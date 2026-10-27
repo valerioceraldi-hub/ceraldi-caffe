@@ -142,23 +142,7 @@ PAGINE_EN = [
  "descrizione": "Aspritz at Ceraldi Caffè: a homemade bitter with Amalfi Coast citrus topped with sparkling Asprinio di Aversa. Aperitivo in Piazza Carità, Naples.",
  "dek": "It is six in the evening, the city lights come on and aperitivo time begins. The star is our own: the Aspritz.",
  "foto": "aspritz",
- "corpo": """
-<p><strong>Aspritz</strong> is our homemade aperitivo, created to celebrate the local area. It starts with a bitter we make ourselves, with <strong>Amalfi Coast citrus</strong>, herbs and roots that give it a young, fresh character. We finish it with sparkling <strong>Asprinio di Aversa</strong>, one of the oldest and most distinctive wines of Campania.</p>
-<p>The result is a truly local spritz: fresh, citrusy and not too strong. A Neapolitan spritz from start to finish.</p>
-
-<h2>Other spritzes</h2>
-<p>Alongside the Aspritz: the classic Campari Spritz, Limoncello Spritz, Hugo with lime, mint and elderflower, Passion Spritz, Cynar Spritz, the Venetian spritz and two spritzes that speak Neapolitan, the <strong>Pignasecca Spritz</strong> (Aperol, Campari, Cynar and prosecco) and the <strong>Maradona Spritz</strong>, blue like curaçao.</p>
-
-<h2>Negroni, gin and tonic and wine</h2>
-<ul>
-<li><strong>Negroni corner</strong>: classic, sour, oriental and the Tyson Negroni.</li>
-<li><strong>Gin and tonic corner</strong>, with selected gins and matching tonics.</li>
-<li><strong>Wines by the glass</strong>, including Campanian labels such as Fiano di Avellino DOCG.</li>
-<li><strong>Beers</strong>, including Neapolitan N'Artigiana on tap, and alcohol-free cocktails.</li>
-</ul>
-<p>All served at your table in Piazza Carità, while the city slows down.</p>
-""",
- "galleria": ["aperitivo", "cocktail-menta-cetriolo", "cocktail-frutti-rossi", "cocktail-barman"],
- "cta": [("Cocktails and drinks", "menu_drink"), ("Get directions", "mappa")],
+ # La pagina è costruita da pagina_aspritz() in build.py con i testi di aspritz.py
+ # (il vecchio corpo, con gli altri spritz, negroni e vini, è confluito nella sezione «Accanto all'Aspritz»).
 },
 ]

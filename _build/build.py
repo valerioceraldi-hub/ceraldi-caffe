@@ -6,6 +6,7 @@ import json, os, html, hashlib, datetime, urllib.parse
 from contenuti import *
 from pagine import *
 from pagine_en import *
+from aspritz import PAGINA_ASPRITZ, HOME_ASPRITZ
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 SITO = os.path.dirname(QUI)
@@ -132,13 +133,13 @@ def piede(rr, lang='it'):
 </html>
 '''
 
-def immagine(k, rr, sizes, eager=False, cls=""):
+def immagine(k, rr, sizes, eager=False, cls="", alt=None):
     f = FOTO[k]; w = f["w"]; rw, rh = f["r"]; big = w[0]
     srcset = ', '.join(f'{rr}img/{k}-{x}.webp {x}w' for x in sorted(w))
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
     c = f' class="{cls}"' if cls else ''
     return (f'<img{c} src="{rr}img/{k}-{big}.webp" srcset="{srcset}" sizes="{sizes}" width="{big}" height="{round(big * rh / rw)}" '
-            f'alt="{e(f["alt"])}" {load} decoding="async">')
+            f'alt="{e(alt or f["alt"])}" {load} decoding="async">')
 
 def carta(titolo1, l1, titolo2, l2):
     li = lambda l: ''.join(f'<li><b>{e(n)}</b><span>{e(d)}</span></li>' for n, d in l)
@@ -331,6 +332,8 @@ def home(lang='it'):
 <p class="p-piu">{piu}</p>
 </div></section>
 
+{home_aspritz(rr, lang)}
+
 <section class="p-sez p-giornata"><div class="p-wrap">
 <div class="p-testa"><p class="p-occhiello scuro">{e(T["giorno_occ"])}</p><h2>{e(T["giorno_h2"])}</h2></div>
 {giornata}
@@ -367,7 +370,23 @@ def home(lang='it'):
 <dl class="p-scheda">{scheda}</dl>
 </div></section>
 </main>
+<script src="{rr}assets/rivela.js" defer></script>
 ''' + piede(rr, lang)
+
+
+def home_aspritz(rr, lang):
+    """Fascia della home dedicata all'Aspritz: foto vera ad arco, illustrazione, tre luoghi e invito alla pagina."""
+    T = HOME_ASPRITZ[lang]
+    it = lang == 'it'
+    tappe = ''.join(f'<li><b>{e(n)}</b><span>{e(l)}</span></li>' for n, l in T["tappe"])
+    return f'''<section class="p-sez az-home" aria-labelledby="az-home-t"><div class="p-wrap az-home-griglia">
+<figure class="az-home-foto rivela"><div class="specchio az-specchio"><img src="{rr}img/aspritz-1024.webp" srcset="{rr}img/aspritz-640.webp 640w, {rr}img/aspritz-1024.webp 1024w" sizes="(max-width: 760px) 80vw, 460px" width="1024" height="768" alt="{e(T["alt"])}" loading="lazy" decoding="async"></div>
+<img class="az-home-ill" src="{rr}img/illustrazioni/aspritz-agrumi.svg" width="560" height="700" alt="" loading="lazy" decoding="async"></figure>
+<div class="az-home-testo rivela"><p class="p-occhiello">{e(T["occhiello"])}</p><h2 id="az-home-t">{T["h2"]}</h2>
+<p class="az-home-p">{e(T["testo"])}</p>
+<ol class="az-tappe" aria-label="{"I luoghi dell'Aspritz" if it else "The places of the Aspritz"}">{tappe}</ol>
+<a class="p-btn pieno" href="{rr}{'' if it else 'en/'}aspritz/">{e(T["cta"])}</a></div>
+</div></section>'''
 
 
 # ── Articoli ──────────────────────────────────────────────────────────
@@ -415,7 +434,7 @@ def articolo(a):
 <p class="meta">{meta_articolo(a)}</p>
 {fig}
 <div class="corpo">{a["corpo"]}</div>
-<aside class="cartellino"><h2>Da provare da Ceraldi</h2><p>Piazza Carità 14, Napoli. Tutti i giorni dalle 6:30 alle 20:30. Dolci di produzione propria.</p><ul>{prova}</ul>
+<aside class="cartellino"><h2>Da provare da Ceraldi</h2><p>{e(a.get("cartellino") or "Piazza Carità 14, Napoli. Tutti i giorni dalle 6:30 alle 20:30. Dolci di produzione propria.")}</p><ul>{prova}</ul>
 <div class="azioni sinistra"><a class="btn" href="../../menu/">Guarda il menu</a><a class="btn" href="{BAR["mappa"]}" rel="noopener">Come arrivare</a></div></aside>
 <aside class="fonti"><h2>Fonti</h2><ul>{fonti}</ul></aside>
 </article>
@@ -453,6 +472,8 @@ def pagina_categoria(c):
           ld_breadcrumb([("Storie", BASE + "storie/"), (c["nome"], url)])]
     h = testa("it", f"{c['nome']}: storie dal caffè | Ceraldi Caffè", c["intro"], url, "../../", ld=ld)
     voci = ''.join(f'<li><a href="../{s}/"><b>{e(PER[s]["titolo"])}</b><span>{e(PER[s]["dek"])}</span><small>{PER[s]["lettura"]} min di lettura</small></a></li>' for s in c["articoli"])
+    if c.get("copertine"):
+        return h + archivio_copertine(c, PER, altre=''.join(f'<a href="../{x["slug"]}/">{e(x["nome"])}</a>' for x in CATEGORIE if x is not c))
     altre = ''.join(f'<a href="../{x["slug"]}/">{e(x["nome"])}</a>' for x in CATEGORIE if x is not c)
     return h + f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
 <main id="contenuto" class="articolo"><div class="contenitore">
@@ -462,6 +483,26 @@ def pagina_categoria(c):
 <ul class="storie" style="margin-top:36px">{voci}</ul>
 <nav class="chips" aria-label="Altre categorie" style="margin-top:40px">{altre}</nav>
 </div></main>
+''' + piede("../../")
+
+def archivio_copertine(c, PER, altre):
+    """Archivio con copertine, data e tempo di lettura (usato per «Il mondo Aspritz»)."""
+    schede = ''
+    for i, s in enumerate(c["articoli"]):
+        a = PER[s]; pub = a.get("pubblicato", PUBBLICATO)
+        schede += (f'<li class="rivela"><a href="../{s}/"><figure>{immagine(a["foto"], "../../", "(max-width: 760px) 92vw, 380px")}</figure>'
+                   f'<p class="p-ora"><time datetime="{pub}">{data_it(pub)}</time> · {a["lettura"]} min di lettura</p>'
+                   f'<h2>{e(a["titolo"])}</h2><p>{e(a["dek"])}</p></a></li>')
+    return f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
+<main id="contenuto" class="articolo pagina-larga"><div class="contenitore">
+<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Storie</a></p>
+<h1>{e(c["nome"])}</h1>
+<p class="dek">{e(c["intro"])}</p>
+<p><a class="p-link" href="../../aspritz/">Scopri l'Aspritz, la nostra creazione</a></p>
+<ul class="az-archivio">{schede}</ul>
+<nav class="chips" aria-label="Altre categorie" style="margin-top:56px">{altre}</nav>
+</div></main>
+<script src="../../assets/rivela.js" defer></script>
 ''' + piede("../../")
 
 # ── Menu completo (da menu_grezzo.json, scaricato da qromo con aggiorna_menu.py) ──
@@ -668,6 +709,99 @@ def pagina(p, lang='it'):
 <aside class="cartellino"><h2>{'Vieni a trovarci' if it else 'Visit us'}</h2><p>{'Piazza Carità 14, Napoli, lungo via Toledo. Tutti i giorni dalle 6:30 alle 20:30.' if it else 'Piazza Carità 14, Naples, on via Toledo. Open every day from 6:30 am to 8:30 pm.'}</p>
 <div class="azioni sinistra"><a class="btn" href="{BAR["mappa"]}" rel="noopener">{'Come arrivare' if it else 'Get directions'}</a><a class="btn" href="tel:{BAR["tel_link"]}">{'Chiama' if it else 'Call'} {BAR["telefono"] if it else '+39 081 552 3488'}</a></div></aside>
 </div></main>
+""" + piede(rr, lang)
+
+def pagina_aspritz(p, lang='it'):
+    """Pagina-racconto dell'Aspritz (sezioni A–H del progetto). Testi in aspritz.py."""
+    it = lang == 'it'
+    T = PAGINA_ASPRITZ[lang]
+    rr = "../" if it else "../../"
+    L = "" if it else "en/"
+    url = BASE + L + "aspritz/"
+    hreflang_it = "" if it else ' hreflang="it"'
+    og = "img/aspritz-1024.webp"
+    ld = [ld_breadcrumb([(p["nav"], url)]),
+          {"@context": "https://schema.org", "@type": "WebPage", "name": T["titolo_seo"], "description": T["descrizione"], "url": url,
+           "isPartOf": {"@id": BASE + "#sito"}, "about": {"@id": BASE + "#bar"}, "primaryImageOfPage": BASE + og, "inLanguage": "it-IT" if it else "en",
+           "mainEntity": {"@type": "MenuItem", "name": "Aspritz", "description": T["descrizione"], "image": BASE + og, "url": url}}]
+    h = testa(lang, T["titolo_seo"] + " | Ceraldi Caffè", T["descrizione"], url, rr, og_img=og, ld=ld, alternates=alt_coppia("aspritz/"),
+              preload=(f"{rr}img/aspritz-1024.webp", f"{rr}img/aspritz-640.webp 640w, {rr}img/aspritz-1024.webp 1024w", "(max-width: 900px) 80vw, 500px"))
+    ill = lambda nome, alt, w, h_, cls="": f'<img{" class=" + chr(34) + cls + chr(34) if cls else ""} src="{rr}img/illustrazioni/{nome}" width="{w}" height="{h_}" alt="{e(alt)}" loading="lazy" decoding="async">'
+    ingr = ''
+    for svg_, etich, tit, testo_, slug, link_t, alt in T["ingr"]:
+        ingr += (f'<article class="az-ingr-scheda rivela"><figure>{ill(svg_, alt, 560, 700 if "radici" not in svg_ else 560)}</figure>'
+                 f'<p class="p-ora">{e(etich)}</p><h3>{e(tit)}</h3><p>{e(testo_)}</p>'
+                 f'<a class="p-link" href="{rr}storie/{slug}/"{hreflang_it}>{e(link_t)}</a></article>')
+    senso = ''.join(f'<div class="rivela"><dt>{e(t)}</dt><dd>{e(d)}</dd></div>' for t, d in T["senso"])
+    crea = ''.join(f'<li class="rivela"><b>{e(t)}</b><p>{e(d)}</p></li>' for t, d in T["crea"])
+    gal = ''.join(f'<figure class="rivela">{immagine(k, rr, "(max-width: 760px) 92vw, 400px")}<figcaption>{e(c)}</figcaption></figure>' for k, c in T["galleria"])
+    PER = {a["slug"]: a for a in ARTICOLI}
+    # elenco testuale, come nelle altre pagine delle storie: le copertine sono già foto e illustrazioni di questa pagina
+    attr_it = "" if it else ' lang="it"'
+    storie = ''.join(f'<li class="rivela"><a href="{rr}storie/{a["slug"]}/"{hreflang_it}><b{attr_it}>{e(a["titolo"])}</b><span{attr_it}>{e(a["dek"])}</span>'
+                     f'<small>{a["lettura"]} min</small></a></li>' for a in ARTICOLI if CATEGORIA_DI[a["slug"]]["slug"] == "aspritz")
+    mappa = "aspritz-mappa.svg" if it else "aspritz-mappa-en.svg"
+    ancora = "visita" if it else "visit"
+    return h + f"""<header class="az-hero">{barra(rr, lang, "aspritz/")}
+<div class="p-wrap az-hero-griglia">
+<div class="az-hero-testo"><p class="dal"><a href="{rr}{L}">Ceraldi Caffè</a> / {e(T["briciola"])}</p>
+<p class="p-occhiello">{e(T["occhiello"])}</p>
+<h1>{e(T["h1"])}</h1>
+<p class="az-sotto">{e(T["sotto"])}</p>
+<p class="az-intro">{e(T["intro"])}</p>
+<a class="az-giu" href="#{ancora}">{e(T["vai"])}</a></div>
+<figure class="az-hero-foto"><div class="specchio az-specchio"><img src="{rr}img/aspritz-1024.webp" srcset="{rr}img/aspritz-640.webp 640w, {rr}img/aspritz-1024.webp 1024w" sizes="(max-width: 900px) 80vw, 500px" width="1024" height="768" alt="{e(T["alt_hero"])}" fetchpriority="high" decoding="async"></div>
+{ill("aspritz-agrumi.svg", "", 560, 700, "az-hero-ill")}</figure>
+</div></header>
+<main id="contenuto" class="az">
+
+<section class="az-sez az-idea"><div class="p-wrap az-due">
+<div class="rivela"><p class="p-occhiello scuro">{e(T["idea_occ"])}</p><h2>{e(T["idea_h2"])}</h2><div class="corpo">{T["idea"]}</div></div>
+<figure class="az-mappa rivela">{ill(mappa, T["mappa_alt"], 600, 700)}<figcaption>{e(T["mappa_cap"])}</figcaption></figure>
+</div></section>
+
+<section class="az-sez az-ingr"><div class="p-wrap">
+<div class="p-testa rivela"><p class="p-occhiello scuro">{e(T["ingr_occ"])}</p><h2>{e(T["ingr_h2"])}</h2><p>{e(T["ingr_p"])}</p></div>
+<div class="az-ingr-griglia">{ingr}</div>
+</div></section>
+
+<section class="az-sez az-senso"><div class="p-wrap">
+<div class="p-testa rivela"><p class="p-occhiello">{e(T["senso_occ"])}</p><h2>{e(T["senso_h2"])}</h2></div>
+<dl class="az-senso-griglia">{senso}</dl>
+</div></section>
+
+<section class="az-sez az-crea"><div class="p-wrap az-crea-griglia">
+<figure class="rivela">{immagine("aperitivo", rr, "(max-width: 760px) 92vw, 600px", alt=T["crea_alt"])}</figure>
+<div><p class="p-occhiello scuro rivela">{e(T["crea_occ"])}</p><h2 class="rivela">{e(T["crea_h2"])}</h2>
+<ol class="az-passi">{crea}</ol>
+<p class="az-nota rivela">{e(T["crea_nota"])}</p></div>
+</div></section>
+
+<section class="az-sez az-napoli"><div class="p-wrap az-due">
+<div class="rivela"><p class="p-occhiello scuro">{e(T["napoli_occ"])}</p><h2>{e(T["napoli_h2"])}</h2><div class="corpo">{T["napoli"]}</div></div>
+<aside class="az-altri rivela"><h3>{e(T["altri_h3"])}</h3>{T["altri"]}<a class="p-link" href="{rr}{L}menu/#cocktails-birre-alcolici">{e(T["menu_drink"])}</a></aside>
+</div></section>
+
+<section class="az-sez az-gal"><div class="p-wrap">
+<div class="p-testa rivela"><p class="p-occhiello scuro">{e(T["gal_occ"])}</p><h2>{e(T["gal_h2"])}</h2></div>
+<div class="az-gal-griglia">{gal}</div>
+</div></section>
+
+<section class="az-sez az-storie"><div class="p-wrap">
+<div class="p-testa riga rivela"><div><p class="p-occhiello scuro">{e(T["storie_occ"])}</p><h2>{e(T["storie_h2"])}</h2></div>
+<a class="p-link" href="{rr}storie/aspritz/"{hreflang_it}>{e(T["storie_tutte"])}</a></div>
+<ul class="storie">{storie}</ul>
+</div></section>
+
+<section class="az-fine" id="{ancora}"><div class="p-wrap">
+{ill("aspritz-fregio.svg", "", 600, 60, "az-fregio")}
+<h2 class="rivela"><span>{e(T["fine_1"])}</span> <em>{e(T["fine_2"])}</em></h2>
+<p class="rivela">{e(T["fine_p"])}</p>
+<div class="p-azioni"><a class="p-btn pieno" href="{BAR["mappa"]}" rel="noopener">{e(T["fine_btn"][0])}</a><a class="p-btn" href="{rr}{L}contatti/">{e(T["fine_btn"][1])}</a></div>
+</div></section>
+<div class="p-wrap az-correlati">{correlati("aspritz", rr, it)}</div>
+</main>
+<script src="{rr}assets/rivela.js" defer></script>
 """ + piede(rr, lang)
 
 def pagina_contatti():
@@ -895,7 +1029,7 @@ def llms():
 - Caffè della casa: Caffè Ceraldi, Caffè Babà, Michelino, Nocciolato, Pistacchiotto, Caldo freddo
 - Rosticceria napoletana: frittatina, crocchè, pizza fritta, pizza di scarole, saltimbocca, zingara ischitana; freselle e insalate
 - English breakfast tutte le mattine (uova, bacon, salsicce, fagioli, funghi, pomodori, pane tostato, tè)
-- Aperitivo: Aspritz fatto in casa (bitter con agrumi della Costiera Amalfitana, erbe e radici, con spumante Asprinio di Aversa), spritz, negroni, gin tonic, vini campani, birre
+- Aperitivo: Aspritz, aperitivo ideato da Ceraldi e di sua produzione (infusione di agrumi della Costiera Amalfitana, erbe e radici, completata con Asprinio di Aversa DOC spumante e arancia disidratata), spritz, negroni, gin tonic, vini campani, birre
 
 ## Pagine
 - [Home]({BASE})
@@ -905,6 +1039,7 @@ def llms():
 - [La pasticceria]({BASE}pasticceria/)
 - [Rosticceria napoletana, freselle e insalate]({BASE}rosticceria/)
 - [Aspritz e aperitivi]({BASE}aspritz/)
+- [Il mondo Aspritz: storie su agrumi, Asprinio, erbe e aperitivo]({BASE}storie/aspritz/)
 - [Contatti e orari]({BASE}contatti/)
 - [English]({BASE}en/)
 - [Storie dal caffè]({BASE}storie/)
@@ -958,9 +1093,9 @@ if __name__ == "__main__":
     for c in CATEGORIE:
         scrivi(f"storie/{c['slug']}/index.html", pagina_categoria(c))
     for p in PAGINE:
-        scrivi(f"{p['slug']}/index.html", pagina(p))
+        scrivi(f"{p['slug']}/index.html", pagina_aspritz(p) if p["slug"] == "aspritz" else pagina(p))
     for p in PAGINE_EN:
-        scrivi(f"en/{p['slug']}/index.html", pagina(p, "en"))
+        scrivi(f"en/{p['slug']}/index.html", pagina_aspritz(p, "en") if p["slug"] == "aspritz" else pagina(p, "en"))
     scrivi("en/menu/index.html", pagina_menu("en"))
     scrivi("specialita/index.html", pagina_specialita("it"))
     scrivi("en/specialita/index.html", pagina_specialita("en"))

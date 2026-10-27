@@ -146,23 +146,7 @@ PAGINE = [
  "descrizione": "L'Aspritz di Ceraldi Caffè: bitter fatto in casa con agrumi della Costiera Amalfitana e Asprinio di Aversa spumante. Aperitivo in Piazza Carità, Napoli.",
  "dek": "Sono le sei di sera, le luci della città si accendono e l'aperitivo va in scena. Il protagonista è nostro: l'Aspritz.",
  "foto": "aspritz",
- "corpo": """
-<p>L'<strong>Aspritz</strong> è il nostro aperitivo fatto in casa, nato per valorizzare il territorio. Alla base c'è un bitter preparato da noi, con <strong>agrumi della Costiera Amalfitana</strong>, erbe e radici, che gli danno un carattere giovane e fresco. Lo completiamo con l'<strong>Asprinio di Aversa</strong> spumante, uno dei vini più antichi e identitari della Campania.</p>
-<p>Il risultato è uno spritz a chilometro zero: fresco, agrumato, non troppo alcolico. Uno spritz napoletano, dall'inizio alla fine.</p>
-
-<h2>Gli altri spritz</h2>
-<p>Accanto all'Aspritz: il classico Campari Spritz, il Limoncello Spritz, l'Hugo con lime, menta e sambuco, il Passion Spritz, il Cynar Spritz, lo Spritz veneziano e due spritz che parlano napoletano, il <strong>Pignasecca Spritz</strong> (Aperol, Campari, Cynar e prosecco) e il <strong>Maradona Spritz</strong>, blu come il curaçao.</p>
-
-<h2>Negroni, gin tonic e vini</h2>
-<ul>
-<li><strong>L'angolo dei Negroni</strong>: classico, sour, oriental e il Tyson Negroni.</li>
-<li><strong>Gin & Tonic corner</strong>, con gin selezionati e toniche abbinate.</li>
-<li><strong>Vini al calice</strong>, con etichette campane come il Fiano di Avellino DOCG.</li>
-<li><strong>Birre</strong>, tra cui la napoletana N'Artigiana alla spina, e cocktail analcolici.</li>
-</ul>
-<p>Il tutto al tavolo, in Piazza Carità, mentre la città rallenta.</p>
-""",
- "galleria": ["aperitivo", "cocktail-menta-cetriolo", "cocktail-frutti-rossi", "cocktail-barman"],
- "cta": [("Cocktail e drink nel menu", "menu_drink"), ("Come arrivare", "mappa")],
+ # La pagina è costruita da pagina_aspritz() in build.py con i testi di aspritz.py
+ # (il vecchio corpo, con gli altri spritz, negroni e vini, è confluito nella sezione «Accanto all'Aspritz»).
 },
 ]

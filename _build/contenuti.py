@@ -547,6 +547,11 @@ FONTI = {
  "tradizioni-napoletane": [("Panaro, Wikipedia", _W + "Panaro"), ("Cornicello, Wikipedia", _W + "Cornicello"), ("Smorfia napoletana, Wikipedia", _W + "Smorfia_napoletana"),
                            ("San Gennaro, Wikipedia", _W + "San_Gennaro")],
 }
+# Progetto Aspritz: articoli, fonti e illustrazioni stanno in aspritz.py
+from aspritz import ARTICOLI_ASPRITZ, FONTI_ASPRITZ, CATEGORIA_ASPRITZ, FOTO_ASPRITZ  # noqa: E402
+ARTICOLI += ARTICOLI_ASPRITZ
+FONTI.update(FONTI_ASPRITZ)
+FOTO.update(FOTO_ASPRITZ)
 for _a in ARTICOLI:
     _a["fonti"] = FONTI[_a["slug"]]
     # Revisore: si indica solo dopo una revisione reale (nome di chi ha riletto e data)
@@ -564,6 +569,7 @@ CATEGORIE = [
   "intro": "Piazza Carità, via Toledo e le tradizioni che si vedono ogni giorno per le strade di Napoli.",
   "articoli": ["piazza-carita-via-toledo", "tradizioni-napoletane"]},
 ]
+CATEGORIE.append(CATEGORIA_ASPRITZ)
 CATEGORIA_DI = {s: c for c in CATEGORIE for s in c["articoli"]}
 assert sorted(CATEGORIA_DI) == sorted(a["slug"] for a in ARTICOLI), "ogni articolo deve avere una categoria"
 

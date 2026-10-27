@@ -160,11 +160,11 @@
   "2026-10-21"
  ],
  "https://www.ceraldicaffe.it/": [
-  "06201fc79067e9b80f8030f779f90912cd7e30f26f56acda64dfe1952dd583e9",
+  "d5e30fe0952932765d4490dad94a1611213b623b1de3f75581be5a84132a9aaf",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/aspritz/": [
-  "1ab177f5454cf4cc4c6ffeeb83e4950973dcc6da77ceb9c8b8c25da6144a80f4",
+  "60eb855b17d7c09e08f674b734248f37ff33787624d6f97017f191ea1dc4efb3",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/bar/": [
@@ -176,11 +176,11 @@
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/en/": [
-  "6cef17ab1d73a4f48f84fdf5d0bc90a17833fe6f2a16dec3cd1367de0f8df093",
+  "f37850d82add469459f33cf404b90f7d5b21256c9d270c9c5d4b0714d0848ef3",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/en/aspritz/": [
-  "21aa24a58ff2b94052623910b34066bc689fbbab69d48d9ae54e0c6543e30cb0",
+  "df1bda5e34f1af99c127500aa29d44a0892acee2e515f4c79ff388c25835ffe7",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/en/bar/": [
@@ -240,71 +240,99 @@
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/": [
-  "bed4a8c7a55c35cc842fa8821ae8185f8a7b8ba84cbf6f88f51b4ccdb5637eac",
+  "fe772ca27fe22ba551f2eede0e22d115ab16cc26ec8fd9800cf573deb1f64b1d",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/a-tazza-e-cafe/": [
-  "0698d8da60609543ea0f3a2320a584e5779d269cfd67685c6dec62b103697db6",
+  "192c4633fa13bac41cf79c1e40b06266466365335316b010863266544dda1f3d",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/agrumi-costiera-amalfitana/": [
+  "b7e8ae97d96d5d2781d8d87e3875a90a43c66ecb8511070d58159f3d9b95c760",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/aperitivo-a-napoli/": [
+  "1ee761d0c667831d6212291f24a35dd255ce47bae22796cbeb67a0886186649a",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/asprinio-di-aversa/": [
+  "c29e16fc62fa555386f56d51fa7b66474be3699df32df3ba85b0f6b3adc77f2b",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/aspritz-ceraldi/": [
+  "695ae982a1e6b6f23cfb1556dfb2d984ccce407be70233ff6530556de1921dea",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/aspritz-idea-di-aperitivo/": [
+  "811d65190dc709ea134b466df21b4873eb188096f4799116123e9da98ea9fd99",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/aspritz/": [
+  "35443236cb3a5b72c014f85870ae8808e09649d7ed85a4323e5e97e13c06ecbf",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/baba/": [
-  "e1924cf9d2b43ab6f7fd511936ad42f31cdc77d735787432c76392f351254e4d",
+  "ddbadfea65b3118c90ac063d1f46d17f89d53c6498897dffef66ce2a672981f8",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/caffe-e-colazione/": [
-  "50640f1a000e2d31f0f38705f289378972834bc24a2ab613ad2e9303a3c54288",
+  "f7f5e810058ea7bfdbc3378afcac31cc9f8915ea08c1aeb0c76928426ea10965",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/caffe-napoletano/": [
-  "5bbdc4388bf1b0110288d7c1b6077228a6c02bc289af9f18f7ed5cc30bea63a8",
+  "6620cdf8cb9e11fd423ae1c47114684c5e1b91d5faf185d2fb4674d58c9e5705",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/caffe-sospeso/": [
-  "054f9afb0cb8f82c145aa50730706728a339946ae914c7520fd8d9fad4da2ebe",
+  "a6b40a4fc123ece2ba4fc49175047fbc678b828cdb959ca76b838e8919422c7f",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/colazione-napoletana/": [
-  "ca02bc14f6645c618f47b971d851fb42768918bc5062027922bf84b6e7b8bdd6",
+  "d5a860a016294c5f2981caa973f48b1f8ff9a8c87d73d22b8d669e720f4987c2",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/dolci-dei-conventi/": [
-  "5fa3737dabea4499c8e0e8beb8320cd444626e3202fa9ce7fe376ed20f80ca23",
+  "702c16d2b3ae31ef6ca94c596f025068e166ff393d28289248c02b1d8de7b452",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/dolci-di-natale/": [
-  "1f1a7b25309f09385a88b4533d61ae16ecc543aec9efac79bbb5a842383de73d",
+  "c1a027294c9314fb6498dad9536ea6721a97be12b336aa6ae251ad8568aaf1b2",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/festa-della-mamma/": [
-  "4113255ddec7f0d856615bd5f2e8e91c6569e00664a2ea5a0a325132dbf2e97b",
+  "56f39172c9972a0066816c4dff124ecc8b60c9c94441c64be9fa7922b4db027d",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/napoli/": [
-  "075f6a6c5379759c1d9460913f1d2dce09bc6de100aa31bf4dc8ddbd96f46299",
+  "d3654ddc726783abb4d99f47e03fe4760afb43ca7cb90a0515ee721a3778d24e",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/pasticceria-napoletana/": [
-  "124433cd21571e06137104139e09013e1f8438df244f95ab454d7b0eae5de698",
+  "ff2330b81993de393384d55ab9e6d8a68d6cd8d59d60c773b2af121510d35d03",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/pastiera/": [
-  "1635161b81e0f4a6959d16fdb57770a51c2ad3592532fd2b8f094ae1b92a6ede",
+  "b8ea947de6d10d19ac58cead75bce6730b44c9876c9d9116f0c45d3ec814cdaf",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/piazza-carita-via-toledo/": [
-  "db03148eb39a06de31c80b7914cac3296428f87970b4ddea7f6e4b6bbba64c3b",
+  "0ee303733f781c9fa42110388701b3988c2a36fb6b32f5bf440533aff57c872c",
+  "2026-10-27"
+ ],
+ "https://www.ceraldicaffe.it/storie/radici-ed-erbe/": [
+  "05a67d93b1b7f7bbcd3472694f83cb6f09e55840a92b2d71b5cacac3eda3f056",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/sfogliatella/": [
-  "dc2d1357bfb8f5900c8835808208ecdb839e2519e279340442edf7000a5d3b1c",
+  "573eac0fbc6b340df9a0b25afba1cff3954f88c89cb7f7456d0d64899a5bfd87",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/tradizioni-napoletane/": [
-  "45656b01c66e623ae303dca210d24caf1e4220d3a3a5f037f5143634d3705bf5",
+  "653ddd81e39dc4a675a1a9a5e4609a15e61b17c89f7aac6a02a005158a5ad68c",
   "2026-10-27"
  ],
  "https://www.ceraldicaffe.it/storie/zeppole-di-san-giuseppe/": [
-  "59064ecb88933b9243e378668bf79b6ef7901e7603fa0cc3578e72564a8618d6",
+  "9b6c987a3f851c4f8fbf0d1e7ad1e0263535b5b4e5140a1d537305160c4cf28b",
   "2026-10-27"
  ]
 }

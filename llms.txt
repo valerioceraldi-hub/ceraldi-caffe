@@ -20,7 +20,7 @@
 - Caffè della casa: Caffè Ceraldi, Caffè Babà, Michelino, Nocciolato, Pistacchiotto, Caldo freddo
 - Rosticceria napoletana: frittatina, crocchè, pizza fritta, pizza di scarole, saltimbocca, zingara ischitana; freselle e insalate
 - English breakfast tutte le mattine (uova, bacon, salsicce, fagioli, funghi, pomodori, pane tostato, tè)
-- Aperitivo: Aspritz fatto in casa (bitter con agrumi della Costiera Amalfitana, erbe e radici, con spumante Asprinio di Aversa), spritz, negroni, gin tonic, vini campani, birre
+- Aperitivo: Aspritz, aperitivo ideato da Ceraldi e di sua produzione (infusione di agrumi della Costiera Amalfitana, erbe e radici, completata con Asprinio di Aversa DOC spumante e arancia disidratata), spritz, negroni, gin tonic, vini campani, birre
 
 ## Pagine
 - [Home](https://www.ceraldicaffe.it/)
@@ -30,6 +30,7 @@
 - [La pasticceria](https://www.ceraldicaffe.it/pasticceria/)
 - [Rosticceria napoletana, freselle e insalate](https://www.ceraldicaffe.it/rosticceria/)
 - [Aspritz e aperitivi](https://www.ceraldicaffe.it/aspritz/)
+- [Il mondo Aspritz: storie su agrumi, Asprinio, erbe e aperitivo](https://www.ceraldicaffe.it/storie/aspritz/)
 - [Contatti e orari](https://www.ceraldicaffe.it/contatti/)
 - [English](https://www.ceraldicaffe.it/en/)
 - [Storie dal caffè](https://www.ceraldicaffe.it/storie/)
@@ -46,3 +47,9 @@
 - ['A tazza 'e cafè: il caffè nella canzone e nel teatro napoletano](https://www.ceraldicaffe.it/storie/a-tazza-e-cafe/): 'A tazza 'e cafè, la canzone del 1918 di Capaldo e Fassone, e il caffè nella cultura di Napoli, da Eduardo De Filippo a Luciano De Crescenzo.
 - [Festa della mamma: fragole, cioccolato e dolci fatti col cuore](https://www.ceraldicaffe.it/storie/festa-della-mamma/): Per la festa della mamma, la seconda domenica di maggio, i dolci che non sbagliano mai: fragole e cioccolato, crostata, macarons, biscotti e torta di rose.
 - [Napoli in sette tradizioni: dal panaro al miracolo di San Gennaro](https://www.ceraldicaffe.it/storie/tradizioni-napoletane/): Sette tradizioni napoletane: caffè sospeso, panaro, cornicello, smorfia, presepe di San Gregorio Armeno, miracolo di San Gennaro e dolci delle feste.
+- [L'Aspritz Ceraldi: quando un aperitivo racconta un territorio](https://www.ceraldicaffe.it/storie/aspritz-ceraldi/): Agrumi della Costiera, erbe e radici, Asprinio di Aversa: come l'Aspritz di Ceraldi Caffè unisce tre luoghi della Campania in un aperitivo nato a Napoli.
+- [Gli agrumi della Costiera Amalfitana: profumi e identità della Campania](https://www.ceraldicaffe.it/storie/agrumi-costiera-amalfitana/): Terrazzamenti, muretti a secco, pergolati di castagno e lo sfusato amalfitano: storia e paesaggio degli agrumi della Costiera, e il loro ruolo nell'Aspritz.
+- [Asprinio di Aversa: il carattere di un vino campano](https://www.ceraldicaffe.it/storie/asprinio-di-aversa/): La DOC «Aversa», le viti maritate ai pioppi dell'alberata, le scale dei vendemmiatori e la lunga storia dell'Asprinio, il bianco che dà le bollicine all'Aspritz.
+- [Radici ed erbe nell'aperitivo: il fascino della componente botanica](https://www.ceraldicaffe.it/storie/radici-ed-erbe/): Genziana, rabarbaro, china, scorze di agrumi: cosa portano radici ed erbe agli aperitivi e ai bitter, dal vermouth di Torino allo spritz, fino all'Aspritz.
+- [L'aperitivo a Napoli: tradizione, convivialità e nuove interpretazioni](https://www.ceraldicaffe.it/storie/aperitivo-a-napoli/): Dal vermouth di Torino allo spritz veneziano, fino ai bar di Napoli: cosa c'è di documentato nella storia dell'aperitivo e come la città lo interpreta oggi.
+- [Aspritz: dentro la nostra idea di aperitivo](https://www.ceraldicaffe.it/storie/aspritz-idea-di-aperitivo/): Perché una base preparata da noi, perché l'Asprinio al posto del prosecco, perché una fetta d'arancia: le scelte dietro l'Aspritz, l'aperitivo di Ceraldi Caffè.
