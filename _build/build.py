@@ -78,7 +78,7 @@ def testa(lang, titolo, descr, url, rr, og_img="img/og.jpg", ld=None, alternates
 
 # Navigazione principale: sei voci. Specialità, rosticceria e Aspritz restano pagine autonome,
 # raggiungibili dalle pagine madri (blocco «Da vedere anche»), dalla home e dal piè di pagina.
-VOCI_NAV = [("bar/", "Il bar"), ("pasticceria/", "Pasticceria"), ("menu/", "Menu"), ("storia/", "Storia"), ("storie/", "Storie"), ("contatti/", "Contatti")]
+VOCI_NAV = [("bar/", "Il bar"), ("pasticceria/", "Pasticceria"), ("menu/", "Menu"), ("storia/", "Storia"), ("storie/", "Racconti"), ("contatti/", "Contatti")]
 # Pagine che esistono in entrambe le lingue: percorso italiano -> percorso inglese
 EN_PATH = {"": "en/", "storia/": "en/storia/", "bar/": "en/bar/", "pasticceria/": "en/pasticceria/", "rosticceria/": "en/rosticceria/",
            "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/", "termini/": "en/termini/"}
@@ -124,7 +124,7 @@ def piede(rr, lang='it'):
 <p style="margin-top:14px">{e(BAR['indirizzo'])}, {e(BAR['cap_citta'])}</p><p>{e(BAR['orari'] if it else BAR['orari_en'])}</p>
 <p><a href="tel:{BAR['tel_link']}">{'Tel.' if it else 'Phone'} {BAR['telefono'] if it else '+39 081 552 3488'}</a></p><p><a href="{BAR['whatsapp']}" rel="noopener">WhatsApp {BAR['cellulare'] if it else '+39 328 438 8404'}</a></p></div>
 <div>{col_pagine}</div>
-<div><p><a href="{rr}{L}storia/">{'La nostra storia' if it else 'Our story'}</a></p><p><a href="{rr}storie/"{'' if it else ' hreflang="it"'}>{'Storie dal caffè' if it else 'Stories (in Italian)'}</a></p><p><a href="{rr}{L}contatti/">{'Orari e contatti' if it else 'Hours and contact'}</a></p></div>
+<div><p><a href="{rr}{L}storia/">{'La nostra storia' if it else 'Our story'}</a></p><p><a href="{rr}storie/"{'' if it else ' hreflang="it"'}>{'Racconti dal caffè' if it else 'Stories (in Italian)'}</a></p><p><a href="{rr}{L}contatti/">{'Orari e contatti' if it else 'Hours and contact'}</a></p></div>
 <div><p><a href="{BAR['google_recensioni']}" rel="noopener">{'Recensioni Google' if it else 'Google reviews'}</a></p><p><a href="{BAR['tripadvisor']}" rel="noopener">Tripadvisor</a></p><p><a href="{BAR['instagram']}" rel="noopener">Instagram</a></p><p><a href="{BAR['facebook']}" rel="noopener">Facebook</a></p></div>
 <p class="legale">© {RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli. {'P. IVA' if it else 'VAT no.'} {PIVA}. <a href="{rr}{L}privacy/">{'Privacy e cookie' if it else 'Privacy and cookies'}</a> <a href="{rr}{L}termini/">{'Termini e condizioni' if it else 'Terms and conditions'}</a>{f' <a href="#" data-preferenze-cookie>{"Preferenze cookie" if it else "Cookie preferences"}</a>' if GA_ID else ''}</p>
 </div></footer>
@@ -238,7 +238,7 @@ HOME_TESTI = {
         gambero="Nella guida <strong>Bar d'Italia</strong> dal {dal}, presenti anche nell'edizione 2026.", gambero_link="Leggi la scheda",
         google="Valutazione media su Google, su {n} recensioni. Dato rilevato il {data}.", su5="su 5",
         link_rec=("Recensioni su Google", "Tripadvisor", "Lascia una recensione"),
-        storie_occ="Storie dal caffè", storie_h2="Napoli raccontata dal bancone", storie_tutte="Tutte le storie",
+        storie_occ="Racconti dal caffè", storie_h2="Napoli raccontata dal bancone", storie_tutte="Tutti i racconti",
         visita_occ="Vieni a trovarci", visita_h2="Piazza Carità 14, nel cuore di Napoli",
         visita_p="Lungo via Toledo, tra piazza Dante e piazza del Plebiscito, all'ingresso della Pignasecca e dei Quartieri Spagnoli. A pochi minuti a piedi dalle fermate Toledo e Dante della metro Linea 1.",
         btn_maps="Apri in Google Maps", btn_chiama="Chiama",
@@ -416,7 +416,7 @@ def articolo(a):
            "publisher": {"@type": "Organization", "name": "Ceraldi Caffè", "logo": {"@type": "ImageObject", "url": BASE + "img/apple-touch-icon.png"}}},
           {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
               {"@type": "ListItem", "position": 1, "name": "Ceraldi Caffè", "item": BASE},
-              {"@type": "ListItem", "position": 2, "name": "Storie", "item": BASE + "storie/"},
+              {"@type": "ListItem", "position": 2, "name": "Racconti", "item": BASE + "storie/"},
               {"@type": "ListItem", "position": 3, "name": CATEGORIA_DI[a["slug"]]["nome"], "item": BASE + f"storie/{CATEGORIA_DI[a['slug']]['slug']}/"},
               {"@type": "ListItem", "position": 4, "name": a["titolo"], "item": url}]}]
     og = f"img/{k}-{FOTO[k]['w'][0]}.webp" if k else "img/og.jpg"
@@ -427,7 +427,7 @@ def articolo(a):
     altre = ''.join(f'<li><a href="../{b["slug"]}/"><b>{e(b["titolo"])}</b><span>{e(b["dek"])}</span><small>{b["lettura"]} min</small></a></li>' for b in sorted(ARTICOLI, key=lambda b: CATEGORIA_DI[b["slug"]] is not CATEGORIA_DI[a["slug"]]) if b is not a)
     return h + f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
 <main id="contenuto" class="articolo"><div class="contenitore">
-<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Storie</a> / <a href="../{CATEGORIA_DI[a["slug"]]["slug"]}/">{e(CATEGORIA_DI[a["slug"]]["nome"])}</a></p>
+<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Racconti</a> / <a href="../{CATEGORIA_DI[a["slug"]]["slug"]}/">{e(CATEGORIA_DI[a["slug"]]["nome"])}</a></p>
 <article>
 <h1>{e(a["titolo"])}</h1>
 <p class="dek">{e(a["dek"])}</p>
@@ -438,7 +438,7 @@ def articolo(a):
 <div class="azioni sinistra"><a class="btn" href="../../menu/">Guarda il menu</a><a class="btn" href="{BAR["mappa"]}" rel="noopener">Come arrivare</a></div></aside>
 <aside class="fonti"><h2>Fonti</h2><ul>{fonti}</ul></aside>
 </article>
-<section class="altre"><h2>Altre storie</h2><ul class="storie">{altre}</ul></section>
+<section class="altre"><h2>Altri racconti</h2><ul class="storie">{altre}</ul></section>
 </div></main>
 ''' + piede("../../")
 
@@ -446,7 +446,7 @@ def indice_storie():
     url = BASE + "storie/"
     h = testa("it", "Storie di Napoli: caffè, dolci e tradizioni | Ceraldi Caffè",
               "Caffè napoletano, caffè sospeso, sfogliatella, babà, pastiera, dolci di Natale, Piazza Carità e tradizioni di Napoli: le storie raccontate da Ceraldi Caffè.", url, "../",
-              ld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Storie dal caffè", "url": url, "isPartOf": {"@id": BASE + "#sito"},
+              ld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Racconti dal caffè", "url": url, "isPartOf": {"@id": BASE + "#sito"},
                    "hasPart": [{"@type": "Article", "headline": a["titolo"], "url": url + a["slug"] + "/"} for a in ARTICOLI]}])
     PER = {a["slug"]: a for a in ARTICOLI}
     chips = ''.join(f'<a href="{c["slug"]}/">{e(c["nome"])}</a>' for c in CATEGORIE)
@@ -457,7 +457,7 @@ def indice_storie():
     return h + f'''<header class="testata-scura">{barra("../", "it", "storie/")}</header>
 <main id="contenuto" class="articolo"><div class="contenitore">
 <p class="briciole"><a href="../">Ceraldi Caffè</a></p>
-<h1>Storie dal caffè</h1>
+<h1>Racconti dal caffè</h1>
 <p class="dek">Riti, leggende, dolci e luoghi della cultura napoletana, raccontati dal bancone di Piazza Carità.</p>
 <div style="margin-top:28px">{lista_s}</div>
 </div></main>
@@ -469,7 +469,7 @@ def pagina_categoria(c):
     PER = {a["slug"]: a for a in ARTICOLI}
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": c["nome"], "description": c["intro"], "url": url, "isPartOf": {"@id": BASE + "#sito"},
            "hasPart": [{"@type": "Article", "headline": PER[s]["titolo"], "url": BASE + f"storie/{s}/"} for s in c["articoli"]]},
-          ld_breadcrumb([("Storie", BASE + "storie/"), (c["nome"], url)])]
+          ld_breadcrumb([("Racconti", BASE + "storie/"), (c["nome"], url)])]
     h = testa("it", f"{c['nome']}: storie dal caffè | Ceraldi Caffè", c["intro"], url, "../../", ld=ld)
     voci = ''.join(f'<li><a href="../{s}/"><b>{e(PER[s]["titolo"])}</b><span>{e(PER[s]["dek"])}</span><small>{PER[s]["lettura"]} min di lettura</small></a></li>' for s in c["articoli"])
     if c.get("copertine"):
@@ -477,7 +477,7 @@ def pagina_categoria(c):
     altre = ''.join(f'<a href="../{x["slug"]}/">{e(x["nome"])}</a>' for x in CATEGORIE if x is not c)
     return h + f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
 <main id="contenuto" class="articolo"><div class="contenitore">
-<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Storie</a></p>
+<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Racconti</a></p>
 <h1>{e(c["nome"])}</h1>
 <p class="dek">{e(c["intro"])}</p>
 <ul class="storie" style="margin-top:36px">{voci}</ul>
@@ -495,7 +495,7 @@ def archivio_copertine(c, PER, altre):
                    f'<h2>{e(a["titolo"])}</h2><p>{e(a["dek"])}</p></a></li>')
     return f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
 <main id="contenuto" class="articolo pagina-larga"><div class="contenitore">
-<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Storie</a></p>
+<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Racconti</a></p>
 <h1>{e(c["nome"])}</h1>
 <p class="dek">{e(c["intro"])}</p>
 <p><a class="p-link" href="../../aspritz/">Scopri l'Aspritz, la nostra creazione</a></p>
@@ -660,7 +660,7 @@ CORRELATI = {
     "aspritz": [("bar/", "Il bar e la colazione", "La giornata comincia alle 6:30", "Coffee and breakfast", "The day starts at 6:30 am"),
                 ("specialita/", "Specialità della casa", "Caffè e dolci nati da Ceraldi", "House specialities", "Coffees and pastries created at Ceraldi"),
                 ("menu/", "Cocktail, birre e alcolici", "Tutta la carta del bar, con i prezzi", "Cocktails, beers and spirits", "The full drinks list, with prices")],
-    "storia": [("storie/", "Storie dal caffè", "Il caffè, i dolci e le tradizioni di Napoli", "Stories from the café", "In Italian: coffee, pastries and Neapolitan traditions"),
+    "storia": [("storie/", "Racconti dal caffè", "Il caffè, i dolci e le tradizioni di Napoli", "Stories from the café", "In Italian: coffee, pastries and Neapolitan traditions"),
                ("pasticceria/", "La pasticceria", "Produzione propria, dal laboratorio alla vetrina", "Our pastries", "Made in-house, from our kitchens to the display case"),
                ("contatti/", "Orari e contatti", "Piazza Carità 14, tutti i giorni dalle 6:30 alle 20:30", "Hours and contact", "Piazza Carità 14, every day 6:30 am – 8:30 pm")],
 }

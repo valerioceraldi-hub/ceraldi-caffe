@@ -496,3 +496,18 @@ h1,h2,h3{text-wrap:balance;margin:0}
   .az-gal-griglia figure,.az-gal-griglia figure:nth-child(1),.az-gal-griglia figure:nth-child(2){grid-column:auto}
   .az-archivio{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ── Barra sempre visibile su tablet e computer: logo e sezioni restano in alto mentre si scorre ── */
+:root{--alt-barra:88px}
+@media (min-width:761px){
+  html{scroll-padding-top:calc(var(--alt-barra) + 16px)}
+  body{padding-top:var(--alt-barra)}
+  .p-barra{position:fixed;top:0;left:0;right:0;width:auto;max-width:none;height:var(--alt-barra);box-sizing:border-box;background:var(--espresso);z-index:45;
+    padding-block:0;padding-left:max(20px,calc((100% - var(--larghezza))/2 + 20px));padding-right:max(20px,calc((100% - var(--larghezza))/2 + 20px));
+    box-shadow:0 1px 0 var(--linea-scura)}
+  .p-hero{justify-content:flex-end;min-height:calc(min(100svh,920px) - var(--alt-barra))}
+  .pagina-menu .chips{top:var(--alt-barra)}
+  .menu-sezione,.menu-sezione h3{scroll-margin-top:calc(var(--alt-barra) + 76px)}
+  .spec{scroll-margin-top:calc(var(--alt-barra) + 24px)}
+}
+@media print{.p-barra{position:static}}

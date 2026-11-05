@@ -99,7 +99,7 @@ PAGINA_ASPRITZ = {
            ("illustrazione-asprinio", "L'alberata aversana, il paesaggio dell'Asprinio."),
            ("cocktail-menta-cetriolo", "Lo spumante versato al banco, per un altro dei nostri drink.")],
  # Storie
- storie_occ="Il mondo Aspritz", storie_h2="Storie per approfondire", storie_tutte="Tutte le storie dell'Aspritz",
+ storie_occ="Il mondo Aspritz", storie_h2="Racconti per approfondire", storie_tutte="Tutti i racconti dell'Aspritz",
  # H
  fine_1="C'è un altro modo di raccontare il territorio.", fine_2="Il nostro si chiama Aspritz.",
  fine_p="Scoprilo da Ceraldi Caffè, in Piazza Carità 14, nel centro di Napoli. Tutti i giorni fino alle 20:30.",
