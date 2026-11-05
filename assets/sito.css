@@ -497,9 +497,9 @@ h1,h2,h3{text-wrap:balance;margin:0}
   .az-archivio{grid-template-columns:minmax(0,1fr)}
 }
 
-/* ── Barra sempre visibile su tablet e computer: logo e sezioni restano in alto mentre si scorre ── */
+/* ── Barra sempre visibile su tablet e computer (anche iPad mini in verticale; non sui telefoni, nemmeno in orizzontale) ── */
 :root{--alt-barra:88px}
-@media (min-width:761px){
+@media (min-width:700px) and (min-height:600px){
   html{scroll-padding-top:calc(var(--alt-barra) + 16px)}
   body{padding-top:var(--alt-barra)}
   .p-barra{position:fixed;top:0;left:0;right:0;width:auto;max-width:none;height:var(--alt-barra);box-sizing:border-box;background:var(--espresso);z-index:45;

@@ -12,6 +12,10 @@ QUI = os.path.dirname(os.path.abspath(__file__))
 SITO = os.path.dirname(QUI)
 e = html.escape
 
+# Versione dei file: cambia quando cambia il contenuto, così i browser scaricano subito la copia nuova
+def ver(rel):
+    return hashlib.sha256(open(os.path.join(SITO, rel), 'rb').read()).hexdigest()[:8]
+
 # Font ospitati sul sito (nessuna chiamata a server esterni: niente dati dei visitatori a terzi)
 def font(rr):
     return (f'<link rel="preload" href="{rr}assets/font/BodoniModa-normal-400_600-latin.woff2" as="font" type="font/woff2" crossorigin>'
@@ -68,8 +72,8 @@ def testa(lang, titolo, descr, url, rr, og_img="img/og.jpg", ld=None, alternates
 <link rel="icon" href="{rr}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{rr}img/apple-touch-icon.png">
 {pre}{font(rr)}
-<link rel="stylesheet" href="{rr}assets/sito.css">
-{f'<script src="{rr}assets/consenso.js" data-ga="{GA_ID}" defer></script>' if GA_ID else ''}
+<link rel="stylesheet" href="{rr}assets/sito.css?v={ver('assets/sito.css')}">
+{f'<script src="{rr}assets/consenso.js?v={ver("assets/consenso.js")}" data-ga="{GA_ID}" defer></script>' if GA_ID else ''}
 {lds}
 </head>
 <body>
