@@ -6,6 +6,7 @@
 
 PIVA = "04523831214"
 RAGIONE_SOCIALE = "Ceraldi Group S.r.l."
+EMAIL = "info@ceraldicaffe.it"
 
 PAGINE = [
 {

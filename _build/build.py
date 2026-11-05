@@ -81,7 +81,7 @@ def testa(lang, titolo, descr, url, rr, og_img="img/og.jpg", ld=None, alternates
 VOCI_NAV = [("bar/", "Il bar"), ("pasticceria/", "Pasticceria"), ("menu/", "Menu"), ("storia/", "Storia"), ("storie/", "Storie"), ("contatti/", "Contatti")]
 # Pagine che esistono in entrambe le lingue: percorso italiano -> percorso inglese
 EN_PATH = {"": "en/", "storia/": "en/storia/", "bar/": "en/bar/", "pasticceria/": "en/pasticceria/", "rosticceria/": "en/rosticceria/",
-           "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/"}
+           "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/", "termini/": "en/termini/"}
 VOCI_NAV_EN = [("en/bar/", "Coffee & breakfast"), ("en/pasticceria/", "Pastries"), ("en/menu/", "Menu"), ("en/storia/", "Our story"), ("en/contatti/", "Contact")]
 
 def alt_coppia(it_path):
@@ -126,7 +126,7 @@ def piede(rr, lang='it'):
 <div>{col_pagine}</div>
 <div><p><a href="{rr}{L}storia/">{'La nostra storia' if it else 'Our story'}</a></p><p><a href="{rr}storie/"{'' if it else ' hreflang="it"'}>{'Storie dal caffè' if it else 'Stories (in Italian)'}</a></p><p><a href="{rr}{L}contatti/">{'Orari e contatti' if it else 'Hours and contact'}</a></p></div>
 <div><p><a href="{BAR['google_recensioni']}" rel="noopener">{'Recensioni Google' if it else 'Google reviews'}</a></p><p><a href="{BAR['tripadvisor']}" rel="noopener">Tripadvisor</a></p><p><a href="{BAR['instagram']}" rel="noopener">Instagram</a></p><p><a href="{BAR['facebook']}" rel="noopener">Facebook</a></p></div>
-<p class="legale">© {RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli. {'P. IVA' if it else 'VAT no.'} {PIVA}. <a href="{rr}{L}privacy/">{'Privacy e cookie' if it else 'Privacy and cookies'}</a>{f' <a href="#" data-preferenze-cookie>{"Preferenze cookie" if it else "Cookie preferences"}</a>' if GA_ID else ''}</p>
+<p class="legale">© {RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli. {'P. IVA' if it else 'VAT no.'} {PIVA}. <a href="{rr}{L}privacy/">{'Privacy e cookie' if it else 'Privacy and cookies'}</a> <a href="{rr}{L}termini/">{'Termini e condizioni' if it else 'Terms and conditions'}</a>{f' <a href="#" data-preferenze-cookie>{"Preferenze cookie" if it else "Cookie preferences"}</a>' if GA_ID else ''}</p>
 </div></footer>
 <nav class="barra-fissa" aria-label="{'Contatti rapidi' if it else 'Quick contacts'}"><a href="tel:{BAR['tel_link']}">{'Chiama' if it else 'Call'}</a><a href="{BAR['mappa']}" rel="noopener">{'Indicazioni' if it else 'Directions'}</a><a href="{rr}{L}menu/">{'Il menu' if it else 'Menu'}</a></nav>
 </body>
@@ -859,7 +859,7 @@ def pagina_privacy():
 <p class="meta">Ultimo aggiornamento: {data}</p>
 <div class="corpo">
 <h2>Titolare</h2>
-<p>{RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli (NA), P. IVA {PIVA}. Per qualsiasi richiesta sui dati personali puoi contattarci al numero <a href="tel:{BAR["tel_link"]}">081 552 3488</a> o presso la sede.</p>
+<p>{RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli (NA), P. IVA {PIVA}. Per qualsiasi richiesta sui dati personali puoi scriverci a <a href="mailto:{EMAIL}">{EMAIL}</a>, chiamare il numero <a href="tel:{BAR["tel_link"]}">081 552 3488</a> o passare in sede.</p>
 <h2>Cosa raccoglie questo sito</h2>
 {PRIVACY_STATISTICHE if GA_ID else PRIVACY_NESSUN_COOKIE}
 <h2>Hosting</h2>
@@ -867,7 +867,7 @@ def pagina_privacy():
 <h2>Link esterni</h2>
 <p>Alcuni link portano a servizi di terzi: Google Maps e Google (recensioni), Tripadvisor, Instagram, Facebook, WhatsApp e il nostro menu interattivo su qromo. Quando li apri si applicano le informative privacy e cookie di quei servizi.</p>
 <h2>I tuoi diritti</h2>
-<p>In base al Regolamento UE 2016/679 (GDPR) puoi chiedere l'accesso, la rettifica o la cancellazione dei dati che ti riguardano e proporre reclamo al Garante per la protezione dei dati personali.</p>
+<p>In base al Regolamento UE 2016/679 (GDPR) puoi chiedere l'accesso, la rettifica o la cancellazione dei dati che ti riguardano e proporre reclamo al Garante per la protezione dei dati personali. Per esercitare i tuoi diritti scrivi a <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 </div>
 </div></main>
 """ + piede("../")
@@ -928,7 +928,7 @@ def pagina_privacy_en():
 <p class="meta">Last updated: <time datetime="{data}">{data}</time>. The Italian version is the reference text.</p>
 <div class="corpo">
 <h2>Data controller</h2>
-<p>{RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli (NA), Italy, VAT no. {PIVA}. For any request about personal data you can call us on <a href="tel:{BAR["tel_link"]}">+39 081 552 3488</a> or visit us.</p>
+<p>{RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli (NA), Italy, VAT no. {PIVA}. For any request about personal data you can write to <a href="mailto:{EMAIL}">{EMAIL}</a>, call us on <a href="tel:{BAR["tel_link"]}">+39 081 552 3488</a> or visit us.</p>
 <h2>What this website collects</h2>
 {PRIVACY_EN_STATISTICHE if GA_ID else PRIVACY_EN_NESSUN_COOKIE}
 <h2>Hosting</h2>
@@ -936,7 +936,71 @@ def pagina_privacy_en():
 <h2>External links</h2>
 <p>Some links lead to third-party services: Google Maps and Google (reviews), Tripadvisor, Instagram, Facebook, WhatsApp and our interactive menu on qromo. When you open them, their own privacy and cookie policies apply.</p>
 <h2>Your rights</h2>
-<p>Under Regulation (EU) 2016/679 (GDPR) you can request access to, correction or deletion of your data, and lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali).</p>
+<p>Under Regulation (EU) 2016/679 (GDPR) you can request access to, correction or deletion of your data, and lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali). To exercise your rights, write to <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+</div>
+</div></main>
+""" + piede("../../", "en")
+
+
+def pagina_termini():
+    url = BASE + "termini/"
+    data = OGGI[8:10] + '/' + OGGI[5:7] + '/' + OGGI[:4]
+    h = testa("it", "Termini e condizioni | Ceraldi Caffè", "Termini e condizioni di utilizzo del sito di Ceraldi Caffè, Piazza Carità 14, Napoli.", url, "../", alternates=alt_coppia("termini/"))
+    return h + f"""<header class="testata-scura">{barra("../", "it", "termini/")}</header>
+<main id="contenuto" class="articolo"><div class="contenitore">
+<p class="briciole"><a href="../">Ceraldi Caffè</a></p>
+<h1>Termini e condizioni</h1>
+<p class="meta">Ultimo aggiornamento: {data}</p>
+<div class="corpo">
+<p>Queste condizioni regolano l'uso del sito www.ceraldicaffe.it. Navigando sul sito le accetti; se non le condividi, ti chiediamo di non usarlo.</p>
+<h2>Chi siamo</h2>
+<p>{RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli (NA), P. IVA {PIVA}. Puoi scriverci a <a href="mailto:{EMAIL}">{EMAIL}</a> o chiamarci al <a href="tel:{BAR["tel_link"]}">081 552 3488</a>.</p>
+<h2>Che cos'è questo sito</h2>
+<p>È una vetrina informativa sul nostro bar e sulla nostra pasticceria. <strong>Non è un negozio online</strong>: attraverso queste pagine non si fanno acquisti, ordini o pagamenti.</p>
+<h2>Prodotti, prezzi, orari e allergeni</h2>
+<p>Facciamo il possibile perché le informazioni siano corrette e aggiornate, ma menu, prezzi, orari e disponibilità dei prodotti possono cambiare senza preavviso. Fa fede quanto indicato in negozio. Se hai allergie o intolleranze, chiedi sempre al nostro personale prima di ordinare.</p>
+<h2>Testi, foto e marchio</h2>
+<p>Testi, fotografie, illustrazioni, logo e marchio Ceraldi Caffè appartengono a {RAGIONE_SOCIALE} o sono usati con autorizzazione, salvo diversa indicazione. Puoi condividere i link alle nostre pagine; per copiare o riutilizzare i contenuti a fini commerciali serve il nostro consenso scritto.</p>
+<h2>Link a siti di terzi</h2>
+<p>Il sito contiene collegamenti a servizi esterni (Google Maps, Tripadvisor, Instagram, Facebook, WhatsApp, il menu interattivo su qromo). Non li controlliamo e non rispondiamo dei loro contenuti: valgono le loro condizioni e le loro informative.</p>
+<h2>Responsabilità</h2>
+<p>Non possiamo garantire che il sito sia sempre raggiungibile o privo di errori. Nei limiti consentiti dalla legge non rispondiamo di danni derivanti dall'uso del sito o dall'affidamento sulle informazioni che contiene. Restano ferme le tutele che la legge riconosce ai consumatori.</p>
+<h2>Privacy e cookie</h2>
+<p>Come trattiamo i dati e quali cookie usiamo è spiegato nella pagina <a href="../privacy/">Privacy e cookie</a>.</p>
+<h2>Legge applicabile e modifiche</h2>
+<p>Si applica la legge italiana, salvi i diritti e il foro inderogabili previsti per i consumatori. Possiamo aggiornare queste condizioni: la data in alto indica l'ultima versione.</p>
+</div>
+</div></main>
+""" + piede("../")
+
+
+def pagina_termini_en():
+    url = BASE + "en/termini/"
+    data = OGGI
+    h = testa("en", "Terms and conditions | Ceraldi Caffè", "Terms and conditions of use of the Ceraldi Caffè website, Piazza Carità 14, Naples.", url, "../../", alternates=alt_coppia("termini/"))
+    return h + f"""<header class="testata-scura">{barra("../../", "en", "termini/")}</header>
+<main id="contenuto" class="articolo"><div class="contenitore">
+<p class="briciole"><a href="../">Ceraldi Caffè</a></p>
+<h1>Terms and conditions</h1>
+<p class="meta">Last updated: <time datetime="{data}">{data}</time>. The Italian version is the reference text.</p>
+<div class="corpo">
+<p>These terms govern the use of the website www.ceraldicaffe.it. By browsing the site you accept them; if you do not agree, please do not use it.</p>
+<h2>Who we are</h2>
+<p>{RAGIONE_SOCIALE}, Piazza Carità 14, 80134 Napoli (NA), Italy, VAT no. {PIVA}. You can write to us at <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="tel:{BAR["tel_link"]}">+39 081 552 3488</a>.</p>
+<h2>What this site is</h2>
+<p>It is an information website about our café and pastry shop. <strong>It is not an online shop</strong>: no purchases, orders or payments are made through these pages.</p>
+<h2>Products, prices, opening hours and allergens</h2>
+<p>We do our best to keep the information correct and up to date, but menu, prices, opening hours and product availability may change without notice. What is shown in the café prevails. If you have allergies or intolerances, always ask our staff before ordering.</p>
+<h2>Texts, photos and brand</h2>
+<p>Texts, photographs, illustrations, the logo and the Ceraldi Caffè brand belong to {RAGIONE_SOCIALE} or are used with permission, unless stated otherwise. You are welcome to share links to our pages; copying or reusing the content for commercial purposes requires our written consent.</p>
+<h2>Third-party links</h2>
+<p>The site contains links to external services (Google Maps, Tripadvisor, Instagram, Facebook, WhatsApp, the interactive menu on qromo). We do not control them and are not responsible for their content: their own terms and policies apply.</p>
+<h2>Liability</h2>
+<p>We cannot guarantee that the site is always available or error-free. To the extent permitted by law, we are not liable for damages arising from the use of the site or from reliance on the information it contains. The rights that the law grants to consumers remain unaffected.</p>
+<h2>Privacy and cookies</h2>
+<p>How we handle data and which cookies we use is explained on the <a href="../privacy/">Privacy and cookies</a> page.</p>
+<h2>Governing law and changes</h2>
+<p>Italian law applies, without prejudice to the mandatory rights and forum granted to consumers. We may update these terms: the date above shows the latest version.</p>
 </div>
 </div></main>
 """ + piede("../../", "en")
@@ -1104,6 +1168,8 @@ if __name__ == "__main__":
     scrivi("menu/index.html", pagina_menu())
     scrivi("contatti/index.html", pagina_contatti())
     scrivi("privacy/index.html", pagina_privacy())
+    scrivi("en/termini/index.html", pagina_termini_en())
+    scrivi("termini/index.html", pagina_termini())
     scrivi("llms.txt", llms())
     scrivi("404.html", pagina_404(BASE))
     # GitHub Pages usa solo il 404.html alla radice del repository: per gli indirizzi fuori da /caffe/ (le app) mostra un messaggio neutro
@@ -1115,4 +1181,4 @@ if __name__ == "__main__":
         scrivi(f"{vecchio}/index.html", rimando(nuovo))
     scrivi("robots.txt", robots())
     scrivi("sitemap.xml", sitemap())
-    print("Pagine generate:", 6 + len(ARTICOLI) + len(PAGINE) + len(CATEGORIE) + len(PAGINE_EN) + 5)
+    print("Pagine generate:", 6 + len(ARTICOLI) + len(PAGINE) + len(CATEGORIE) + len(PAGINE_EN) + 7)
