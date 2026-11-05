@@ -59,7 +59,7 @@ def testa(lang, titolo, descr, url, rr, og_img="img/og.jpg", ld=None, alternates
 <meta name="description" content="{e(descr)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{url}">{alt}
-<meta name="theme-color" content="#241610">
+<meta name="theme-color" content="#2E3A2F">
 <meta property="og:type" content="{tipo}">
 <meta property="og:site_name" content="Ceraldi Caffè">
 <meta property="og:title" content="{e(titolo)}">

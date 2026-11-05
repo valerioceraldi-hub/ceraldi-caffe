@@ -3,8 +3,8 @@
    Bodoni Moda solo per i titoli grandi (asse ottico automatico); Jost per testo, navigazione e interfaccia.
    Scala tipografica (rem): .875 · 1 · 1.125 · 1.375 · 1.75 · 2.25 · 3 · 3.5+ */
 :root{
-  --espresso:#1E1410; --espresso-2:#2A1D17; --marmo:#F3EFE8; --marmo-2:#E8E1D6; --avorio:#FBF8F3;
-  --inchiostro:#23170F; --seppia:#5F5045; --ottone:#7A5C2C; --ottone-chiaro:#D4B57E; --pelle:#6E1A22; --verde:#2E3A2F;
+  --espresso:#2E3A2F; --espresso-2:#3A4A3C; --marmo:#F3EFE8; --marmo-2:#E8E1D6; --avorio:#FBF8F3;
+  --inchiostro:#23170F; --seppia:#5F5045; --ottone:#7A5C2C; --ottone-chiaro:#D4B57E; --pelle:#6E1A22; --verde:#222D25;
   --linea:#DCD3C6; --linea-scura:rgba(212,181,126,.28); --chiaro:#F1E6D6; --chiaro-2:#D9CAB6;
   --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
   --testo:"Jost", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
@@ -65,8 +65,8 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .p-hero{position:relative;min-height:min(100svh,920px);display:flex;flex-direction:column;justify-content:space-between;color:#F7EFE3;background:var(--espresso);overflow:hidden;isolation:isolate}
 .p-hero-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:-2;filter:brightness(.92) saturate(.95)}
 .p-velo{position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(90deg,rgba(20,13,10,.86) 0%,rgba(20,13,10,.66) 34%,rgba(20,13,10,.18) 62%,rgba(20,13,10,0) 80%),
-  linear-gradient(180deg,rgba(20,13,10,.7) 0%,rgba(20,13,10,0) 22%,rgba(20,13,10,0) 60%,rgba(20,13,10,.75) 100%)}
+  linear-gradient(90deg,rgba(22,30,24,.86) 0%,rgba(22,30,24,.66) 34%,rgba(22,30,24,.18) 62%,rgba(22,30,24,0) 80%),
+  linear-gradient(180deg,rgba(22,30,24,.7) 0%,rgba(22,30,24,0) 22%,rgba(22,30,24,0) 60%,rgba(22,30,24,.75) 100%)}
 .p-hero-testo{max-width:var(--larghezza);width:100%;margin:0 auto;padding:0 max(20px, env(safe-area-inset-right, 0px)) clamp(48px,9vh,96px) max(20px, env(safe-area-inset-left, 0px))}
 .p-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,7.2vw,5.75rem);line-height:.98;letter-spacing:-.01em;max-width:12ch;color:#FBF4EA}
 .p-lead{font-size:clamp(1.125rem,1.5vw,1.3125rem);line-height:1.6;max-width:44ch;margin-top:24px;color:#EFE4D4}
@@ -327,7 +327,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
   .p-barra{padding-block:14px}
   .p-hero{min-height:calc(100svh - 58px - env(safe-area-inset-bottom, 0px))}
   .p-hero-foto{object-position:58% 50%}
-  .p-velo{background:linear-gradient(180deg,rgba(20,13,10,.72) 0%,rgba(20,13,10,.1) 18%,rgba(20,13,10,.35) 38%,rgba(20,13,10,.9) 62%,rgba(20,13,10,.95) 100%)}
+  .p-velo{background:linear-gradient(180deg,rgba(22,30,24,.72) 0%,rgba(22,30,24,.1) 18%,rgba(22,30,24,.35) 38%,rgba(22,30,24,.9) 62%,rgba(22,30,24,.95) 100%)}
   .p-occhiello{letter-spacing:.12em}
   .p-hero h1{font-size:clamp(2.5rem,12vw,3.25rem)}
   .p-lead{margin-top:16px}
