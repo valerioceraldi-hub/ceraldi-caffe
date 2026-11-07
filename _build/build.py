@@ -28,6 +28,7 @@ FOTO.update({
     "saltimbocca": {"alt": "Saltimbocca con porchetta e provola di Ceraldi Caffè", "w": [768, 480], "r": (3, 4)},
     "frittatina": {"alt": "Frittatina napoletana di bucatini aperta a metà", "w": [800, 480], "r": (4, 5)},
 })
+ALT_AGRUMI = {"it": "Illustrazione di limoni e arance della Costiera Amalfitana", "en": "Illustration of Amalfi Coast lemons and oranges"}
 GIORNI = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 # Pagine indicizzabili scritte in questo build: alimentano la sitemap in automatico
@@ -385,7 +386,7 @@ def home_aspritz(rr, lang):
     tappe = ''.join(f'<li><b>{e(n)}</b><span>{e(l)}</span></li>' for n, l in T["tappe"])
     return f'''<section class="p-sez az-home" aria-labelledby="az-home-t"><div class="p-wrap az-home-griglia">
 <figure class="az-home-foto rivela"><div class="specchio az-specchio"><img src="{rr}img/aspritz-1024.webp" srcset="{rr}img/aspritz-640.webp 640w, {rr}img/aspritz-1024.webp 1024w" sizes="(max-width: 760px) 80vw, 460px" width="1024" height="768" alt="{e(T["alt"])}" loading="lazy" decoding="async"></div>
-<img class="az-home-ill" src="{rr}img/illustrazioni/aspritz-agrumi.svg" width="560" height="700" alt="" loading="lazy" decoding="async"></figure>
+<img class="az-home-ill" src="{rr}img/illustrazioni/aspritz-agrumi.svg" width="560" height="700" alt="{e(ALT_AGRUMI[lang])}" loading="lazy" decoding="async"></figure>
 <div class="az-home-testo rivela"><p class="p-occhiello">{e(T["occhiello"])}</p><h2 id="az-home-t">{T["h2"]}</h2>
 <p class="az-home-p">{e(T["testo"])}</p>
 <ol class="az-tappe" aria-label="{"I luoghi dell'Aspritz" if it else "The places of the Aspritz"}">{tappe}</ol>
@@ -755,7 +756,7 @@ def pagina_aspritz(p, lang='it'):
 <p class="az-intro">{e(T["intro"])}</p>
 <a class="az-giu" href="#{ancora}">{e(T["vai"])}</a></div>
 <figure class="az-hero-foto"><div class="specchio az-specchio"><img src="{rr}img/aspritz-1024.webp" srcset="{rr}img/aspritz-640.webp 640w, {rr}img/aspritz-1024.webp 1024w" sizes="(max-width: 900px) 80vw, 500px" width="1024" height="768" alt="{e(T["alt_hero"])}" fetchpriority="high" decoding="async"></div>
-{ill("aspritz-agrumi.svg", "", 560, 700, "az-hero-ill")}</figure>
+{ill("aspritz-agrumi.svg", ALT_AGRUMI[lang], 560, 700, "az-hero-ill")}</figure>
 </div></header>
 <main id="contenuto" class="az">
 
