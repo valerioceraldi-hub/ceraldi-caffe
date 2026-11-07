@@ -645,9 +645,9 @@ def pagina_menu(lang='it'):
 </div></main>
 """ + piede(rr, lang)
 
-CTA_LINK = {"mappa": (BAR["mappa"], True), "menu_interno": ("../menu/", False), "menu_bar": ("../menu/#bar-dolci", False),
-            "menu_dolci": ("../menu/#bar-dolci", False), "menu_food": ("../menu/#food", False),
-            "menu_drink": ("../menu/#cocktails-birre-alcolici", False)}
+CTA_LINK = {"mappa": (BAR["mappa"], True), "menu_interno": ("../menu/", False), "menu_bar": ("../menu/#s-1", False),
+            "menu_dolci": ("../menu/#s-1", False), "menu_food": ("../menu/#s-2", False),
+            "menu_drink": ("../menu/#s-3", False)}
 
 # «Da vedere anche»: collega le pagine autonome (specialità, rosticceria, Aspritz) alle pagine madri,
 # così restano raggiungibili anche con la navigazione a sei voci. (percorso IT, titolo IT, testo IT, titolo EN, testo EN)
@@ -783,7 +783,7 @@ def pagina_aspritz(p, lang='it'):
 
 <section class="az-sez az-napoli"><div class="p-wrap az-due">
 <div class="rivela"><p class="p-occhiello scuro">{e(T["napoli_occ"])}</p><h2>{e(T["napoli_h2"])}</h2><div class="corpo">{T["napoli"]}</div></div>
-<aside class="az-altri rivela"><h3>{e(T["altri_h3"])}</h3>{T["altri"]}<a class="p-link" href="{rr}{L}menu/#cocktails-birre-alcolici">{e(T["menu_drink"])}</a></aside>
+<aside class="az-altri rivela"><h3>{e(T["altri_h3"])}</h3>{T["altri"]}<a class="p-link" href="{rr}{L}menu/#s-3">{e(T["menu_drink"])}</a></aside>
 </div></section>
 
 <section class="az-sez az-gal"><div class="p-wrap">
@@ -869,7 +869,9 @@ def pagina_privacy():
 <h2>Hosting</h2>
 <p>Il sito è ospitato su GitHub Pages (GitHub, Inc.). Come ogni server web, il fornitore di hosting può registrare dati tecnici delle visite, come l'indirizzo IP, per motivi di sicurezza e di funzionamento del servizio, secondo la propria informativa.</p>
 <h2>Link esterni</h2>
-<p>Alcuni link portano a servizi di terzi: Google Maps e Google (recensioni), Tripadvisor, Instagram, Facebook, WhatsApp e il nostro menu interattivo su qromo. Quando li apri si applicano le informative privacy e cookie di quei servizi.</p>
+<p>Alcuni link portano a servizi di terzi: Google Maps e Google (recensioni), Tripadvisor, Instagram, Facebook e WhatsApp. Quando li apri si applicano le informative privacy e cookie di quei servizi.</p>
+<h2>Il menu digitale</h2>
+<p>Il menu (<a href="{BASE}menu/">{BASE}menu/</a>) è una pagina di questo sito, con i caratteri tipografici ospitati sul sito stesso. Non usa cookie né Google Analytics: conta in forma anonima e aggregata le aperture del menu e i prodotti consultati (giorno, ora, lingua), senza indirizzo IP, senza identificativi e senza dati personali; i conteggi sono conservati sul nostro database (Supabase), il cui fornitore, come ogni server, registra per un periodo limitato dati tecnici delle richieste per motivi di sicurezza. Se scegli una lingua, il menu la ricorda solo nel tuo browser.</p>
 <h2>I tuoi diritti</h2>
 <p>In base al Regolamento UE 2016/679 (GDPR) puoi chiedere l'accesso, la rettifica o la cancellazione dei dati che ti riguardano e proporre reclamo al Garante per la protezione dei dati personali. Per esercitare i tuoi diritti scrivi a <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 </div>
@@ -938,7 +940,9 @@ def pagina_privacy_en():
 <h2>Hosting</h2>
 <p>The site is hosted on GitHub Pages (GitHub, Inc.). Like any web server, the hosting provider may log technical data about visits, such as the IP address, for security and operational purposes, under its own privacy policy.</p>
 <h2>External links</h2>
-<p>Some links lead to third-party services: Google Maps and Google (reviews), Tripadvisor, Instagram, Facebook, WhatsApp and our interactive menu on qromo. When you open them, their own privacy and cookie policies apply.</p>
+<p>Some links lead to third-party services: Google Maps and Google (reviews), Tripadvisor, Instagram, Facebook and WhatsApp. When you open them, their own privacy and cookie policies apply.</p>
+<h2>The digital menu</h2>
+<p>The menu (<a href="{BASE}menu/en/">{BASE}menu/en/</a>) is a page of this website, with typefaces hosted on the site itself. It uses no cookies and no Google Analytics: it counts, anonymously and in aggregate, menu openings and the products viewed (day, hour, language), with no IP address, no identifiers and no personal data; the counts are stored in our database (Supabase), whose provider, like any server, keeps technical request logs for a limited time for security reasons. If you choose a language, the menu remembers it only in your browser.</p>
 <h2>Your rights</h2>
 <p>Under Regulation (EU) 2016/679 (GDPR) you can request access to, correction or deletion of your data, and lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali). To exercise your rights, write to <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 </div>
@@ -966,7 +970,7 @@ def pagina_termini():
 <h2>Testi, foto e marchio</h2>
 <p>Testi, fotografie, illustrazioni, logo e marchio Ceraldi Caffè appartengono a {RAGIONE_SOCIALE} o sono usati con autorizzazione, salvo diversa indicazione. Puoi condividere i link alle nostre pagine; per copiare o riutilizzare i contenuti a fini commerciali serve il nostro consenso scritto.</p>
 <h2>Link a siti di terzi</h2>
-<p>Il sito contiene collegamenti a servizi esterni (Google Maps, Tripadvisor, Instagram, Facebook, WhatsApp, il menu interattivo su qromo). Non li controlliamo e non rispondiamo dei loro contenuti: valgono le loro condizioni e le loro informative.</p>
+<p>Il sito contiene collegamenti a servizi esterni (Google Maps, Tripadvisor, Instagram, Facebook, WhatsApp). Non li controlliamo e non rispondiamo dei loro contenuti: valgono le loro condizioni e le loro informative.</p>
 <h2>Responsabilità</h2>
 <p>Non possiamo garantire che il sito sia sempre raggiungibile o privo di errori. Nei limiti consentiti dalla legge non rispondiamo di danni derivanti dall'uso del sito o dall'affidamento sulle informazioni che contiene. Restano ferme le tutele che la legge riconosce ai consumatori.</p>
 <h2>Privacy e cookie</h2>
@@ -998,7 +1002,7 @@ def pagina_termini_en():
 <h2>Texts, photos and brand</h2>
 <p>Texts, photographs, illustrations, the logo and the Ceraldi Caffè brand belong to {RAGIONE_SOCIALE} or are used with permission, unless stated otherwise. You are welcome to share links to our pages; copying or reusing the content for commercial purposes requires our written consent.</p>
 <h2>Third-party links</h2>
-<p>The site contains links to external services (Google Maps, Tripadvisor, Instagram, Facebook, WhatsApp, the interactive menu on qromo). We do not control them and are not responsible for their content: their own terms and policies apply.</p>
+<p>The site contains links to external services (Google Maps, Tripadvisor, Instagram, Facebook, WhatsApp). We do not control them and are not responsible for their content: their own terms and policies apply.</p>
 <h2>Liability</h2>
 <p>We cannot guarantee that the site is always available or error-free. To the extent permitted by law, we are not liable for damages arising from the use of the site or from reliance on the information it contains. The rights that the law grants to consumers remain unaffected.</p>
 <h2>Privacy and cookies</h2>
@@ -1083,7 +1087,7 @@ def llms():
 - Indirizzo: Piazza Carità 14, 80134 Napoli, Italia (lungo via Toledo, vicino alle stazioni metro Toledo e Dante, Linea 1)
 - Orari: tutti i giorni, domenica compresa, 6:30 – 20:30
 - Telefono: +39 081 552 3488; cellulare e WhatsApp: +39 328 438 8404
-- Menu completo con prezzi: {BASE}menu/ (menu interattivo con allergeni: {BAR["menu"]})
+- Menu completo con prezzi e foto, in 5 lingue: {BASE}menu/
 - Ragione sociale: {RAGIONE_SOCIALE}, P. IVA {PIVA}
 - Recensioni: Google ({BAR["google_recensioni"]}), Tripadvisor ({BAR["tripadvisor"]}); valutazione {BAR['google_voto']}/5 su Google con {BAR['google_n']} recensioni (dato rilevato il {BAR['google_data']})
 - Riconoscimenti: nella guida Bar d'Italia del Gambero Rosso dal {BAR['gambero_dal']}, presenti nell'edizione 2026 (scheda: {BAR["gambero_rosso"]})
@@ -1149,6 +1153,36 @@ def rimando(dest):
 <body><p>Questa pagina si è spostata: <a href="{u}">vai alla nuova pagina</a>.</p></body></html>
 '''
 
+def rimando_menu_en():
+    """Il vecchio /en/menu/ porta al menu in inglese, conservando l'eventuale ancora (#s-3, #v-123…)."""
+    u = BASE + "menu/en/"
+    return f'''<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Menu | Ceraldi Caffè</title>
+<link rel="canonical" href="{u}">
+<script>location.replace("../../menu/en/" + location.hash);</script>
+<meta http-equiv="refresh" content="0; url={u}"></head>
+<body><p>Our menu has moved: <a href="{u}">open the menu</a>.</p></body></html>
+'''
+
+def rimando_qr():
+    """/m/ è l'indirizzo breve e fisso stampato nei QR dei tavoli: non cambiarlo mai. Porta al menu (anche se un giorno il menu si sposta, basta cambiare qui)."""
+    u = BASE + "menu/"
+    return f'''<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Menu | Ceraldi Caffè</title>
+<link rel="canonical" href="{u}"><meta name="robots" content="noindex">
+<script>location.replace("../menu/" + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url={u}"></head>
+<body style="margin:0;background:#2E3A2F;color:#fff;font:16px/1.5 system-ui,sans-serif;text-align:center;padding:40vh 24px 0"><p><a href="{u}" style="color:#fff">Apro il menu…</a></p></body></html>
+'''
+
+def menu_nel_sitemap():
+    """Il menu (cartella menu/, una sottocartella per lingua) è generato a parte dal database: qui lo si aggiunge solo alla sitemap."""
+    base = os.path.join(SITO, "menu")
+    for sub in [""] + sorted(d + "/" for d in os.listdir(base) if os.path.isfile(os.path.join(base, d, "index.html"))) if os.path.isdir(base) else []:
+        p = os.path.join(base, sub, "index.html")
+        if os.path.isfile(p) and "ritorno-sito" in open(p, encoding="utf-8").read():
+            PAGINE_SITEMAP.append((BASE + "menu/" + sub, hashlib.sha256(open(p, "rb").read()).hexdigest()))
+
 def robots():
     return f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n"
 
@@ -1164,12 +1198,13 @@ if __name__ == "__main__":
         scrivi(f"{p['slug']}/index.html", pagina_aspritz(p) if p["slug"] == "aspritz" else pagina(p))
     for p in PAGINE_EN:
         scrivi(f"en/{p['slug']}/index.html", pagina_aspritz(p, "en") if p["slug"] == "aspritz" else pagina(p, "en"))
-    scrivi("en/menu/index.html", pagina_menu("en"))
+    scrivi("en/menu/index.html", rimando_menu_en())
     scrivi("specialita/index.html", pagina_specialita("it"))
     scrivi("en/specialita/index.html", pagina_specialita("en"))
     scrivi("en/contatti/index.html", pagina_contatti_en())
     scrivi("en/privacy/index.html", pagina_privacy_en())
-    scrivi("menu/index.html", pagina_menu())
+    menu_nel_sitemap()
+    scrivi("m/index.html", rimando_qr())
     scrivi("contatti/index.html", pagina_contatti())
     scrivi("privacy/index.html", pagina_privacy())
     scrivi("en/termini/index.html", pagina_termini_en())

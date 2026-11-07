@@ -30,7 +30,7 @@ BAR = {
     "orari": "Tutti i giorni, 6:30 – 20:30",
     "orari_en": "Every day, 6:30 am – 8:30 pm",
     "mappa": "https://maps.google.com/?cid=3267263170235699466",
-    "menu": "https://ceraldicaffe.qromo.it",
+    "menu": BASE + "menu/",  # menu digitale sul sito, aggiornato in automatico dal database (dal 07/11/2026)
     "instagram": "https://www.instagram.com/ceraldicaffe/",
     "facebook": "https://www.facebook.com/ceraldicaffe",
     # Scheda Google con le recensioni (formato ufficiale Google Maps URLs; il vecchio search.google.com/local/reviews risponde 404)
@@ -496,8 +496,8 @@ ARTICOLI += [
 FAQ = [
     ("Quali sono gli orari di Ceraldi Caffè?", "Siamo aperti tutti i giorni, domenica compresa, dalle 6:30 alle 20:30.", None),
     ("Dove si trova il bar?", "In Piazza Carità 14, nel centro di Napoli, lungo via Toledo e vicino alla Pignasecca. Le stazioni Toledo e Dante della metropolitana Linea 1 sono a pochi minuti a piedi.", None),
-    ("Posso vedere il menu prima di venire?", "Sì, il menu completo con prezzi è sul sito: " + BASE + "menu/ e c'è anche il menu interattivo con filtro allergeni: https://ceraldicaffe.qromo.it",
-     'Sì, il menu completo con prezzi è qui sul sito: <a href="' + BASE + 'menu/">apri il menu di Ceraldi Caffè</a>. C\'è anche il <a href="https://ceraldicaffe.qromo.it" rel="noopener">menu interattivo</a> con filtro allergeni.'),
+    ("Posso vedere il menu prima di venire?", "Sì, il menu completo con prezzi e foto è sul sito, in italiano, inglese, francese, tedesco e spagnolo: " + BASE + "menu/",
+     'Sì, il menu completo con prezzi e foto è qui sul sito, in italiano, inglese, francese, tedesco e spagnolo: <a href="' + BASE + 'menu/">apri il menu di Ceraldi Caffè</a>.'),
     ("I dolci sono fatti da voi?", "Sì. La pasticceria è di produzione propria, con ricette di famiglia tramandate di generazione in generazione: sfogliatelle, babà, pastiera, zeppole e le creazioni della casa.", None),
     ("Cosa posso mangiare a colazione?", "La classica colazione all'italiana con croissant (vuoti, alla crema, al cioccolato, integrali, vegani), brioche, kranz e pain au chocolat, insieme ai dolci napoletani come sfogliatella, graffa e babà.", None),
     ("Fate anche l'aperitivo?", "Sì, fino alle 20:30, con il nostro Aspritz fatto in casa, spritz, negroni, gin tonic, vini campani al calice e birre.", None),
@@ -510,8 +510,8 @@ FAQ = [
 FAQ_EN = [
     ("What are the opening hours?", "We are open every day, Sundays included, from 6:30 am to 8:30 pm.", None),
     ("Where is the café?", "At Piazza Carità 14 in central Naples, on Via Toledo near the Pignasecca market. Toledo and Dante stations on Metro Line 1 are a few minutes' walk away.", None),
-    ("Can I see the menu online?", "Yes, the full menu with prices is on our website: " + BASE + "en/menu/ and there is also an interactive menu with an allergen filter: https://ceraldicaffe.qromo.it",
-     'Yes: <a href="' + BASE + 'en/menu/">see the full menu with prices</a>, or the <a href="https://ceraldicaffe.qromo.it" rel="noopener">interactive menu</a>, available in English with an allergen filter.'),
+    ("Can I see the menu online?", "Yes, the full menu with prices and photos is on our website, in English, Italian, French, German and Spanish: " + BASE + "menu/en/",
+     'Yes: <a href="' + BASE + 'menu/en/">see the full menu with prices and photos</a>, in English, Italian, French, German and Spanish.'),
     ("Do you make your own pastries?", "Yes. Our pastries are made in-house from family recipes handed down through the generations.", None),
     ("What can I have for breakfast?", "A classic Italian breakfast with croissants, brioche, kranz and pain au chocolat, plus Neapolitan pastries such as sfogliatella, graffa and babà.", None),
     ("Do you serve an English breakfast?", "Yes, every morning: eggs, bacon, sausages, beans, mushrooms, tomatoes, toast and tea.", None),
@@ -588,7 +588,7 @@ MENU_APPROFONDIMENTI = {
 # Ogni voce è legata al prodotto su qromo tramite il suo id: ingredienti, allergeni e disponibilità
 # arrivano dal menu; se un prodotto non è più disponibile su qromo, sparisce da solo dalla pagina.
 SPECIALITA = [
- {"id": "caffe", "nome": "I caffè della casa", "nome_en": "House coffees", "menu": "bar-dolci", "voci": [
+ {"id": "caffe", "nome": "I caffè della casa", "nome_en": "House coffees", "menu": "s-1", "voci": [
    (153768, "caffe-ceraldi", "La nostra firma: cioccolata calda sul fondo, crema di caffè e panna montata fresca, in bicchiere.", "Our signature: hot chocolate at the bottom, coffee cream and fresh whipped cream, served in a glass."),
    (153770, None, "Il caffè incontra il dolce più napoletano: crema di caffè, crema al babà, un babà mignon e panna.", "Coffee meets the most Neapolitan of pastries: coffee cream, babà cream, a mini babà and cream."),
    (153769, None, "Espresso con crema di zucchero e panna sciolta a bagnomaria.", "Espresso with whipped sugar cream and cream warmed in a bain-marie."),
@@ -596,7 +596,7 @@ SPECIALITA = [
    (153789, None, "Espresso con crema di pistacchio e granella tostata.", "Espresso with pistachio cream and toasted chopped pistachios."),
    (153773, None, "Espresso con crema di zucchero e crema di latte montata a freddo.", "Espresso with whipped sugar cream and cold-whipped milk cream."),
  ]},
- {"id": "dolci", "nome": "I dolci della casa", "nome_en": "House pastries", "menu": "bar-dolci", "voci": [
+ {"id": "dolci", "nome": "I dolci della casa", "nome_en": "House pastries", "menu": "s-1", "voci": [
    (616031, "cestino", "Il riccio della sfogliatella diventa un cesto croccante, farcito con crema chantilly e frutti di bosco.", "The crisp layers of the sfogliatella shaped into a basket, filled with chantilly cream and berries."),
    (638146, None, "Monoporzione di babà bagnato al limoncello, con un cuore di chantilly ai limoni di Amalfi.", "A single-serve babà soaked in limoncello, with a heart of Amalfi lemon chantilly."),
    (219384, "babamisu", "Una cupola di babà farcita con crema al mascarpone e caffè: il babà incontra il tiramisù.", "A babà dome filled with mascarpone cream and coffee: babà meets tiramisù."),
@@ -604,7 +604,7 @@ SPECIALITA = [
    (472130, None, "Torta al forno con mela Annurca IGP, crema pasticcera e cannella.", "A baked cake with Annurca PGI apples, custard and cinnamon."),
    (153840, None, "La sfogliatella riccia con crema pasticcera e amarene, la più vicina alla ricetta del convento.", "The sfogliatella riccia with custard and black cherries, the closest to the original convent recipe."),
  ]},
- {"id": "aperitivo", "nome": "L'aperitivo della casa", "nome_en": "House aperitivo", "menu": "cocktails-birre-alcolici", "voci": [
+ {"id": "aperitivo", "nome": "L'aperitivo della casa", "nome_en": "House aperitivo", "menu": "s-3", "voci": [
    (153960, "aspritz", "Il nostro spritz napoletano: bitter fatto in casa con agrumi della Costiera Amalfitana, erbe e radici, e Asprinio di Aversa spumante.", "Our Neapolitan spritz: a homemade bitter with Amalfi Coast citrus, herbs and roots, topped with sparkling Asprinio di Aversa."),
  ]},
 ]

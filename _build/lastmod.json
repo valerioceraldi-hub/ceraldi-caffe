@@ -164,80 +164,96 @@
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/aspritz/": [
-  "0d092c0e9c9f08aa16de60516d88c4c075ff642ab061895d78c96b61b41b7da3",
-  "2026-11-05"
+  "9fad59256b6a7e6db4b768aea79c1720610ca4a3d4fe9acafd9810b00e62e8e5",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/bar/": [
-  "80abfaf34c4e7dc737702fab40469da5072a5ba17196a66b612ecb8ba38486cb",
-  "2026-11-05"
+  "0268aea740ac26b2f51c3e419388139b37898bbd2e352cfdcc6e92f06dbf4d7d",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/contatti/": [
-  "d4e888add5b381d463abb1c756aef96319f4e169bb3daf94fe9614c07e795c66",
-  "2026-11-05"
+  "aa204fc1a4dd1c877ebbbb23154d6eab79e025b006acf3879c125d6e38f5d326",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/": [
   "6ec724bb038febd01e6eeff40816e2ea7786b45b97639f6ec3cae09bcf3d190d",
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/en/aspritz/": [
-  "df3e137cd79a191d5a124cbdf316f31c2154b537b532a3f00e8e70283378db2b",
-  "2026-11-05"
+  "008f0f478f419d3e8874d6fa0560e9fdf1b66b9fbd0ffddbbbdb3cb46fe6b637",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/bar/": [
-  "b3ccc6ef411afe1c6e59f18c58520f3caedbb9045957c52c43341937a937b9af",
-  "2026-11-05"
+  "ddcec446b582a20272e5d122b190e0e71a0f8f56b4655eeb2da0c7d0c2443ae6",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/contatti/": [
-  "5e6363d2d212ac6640affd3ae992214a35fe7c4f30326faca8d86307e7a403c9",
-  "2026-11-05"
+  "59d979725bda927143f11ab2c9a5a3bae3f44807b65573db86dd73563093d41a",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/menu/": [
   "5d40e110563d105e561f0fb7cf29c62249e1c534db5aff0892a7e5b501653630",
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/en/pasticceria/": [
-  "49129af7045767b8ed555fe9a489c0e50f351d22034dba53f3afd54d064a232b",
-  "2026-11-05"
+  "f0e8eee72e504e410b24c09af73729c5c56b01ce74ffe27b382fac60d2deb9eb",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/privacy/": [
-  "7359d8ac987e119352655b4c1fd7ead888852b57839223a72a9b4b12d66c76d7",
-  "2026-11-05"
+  "a1e80be977a293c845b7eb56a1a978511973cda6f566f3d4181bbd87aa87ea01",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/rosticceria/": [
-  "305603586b007ab7a57856272a6314f71bf3320f957112f21e046aa92d7d6b0f",
-  "2026-11-05"
+  "e820ee4aa08965f20cdbd9c35a04aa3018c15c1087fc3c9a338f5610238016da",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/specialita/": [
-  "b2cc3dc486970ea15985c8cc20b60fdf0c2c666369808a52da1c76b0e4bba7d9",
-  "2026-11-05"
+  "5c0296dde47198aa6333069fda5dd283daaa4b50ec9ea0fb82e8de80ce500883",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/en/storia/": [
   "cd4aa702dc578cd3a93700784085e4baf7d7182763590828ed7187e4d1d1f682",
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/en/termini/": [
-  "72ab9d08c9988cc1960eeac8c26700079a6ab34045a08b8704402763ffb9b24b",
-  "2026-11-05"
+  "caae16b9e39f8fe56583d9e2cb802188409eedf9cab4d770468eaf1fee788bf5",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/menu/": [
-  "7deaae224be52f60e2519bf89362a7f4c9570ba18653980a8db629778de04d60",
-  "2026-11-05"
+  "54b1480c6ce0c7f7d722b5425016c760446c402990ee06cda138ee145a47058f",
+  "2026-11-07"
+ ],
+ "https://www.ceraldicaffe.it/menu/de/": [
+  "a1a51cdbdbed7f7de23926fcd996fa3329c4962a3f7f66dba43da7130cec0914",
+  "2026-11-07"
+ ],
+ "https://www.ceraldicaffe.it/menu/en/": [
+  "662b2785e4d5843a49033af68c563b0581dda5714b21ea756ea13c2180939973",
+  "2026-11-07"
+ ],
+ "https://www.ceraldicaffe.it/menu/es/": [
+  "3cf3498c4d1d997d04416b27d3d05f6887f00da86a9155a048e91f0593126593",
+  "2026-11-07"
+ ],
+ "https://www.ceraldicaffe.it/menu/fr/": [
+  "72b897f2ec2bb66e0906e83ed398056387214c4e414f9e17162ec56e129d8a19",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/pasticceria/": [
-  "fcadc4d87fdff4c9a280e05e33b05867e3eccbd7d0adf50c695a9a89f0638315",
-  "2026-11-05"
+  "28a492703299af10c8917ea89eb95f19e301b3e005c537cbf54e0ab2c85aeb70",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/privacy/": [
-  "5ccd5b0f983d679b0780429a65163edb9992c7c7e5acdf56649cc65411f3ddbb",
-  "2026-11-05"
+  "4e091e0fe44ff6a3501142b6103d3f9d9095abc852f1e3e6b03e85a0a522a0c9",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/rosticceria/": [
-  "df0796540d2d6de33a001494537309cbe72a395be2a3beafd435318cf2466f21",
-  "2026-11-05"
+  "ce5ac6203d54f07bee16816a89804607586d033e9c05dbdc89baa05511ffc878",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/specialita/": [
-  "035cffeb6ce05fbb1b345fdb661f64dadaef316490626a13e64f43699fd58e31",
-  "2026-11-05"
+  "fdd0f6f6cab7c024f997682033b73371b2282aaf3b965fda13c718f6d6476c76",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/storia/": [
   "aa296f0ed5b08be7e39899ec55700817486f72b6690a3ff16388a6e8a15db940",
@@ -264,12 +280,12 @@
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/storie/aspritz-ceraldi/": [
-  "0cac34099c242f2c948f128887ff9616a0e4ef552383204c4b7b93c3419a4f51",
-  "2026-11-05"
+  "0161b7c4e1815083bd9954d538f7fb2109172baf866e6cbd0ebd387db5ce11ad",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/storie/aspritz-idea-di-aperitivo/": [
-  "89aad63c784874decd7a845e08f116b8acfbf87a665a889b7b60622992d35f4c",
-  "2026-11-05"
+  "b1fc9b07cd12d99d628da9a364d4dee4bb2f18181dd11ecd3569c698ec45220b",
+  "2026-11-07"
  ],
  "https://www.ceraldicaffe.it/storie/aspritz/": [
   "26fbb1d7b5eb40abd3824f786b53a3a3622dd1a61222bdc4e6b30285213dc9a2",
@@ -340,7 +356,7 @@
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/termini/": [
-  "b509c9521209a26f78a1a3ebbba1da5e131507103783bd48f2b5b87092ab3804",
-  "2026-11-05"
+  "86ff8a54988dde7ed47ffd1c699c3685fbe57b910984496296a84b4e71019b1c",
+  "2026-11-07"
  ]
 }

@@ -1,0 +1,52 @@
+# Aggiorna il menu del sito (cartella menu/, https://www.ceraldicaffe.it/menu/) dai dati del database.
+# - Ogni 30 minuti dalle 5 alle 22 circa (ora italiana) e su richiesta: dal Back Office «Ceraldi Menu» a ogni salvataggio
+#   (funzione Supabase menu-pubblica) oppure a mano dalla scheda Actions › «Aggiorna menu» › «Run workflow».
+# - Il programma che genera il menu (menu_genera.py) sta nel repository delle app (valerioceraldi-hub/Ceraldi, pubblico):
+#   si legge da lì, così menu e Back Office usano sempre lo stesso modello.
+# - Legge solo i dati pubblici del menu con la chiave pubblica «anon» (la stessa delle app): nessun segreto nuovo.
+# - Scrive un commit solo se il menu è cambiato. Se il database non risponde o non c'è nessuna voce pubblicata,
+#   si ferma e il menu online resta com'è.
+# Per spegnerlo: scheda Actions › «Aggiorna menu» › «Disable workflow».
+name: Aggiorna menu
+on:
+  schedule:
+    - cron: '7,37 4-20 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: menu-aggiorna
+  cancel-in-progress: false
+jobs:
+  genera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Programma del menu (repository delle app)
+        uses: actions/checkout@v4
+        with:
+          repository: valerioceraldi-hub/Ceraldi
+          path: _app
+          sparse-checkout: |
+            caffe/_build
+            ceraldi_menu.html
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Genera il menu dal database
+        run: |
+          pip install --quiet segno==1.6.1   # QR del Wi-Fi ospiti (puro Python, nessuna dipendenza)
+          KEY=$(grep -o "SB_KEY = '[^']*'" _app/ceraldi_menu.html | cut -d"'" -f2)
+          test -n "$KEY"
+          MENU_SB_URL=https://qaqqptpprmfjlolordaq.supabase.co MENU_SB_KEY="$KEY" \
+            python3 _app/caffe/_build/menu_genera.py --out menu --tutte-le-lingue --copia-foto --statistiche \
+              --sito https://www.ceraldicaffe.it/menu/ --caratteri /assets/font.css \
+              --guida-url https://valerioceraldi-hub.github.io/Ceraldi/guida-nuova/
+      - name: Pubblica se è cambiato
+        run: |
+          git add -A menu
+          if git diff --cached --quiet; then echo "Menu invariato"; exit 0; fi
+          git -c user.name="menu-automatico" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "menu: aggiornato dal database"
+          # se nel frattempo è stata pubblicata un'altra modifica al sito, si riallinea e riprova
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep $((i * 5)); done; exit 1

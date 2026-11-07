@@ -379,7 +379,7 @@ _FAO = ("The Amalfi lemon and its layered, resilient landscape, FAO", "https://w
 _IGP = ("Limone Costa d'Amalfi IGP, documento unico, Commissione europea (eAmbrosia)", "https://webgate.ec.europa.eu/eambrosia-api/api/v1/attachments/47034")
 _LINKIESTA = ("Aperire. Breve storia di un rito italiano, Linkiesta", "https://www.linkiesta.it/2025/11/breve-storia-rito-italiano-aperitivo-libro-italiasquisita/")
 _SPRITZ = ("La vera storia dello spritz: origini e varianti, Gambero Rosso", "https://www.gamberorosso.it/vino/la-vera-storia-dello-spritz-origini-e-varianti/")
-_MENU = ("Menu di Ceraldi Caffè, voce «Aspritz»", "https://ceraldicaffe.qromo.it")
+_MENU = ("Menu di Ceraldi Caffè, voce «Aspritz»", "https://www.ceraldicaffe.it/menu/#p-aspritz")
 FONTI_ASPRITZ = {
  "aspritz-ceraldi": [_MENU, _DISCIPLINARE, _FAO],
  "agrumi-costiera-amalfitana": [_FAO, _IGP, ("Amalfi Coast, Wikipedia", "https://en.wikipedia.org/wiki/Amalfi_Coast"),

@@ -15,7 +15,8 @@ from contenuti import BASE  # noqa: E402
 VIETATE = ["cento anni", "hundred years", "buffet", "quasi 2.000", "almost 2,000", "dieci anni", "ten years", "primi anni Settanta", "early 1970"]
 
 errori, avvisi = [], []
-pagine = sorted(f for f in glob.glob(os.path.join(SITO, "**", "*.html"), recursive=True) if "/_build/" not in f)
+# il menu (menu/) lo genera menu_genera.py del repository delle app, con le sue prove: qui si verifica solo che ci sia
+pagine = sorted(f for f in glob.glob(os.path.join(SITO, "**", "*.html"), recursive=True) if "/_build/" not in f and not f.startswith(os.path.join(SITO, "menu") + os.sep))
 titoli, descrizioni = {}, {}
 
 def esiste(path):
