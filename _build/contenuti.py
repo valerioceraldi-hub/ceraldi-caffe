@@ -159,7 +159,7 @@ ARTICOLI = [
 {
  "slug": "caffe-sospeso",
  "titolo": "Il caffè sospeso: un gesto napoletano che ha fatto il giro del mondo",
- "titolo_seo": "Caffè sospeso: cos'è e come è nato",
+ "titolo_seo": "Caffè sospeso: cos'è, origini e significato",
  "descrizione": "Pagare un caffè in più per chi verrà dopo: cos'è il caffè sospeso, da dove nasce e perché il 10 dicembre gli è dedicata una giornata.",
  "dek": "Si paga un caffè in più, per chi entrerà dopo e non potrà permetterselo. Un'abitudine piccola, nata nei bar di Napoli.",
  "foto": "squadra",
@@ -237,7 +237,7 @@ ARTICOLI = [
 {
  "slug": "pastiera",
  "titolo": "La pastiera napoletana: il profumo della Pasqua",
- "titolo_seo": "Pastiera napoletana: storia e leggende",
+ "titolo_seo": "Pastiera napoletana: storia, leggende e ingredienti",
  "descrizione": "Grano, ricotta e fiori d'arancio: la storia e le leggende della pastiera napoletana, dalla sirena Partenope al convento di San Gregorio Armeno.",
  "dek": "Grano cotto, ricotta, fiori d'arancio. Nessun dolce racconta la primavera a Napoli come la pastiera, e nessuno ha tante leggende.",
  "foto": "pastiera",
@@ -500,6 +500,7 @@ FAQ = [
      'Sì, il menu completo con prezzi e foto è qui sul sito, in italiano, inglese, francese, tedesco e spagnolo: <a href="' + BASE + 'menu/">apri il menu di Ceraldi Caffè</a>.'),
     ("I dolci sono fatti da voi?", "Sì. La pasticceria è di produzione propria, con ricette di famiglia tramandate di generazione in generazione: sfogliatelle, babà, pastiera, zeppole e le creazioni della casa.", None),
     ("Cosa posso mangiare a colazione?", "La classica colazione all'italiana con croissant (vuoti, alla crema, al cioccolato, integrali, vegani), brioche, kranz e pain au chocolat, insieme ai dolci napoletani come sfogliatella, graffa e babà.", None),
+    ("Avete tavoli all'aperto?", "Sì, abbiamo tavoli all'aperto in Piazza Carità, oltre alla sala interna e al bancone.", None),
     ("Fate anche l'aperitivo?", "Sì, fino alle 20:30, con il nostro Aspritz fatto in casa, spritz, negroni, gin tonic, vini campani al calice e birre.", None),
     ("Si può pranzare?", "Sì, con la rosticceria napoletana (frittatine, crocchè, pizza fritta), saltimbocca e panini, freselle e insalate.", None),
     ("Servite la colazione inglese?", "Sì, tutte le mattine serviamo la Full English Breakfast: uova, bacon, salsicce, fagioli, funghi, pomodori, pane tostato e tè.", None),
@@ -514,6 +515,7 @@ FAQ_EN = [
      'Yes: <a href="' + BASE + 'menu/en/">see the full menu with prices and photos</a>, in English, Italian, French, German and Spanish.'),
     ("Do you make your own pastries?", "Yes. Our pastries are made in-house from family recipes handed down through the generations.", None),
     ("What can I have for breakfast?", "A classic Italian breakfast with croissants, brioche, kranz and pain au chocolat, plus Neapolitan pastries such as sfogliatella, graffa and babà.", None),
+    ("Do you have outdoor seating?", "Yes, we have outdoor tables on Piazza Carità, as well as the indoor hall and the counter.", None),
     ("Do you serve an English breakfast?", "Yes, every morning: eggs, bacon, sausages, beans, mushrooms, tomatoes, toast and tea.", None),
     ("How can I contact you?", "Call +39 081 552 3488, or mobile +39 328 438 8404 (also WhatsApp), or find us on Instagram @ceraldicaffe.", None),
 ]

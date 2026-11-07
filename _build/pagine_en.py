@@ -39,8 +39,8 @@ PAGINE_EN = [
  "slug": "bar",
  "nav": "Coffee and breakfast",
  "titolo": "The café: Neapolitan coffee, breakfast and English breakfast",
- "titolo_seo": "Coffee and breakfast in Piazza Carità, Naples",
- "descrizione": "Espresso and house coffees, croissants, Neapolitan pastries and a full English breakfast every morning at Ceraldi Caffè, Piazza Carità, Naples.",
+ "titolo_seo": "Breakfast in central Naples, Piazza Carità",
+ "descrizione": "Where to have breakfast in central Naples: from 6:30 am, outdoor tables on Via Toledo. Espresso, croissants, sfogliatelle and a full English breakfast.",
  "dek": "From 6:30 in the morning: espresso in a warm cup, our house coffees, Italian and Neapolitan breakfast. And for guests from abroad, a full English breakfast every morning.",
  "foto": "caffe-ceraldi",
  "corpo": """
@@ -63,6 +63,15 @@ PAGINE_EN = [
 
 <h2>Full English breakfast, every morning</h2>
 <p>For guests who don't want to give up their habits, we serve a <strong>full English breakfast</strong> every morning, made the traditional way: eggs, bacon, sausages, beans, mushrooms and tomatoes, toast and, of course, tea. Or try a plain or filled omelette, or scrambled eggs.</p>
+
+<h2>Where to have breakfast in central Naples</h2>
+<p>We are at Piazza Carità 14, on Via Toledo, halfway between Piazza Dante and Piazza del Plebiscito: a good first stop before a day in the historic centre, the Spanish Quarter or the Pignasecca market.</p>
+<ul>
+<li><strong>Open every day from 6:30 am</strong>, Sundays included, until 8:30 pm.</li>
+<li><strong>Outdoor tables</strong> on the square, or a seat in the hall among the mirrors and red armchairs; or the counter, for a quick espresso.</li>
+<li><strong>A few minutes' walk</strong> from Toledo and Dante stations on Metro Line 1.</li>
+<li><strong>What to order</strong>: espresso and house coffees, croissants, sfogliatelle and babà from our own pastry kitchen, full English breakfast. See the <a href="../../menu/en/">menu with prices</a>.</li>
+</ul>
 """,
  "galleria": ["sala", "bar-banco", "vetrina", "cornetti-caffe-bancone", "latte-macchiato-dolci", "caffe-servito-bancone"],
  "cta": [("Café menu", "menu_bar"), ("Get directions", "mappa")],

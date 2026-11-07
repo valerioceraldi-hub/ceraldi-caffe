@@ -44,8 +44,8 @@ PAGINE = [
  "slug": "bar",
  "nav": "Il bar e la colazione",
  "titolo": "Il bar: caffè napoletano, colazione e English breakfast",
- "titolo_seo": "Colazione e caffè a Napoli centro, Piazza Carità",
- "descrizione": "Espresso e caffè della casa, colazione con croissant, sfogliatelle ed English breakfast tutte le mattine: il bar di Ceraldi Caffè in Piazza Carità, Napoli.",
+ "titolo_seo": "Colazione a Napoli centro, Piazza Carità",
+ "descrizione": "Dove fare colazione a Napoli centro: dalle 6:30, tavoli all'aperto in Piazza Carità, su via Toledo. Caffè, cornetti, sfogliatelle ed English breakfast.",
  "dek": "Dalle 6:30 del mattino: l'espresso nella tazzina calda, i caffè della casa, la colazione all'italiana e quella napoletana. E per chi viene da lontano, l'English breakfast tutte le mattine.",
  "foto": "caffe-ceraldi",
  "corpo": """
@@ -69,6 +69,15 @@ PAGINE = [
 <h2>English breakfast, tutte le mattine</h2>
 <p>Per i nostri ospiti stranieri che non vogliono rinunciare alle loro abitudini, tutte le mattine serviamo la <strong>Full English Breakfast</strong>, preparata come vuole la tradizione: uova, bacon, salsicce, fagioli, funghi e pomodori, pane tostato e l'immancabile tè. In alternativa, omelette semplice o farcita e uova strapazzate.</p>
 <p lang="en"><em>Full English breakfast served every morning in the heart of Naples: eggs, bacon, sausages, beans, mushrooms, tomatoes, toast and tea.</em></p>
+
+<h2>Dove fare colazione a Napoli centro</h2>
+<p>Siamo in <a href="../storie/piazza-carita-via-toledo/">Piazza Carità 14</a>, lungo via Toledo, a metà strada tra piazza Dante e piazza del Plebiscito: la colazione giusta prima di una giornata in centro storico, ai Quartieri Spagnoli o alla Pignasecca.</p>
+<ul>
+<li><strong>Tutti i giorni dalle 6:30</strong>, domenica compresa, fino alle 20:30.</li>
+<li><strong>Tavoli all'aperto</strong> in piazza, oppure in sala tra gli specchi e le poltroncine rosse; e naturalmente il bancone, per il caffè al volo.</li>
+<li><strong>A pochi minuti a piedi</strong> dalle fermate Toledo e Dante della metro Linea 1.</li>
+<li><strong>Cosa trovi</strong>: espresso e caffè della casa, cornetti, sfogliatelle e babà della nostra pasticceria, English breakfast. Guarda il <a href="../menu/">menu con i prezzi</a>.</li>
+</ul>
 """,
  "galleria": ["sala", "bar-banco", "vetrina", "cornetti-caffe-bancone", "latte-macchiato-dolci", "caffe-servito-bancone"],
  "cta": [("Menu del bar", "menu_bar"), ("Come arrivare", "mappa")],

@@ -175,6 +175,7 @@ def ld_bar(lang='it'):
         "geo": {"@type": "GeoCoordinates", "latitude": GEO[0], "longitude": GEO[1]},
         "hasMap": BAR["mappa"], "hasMenu": BASE + "menu/", "vatID": "IT" + PIVA, "legalName": RAGIONE_SOCIALE,
         "servesCuisine": ["Caffetteria", "Pasticceria napoletana", "Colazione italiana", "Aperitivo"],
+        "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Tavoli all'aperto" if lang == 'it' else "Outdoor seating", "value": True}],
         "knowsAbout": ["caffè napoletano", "sfogliatella", "babà", "pastiera napoletana", "zeppole di San Giuseppe", "pasticceria napoletana", "colazione all'italiana"],
         "sameAs": [BAR["instagram"], BAR["facebook"], BAR["tripadvisor"], BAR["mappa"], BAR["gambero_rosso"]],
         "award": "Guida Bar d'Italia del Gambero Rosso" if lang == 'it' else "Gambero Rosso Bar d'Italia guide",
@@ -220,7 +221,9 @@ HOME_GIORNATA = [  # foto, momento IT/EN, titolo IT/EN, testo IT/EN, link IT/EN,
      "Our homemade Aspritz with Amalfi Coast citrus and Asprinio di Aversa, spritz and cocktails made at the bar.",
      "aspritz/", "en/aspritz/", "L'Aspritz", "The Aspritz"),
 ]
-HOME_STORIE = [("caffe-sospeso", "squadra"), ("pastiera", "pastiera"), ("piazza-carita-via-toledo", "sala-bianca")]
+# Il terzo racconto segue la stagione: per le feste i dolci di Natale. A febbraio rimettere
+# ("piazza-carita-via-toledo", "sala-bianca") e ricostruire il sito.
+HOME_STORIE = [("caffe-sospeso", "squadra"), ("pastiera", "pastiera"), ("dolci-di-natale", "vetrina")]
 HOME_TESTI = {
     "it": dict(
         titolo="Ceraldi Caffè | Bar e pasticceria a Napoli, Piazza Carità",
