@@ -480,12 +480,13 @@ def pagina_categoria(c):
     if c.get("copertine"):
         return h + archivio_copertine(c, PER, altre=''.join(f'<a href="../{x["slug"]}/">{e(x["nome"])}</a>' for x in CATEGORIE if x is not c))
     altre = ''.join(f'<a href="../{x["slug"]}/">{e(x["nome"])}</a>' for x in CATEGORIE if x is not c)
+    testo_categoria = ''.join(f'<p>{e(t)}</p>' for t in c.get("testo", []))  # presentazione facoltativa della categoria
     return h + f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
 <main id="contenuto" class="articolo"><div class="contenitore">
 <p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Racconti</a></p>
 <h1>{e(c["nome"])}</h1>
 <p class="dek">{e(c["intro"])}</p>
-<ul class="storie" style="margin-top:36px">{voci}</ul>
+{testo_categoria}<ul class="storie" style="margin-top:36px">{voci}</ul>
 <nav class="chips" aria-label="Altre categorie" style="margin-top:40px">{altre}</nav>
 </div></main>
 ''' + piede("../../")

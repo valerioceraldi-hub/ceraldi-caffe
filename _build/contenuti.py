@@ -567,6 +567,8 @@ CATEGORIE = [
   "articoli": ["sfogliatella", "baba", "pastiera", "zeppole-di-san-giuseppe", "dolci-dei-conventi", "dolci-di-natale", "festa-della-mamma"]},
  {"slug": "napoli", "nome": "Napoli: luoghi e tradizioni",
   "intro": "Piazza Carità, via Toledo e le tradizioni che si vedono ogni giorno per le strade di Napoli.",
+  "testo": ["Ceraldi Caffè sta in Piazza Carità, al numero 14, lungo via Toledo: a metà strada tra piazza Dante e piazza del Plebiscito, all'ingresso della Pignasecca e dei Quartieri Spagnoli, a pochi minuti a piedi dalle fermate Toledo e Dante della metro Linea 1. Ci siamo arrivati nel 2002, dopo quasi trent'anni in Piazza Garibaldi, davanti alla stazione.",
+            "Da qui, ogni giorno, vediamo passare la città: chi va al lavoro e si ferma per il primo caffè delle 6:30, chi fa la spesa alla Pignasecca, chi visita Napoli per la prima volta e cerca una sfogliatella prima di salire verso il centro storico. In questa sezione raccogliamo quello che si vede e si racconta dal nostro bancone: la storia della piazza e della strada, e le tradizioni napoletane che sopravvivono nei gesti di tutti i giorni."],
   "articoli": ["piazza-carita-via-toledo", "tradizioni-napoletane"]},
 ]
 CATEGORIE.append(CATEGORIA_ASPRITZ)
