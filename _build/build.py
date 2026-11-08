@@ -86,7 +86,7 @@ def testa(lang, titolo, descr, url, rr, og_img="img/og.jpg", ld=None, alternates
 VOCI_NAV = [("bar/", "Il bar"), ("pasticceria/", "Pasticceria"), ("menu/", "Menu"), ("storia/", "Storia"), ("storie/", "Racconti"), ("contatti/", "Contatti")]
 # Pagine che esistono in entrambe le lingue: percorso italiano -> percorso inglese
 EN_PATH = {"": "en/", "storia/": "en/storia/", "bar/": "en/bar/", "pasticceria/": "en/pasticceria/", "rosticceria/": "en/rosticceria/",
-           "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/", "termini/": "en/termini/"}
+           "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "babamisu/": "en/babamisu/", "caffe-sfogliata/": "en/caffe-sfogliata/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/", "termini/": "en/termini/"}
 VOCI_NAV_EN = [("en/bar/", "Coffee & breakfast"), ("en/pasticceria/", "Pastries"), ("en/menu/", "Menu"), ("en/storia/", "Our story"), ("en/contatti/", "Contact")]
 
 def alt_coppia(it_path):
@@ -659,10 +659,12 @@ CTA_LINK = {"mappa": (BAR["mappa"], True), "menu_interno": ("../menu/", False), 
 CORRELATI = {
     "bar": [("specialita/", "Specialità della casa", "Caffè Ceraldi, Caffè Babà, Michelino e i dolci nati da noi", "House specialities", "Caffè Ceraldi, Caffè Babà and our own pastries"),
             ("rosticceria/", "Rosticceria e pranzo veloce", "Frittatine, crocchè, pizza fritta, saltimbocca e freselle", "Street food and quick lunch", "Frittatine, croquettes, fried pizza and freselle"),
-            ("aspritz/", "Aspritz e aperitivi", "Il nostro spritz fatto in casa", "Aspritz and aperitivo", "Our homemade spritz")],
+            ("aspritz/", "Aspritz e aperitivi", "Il nostro spritz fatto in casa", "Aspritz and aperitivo", "Our homemade spritz"),
+            ("caffe-sfogliata/", "Caffè Sfogliata", "Il caffè caldo con schiuma fredda alla cannella", "Caffè Sfogliata", "Hot coffee with cold cinnamon foam")],
     "pasticceria": [("specialita/", "Specialità della casa", "Cestino, Segreto amalfitano, Babàmisù, Pellecchiella", "House specialities", "Cestino, Segreto amalfitano, Babàmisù, Pellecchiella"),
                     ("storie/pasticceria-napoletana/", "Storie della pasticceria napoletana", "Sfogliatella, babà, pastiera, zeppole e i dolci dei conventi", "Neapolitan pastry stories", "In Italian: sfogliatella, babà, pastiera, zeppole"),
-                    ("bar/", "Il bar e la colazione", "Il caffè al bancone e la colazione napoletana", "Coffee and breakfast", "Espresso at the counter and Neapolitan breakfast")],
+                    ("bar/", "Il bar e la colazione", "Il caffè al bancone e la colazione napoletana", "Coffee and breakfast", "Espresso at the counter and Neapolitan breakfast"),
+                    ("babamisu/", "Babàmisù", "Il babà al mascarpone, nostro dal 2023", "Babàmisù", "The mascarpone babà, ours since 2023")],
     "rosticceria": [("bar/", "Il bar e la colazione", "Dalla colazione all'English breakfast", "Coffee and breakfast", "From espresso to Full English Breakfast"),
                     ("aspritz/", "Aspritz e aperitivi", "La sera, al tavolo, con il nostro spritz", "Aspritz and aperitivo", "In the evening, with our homemade spritz"),
                     ("menu/", "Il menu completo", "Prezzi e allergeni di tutta la rosticceria", "The full menu", "Prices and allergens")],

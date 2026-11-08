@@ -54,9 +54,9 @@ CAFFE_CASA = [
     ("Caldo freddo", "Espresso, crema di zucchero e crema di latte montata a freddo."),
 ]
 DOLCI_CASA = [
-    ("Segreto amalfitano", "Babà bagnato al limoncello con cuore di chantilly ai limoni di Amalfi."),
+    ("Segreto amalfitano", "Babà bagnato al limoncello con un cuore di chantilly al limone, come quella della delizia al limone amalfitana."),
     ("Cestino", "Il riccio della sfogliatella farcito con chantilly e frutti di bosco."),
-    ("Babàmisù", "Cupola di babà con crema al mascarpone e caffè."),
+    ("Babàmisù", "Babà farcito con crema al mascarpone e bagnato con liquore al caffè, nostro dal 2023."),
     ("Pellecchiella", "Torta con albicocche Pellecchielle del Vesuvio."),
     ("Torta di mele", "Con mela Annurca IGP, crema pasticcera e cannella."),
     ("Sfogliata Santa Rosa", "La sfogliatella con crema e amarene, come nella ricetta delle origini."),
@@ -79,9 +79,9 @@ CAFFE_CASA_EN = [
     ("Caldo freddo", "Espresso, sugar cream and cold-whipped milk cream."),
 ]
 DOLCI_CASA_EN = [
-    ("Segreto amalfitano", "Limoncello-soaked babà with an Amalfi lemon chantilly heart."),
+    ("Segreto amalfitano", "Limoncello-soaked babà with a lemon chantilly heart, like that of the Amalfi lemon delizia."),
     ("Cestino", "Sfogliatella pastry filled with chantilly cream and berries."),
-    ("Babàmisù", "A babà dome filled with mascarpone and coffee cream."),
+    ("Babàmisù", "A babà filled with mascarpone cream and soaked in coffee liqueur, ours since 2023."),
     ("Pellecchiella", "Cake with Pellecchiella apricots from Vesuvius."),
     ("Torta di mele", "Annurca IGP apples, custard and cinnamon."),
     ("Sfogliata Santa Rosa", "Sfogliatella with custard and black cherries, like the original."),
@@ -232,7 +232,7 @@ ARTICOLI = [
 <h2>Come si gusta</h2>
 <p>Il babà classico è semplice, solo pasta e bagna. Ma si presta a mille varianti: con crema e amarene, con panna e fragole, con il cioccolato, o al limoncello, per un omaggio alla Costiera.</p>
 """,
- "provare": [("Babà al rum", "classico, oppure con crema e amarene, panna e fragole o cioccolato"), ("Segreto amalfitano", "babà al limoncello con chantilly ai limoni di Amalfi"), ("Babàmisù", "cupola di babà con mascarpone e caffè"), ("Caffè Babà", "il babà anche nella tazza")],
+ "provare": [("Babà al rum", "classico, oppure con crema e amarene, panna e fragole o cioccolato"), ("Segreto amalfitano", "babà al limoncello con un cuore di chantilly al limone"), ("Babàmisù", "babà al mascarpone bagnato con liquore al caffè"), ("Caffè Babà", "il babà anche nella tazza")],
 },
 {
  "slug": "pastiera",
@@ -602,8 +602,8 @@ SPECIALITA = [
  ]},
  {"id": "dolci", "nome": "I dolci della casa", "nome_en": "House pastries", "menu": "s-1", "voci": [
    (616031, "cestino", "Il riccio della sfogliatella diventa un cesto croccante, farcito con crema chantilly e frutti di bosco.", "The crisp layers of the sfogliatella shaped into a basket, filled with chantilly cream and berries."),
-   (638146, None, "Monoporzione di babà bagnato al limoncello, con un cuore di chantilly ai limoni di Amalfi.", "A single-serve babà soaked in limoncello, with a heart of Amalfi lemon chantilly."),
-   (219384, "babamisu", "Una cupola di babà farcita con crema al mascarpone e caffè: il babà incontra il tiramisù.", "A babà dome filled with mascarpone cream and coffee: babà meets tiramisù."),
+   (638146, None, "Monoporzione di babà bagnato al limoncello, con un cuore di chantilly al limone, come quella della delizia al limone amalfitana. Ideato nel 2023.", "A single-serve babà soaked in limoncello, with a heart of lemon chantilly, like that of the Amalfi lemon delizia. Created in 2023."),
+   (219384, "babamisu", "Un babà farcito con crema al mascarpone e bagnato con liquore al caffè: il babà incontra il tiramisù. Lo facciamo noi dal 2023.", "A babà filled with mascarpone cream and soaked in coffee liqueur: babà meets tiramisù. Ours since 2023."),
    (472126, "pellecchiella", "Torta al forno con albicocche Pellecchielle del Vesuvio.", "A baked cake with Pellecchiella apricots from Vesuvius."),
    (472130, None, "Torta al forno con mela Annurca IGP, crema pasticcera e cannella.", "A baked cake with Annurca PGI apples, custard and cinnamon."),
    (153840, None, "La sfogliatella riccia con crema pasticcera e amarene, la più vicina alla ricetta del convento.", "The sfogliatella riccia with custard and black cherries, the closest to the original convent recipe."),

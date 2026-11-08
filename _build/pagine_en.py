@@ -154,4 +154,56 @@ PAGINE_EN = [
  # La pagina è costruita da pagina_aspritz() in build.py con i testi di aspritz.py
  # (il vecchio corpo, con gli altri spritz, negroni e vini, è confluito nella sezione «Accanto all'Aspritz»).
 },
+
+{
+ "slug": "babamisu",
+ "nav": "Babàmisù",
+ "titolo": "Babàmisù: babà meets tiramisù",
+ "titolo_seo": "Babàmisù, Ceraldi's mascarpone babà in Naples",
+ "descrizione": "Ceraldi Caffè's Babàmisù: a babà filled with mascarpone cream and soaked in coffee liqueur. Made in-house since 2023, in Piazza Carità, Naples.",
+ "dek": "A babà filled with mascarpone cream and soaked in coffee liqueur. Two icons of Italian pastry in a single bite, made by us since 2023.",
+ "foto": "babamisu",
+ "corpo": """
+<p class="capolettera">The babà is the leavened, syrup-soaked cake that Naples made its own. Tiramisù is the spoon dessert of mascarpone and coffee. The <strong>Babàmisù</strong> brings them together: a babà <strong>filled with mascarpone cream</strong> and <strong>soaked in coffee liqueur</strong>.</p>
+
+<h2>Since when</h2>
+<p>We make it ourselves, in-house, <strong>since 2023</strong>: the year of Ceraldi's 50th anniversary. Ceraldi has been a family café and pastry shop in Naples since 1973. The same year saw the birth of the <a href="../specialita/">Segreto amalfitano</a>, a limoncello babà with a heart of lemon chantilly, like that of the Amalfi lemon delizia.</p>
+
+<h2>What it is</h2>
+<ul>
+<li><strong>The babà</strong>, soft and soaked.</li>
+<li><strong>The filling</strong>: mascarpone cream.</li>
+<li><strong>The soaking</strong>: coffee liqueur, so the dessert contains alcohol.</li>
+</ul>
+<p>Allergens: gluten, milk, eggs. For other needs, ask the staff at the counter.</p>
+
+<h2>Where and when</h2>
+<p>The Babàmisù is always available in our display case at Piazza Carità 14, on via Toledo, from 6:30 am to 8:30 pm. The current price is on the <a href="../menu/#s-1">menu</a>.</p>
+""",
+ "cta": [("See the menu with prices", "menu_dolci"), ("Get directions", "mappa")],
+},
+{
+ "slug": "caffe-sfogliata",
+ "nav": "Caffè Sfogliata",
+ "titolo": "Caffè Sfogliata: coffee in a chocolate-lined riccio",
+ "titolo_seo": "Caffè Sfogliata, Ceraldi's special coffee in Naples",
+ "descrizione": "Ceraldi Caffè's Caffè Sfogliata: hot coffee and cold cinnamon milk foam in an edible riccio lined with dark chocolate. Piazza Carità, Naples.",
+ "dek": "Hot coffee, cold cinnamon milk foam and a riccio you can eat, lined with dark chocolate.",
+ "foto": "bar-banco",
+ "corpo": """
+<p class="capolettera">The <strong>Caffè Sfogliata</strong> is one of our special coffees, and it arrives in an unusual way: the coffee is <strong>hot</strong>, the cinnamon milk foam is <strong>cold</strong>, and the container is an <strong>edible riccio lined with dark chocolate</strong>.</p>
+
+<h2>What's in it</h2>
+<ul>
+<li><strong>Hot coffee</strong>, served inside the riccio.</li>
+<li><strong>Cold cinnamon milk foam</strong>.</li>
+<li><strong>An edible riccio</strong> lined with <strong>dark chocolate</strong>, to eat after the coffee.</li>
+</ul>
+<p>The contrast between hot coffee and cold foam is the heart of the recipe.</p>
+
+<h2>Where to find it</h2>
+<p>The Caffè Sfogliata is available at the counter and at the table at Ceraldi Caffè, Piazza Carità 14, on via Toledo, every day from 6:30 am to 8:30 pm. The price is on the <a href="../menu/#s-1">menu</a>. See also our <a href="../specialita/">house specialities</a>.</p>
+""",
+ "cta": [("See the menu with prices", "menu_bar"), ("Get directions", "mappa")],
+},
 ]

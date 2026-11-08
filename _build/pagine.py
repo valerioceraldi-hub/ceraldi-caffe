@@ -106,8 +106,8 @@ PAGINE = [
 <h2>Le creazioni della casa</h2>
 <ul>
 <li><strong>Cestino</strong>: il riccio della sfogliatella diventa un cesto croccante, con chantilly e frutti di bosco.</li>
-<li><strong>Segreto amalfitano</strong>: babà al limoncello con un cuore di chantilly ai limoni di Amalfi.</li>
-<li><strong>Babàmisù</strong>: una cupola di babà con crema al mascarpone e caffè.</li>
+<li><strong>Segreto amalfitano</strong>: babà al limoncello con un cuore di chantilly al limone, come quella della delizia al limone amalfitana. <a href="../babamisu/">Nato nel 2023 insieme al Babàmisù.</a></li>
+<li><strong>Babàmisù</strong>: babà farcito con crema al mascarpone e bagnato con liquore al caffè. <a href="../babamisu/">Scopri il Babàmisù</a>.</li>
 <li><strong>Pellecchiella</strong>: torta con le albicocche Pellecchielle del Vesuvio.</li>
 <li><strong>Torta di mele</strong> con mela Annurca IGP, <strong>ricotta e pera</strong>, crostata di fragoline, millefoglie crema e amarena.</li>
 </ul>
@@ -158,5 +158,57 @@ PAGINE = [
  "foto": "aspritz",
  # La pagina è costruita da pagina_aspritz() in build.py con i testi di aspritz.py
  # (il vecchio corpo, con gli altri spritz, negroni e vini, è confluito nella sezione «Accanto all'Aspritz»).
+},
+
+{
+ "slug": "babamisu",
+ "nav": "Babàmisù",
+ "titolo": "Babàmisù: il babà incontra il tiramisù",
+ "titolo_seo": "Babàmisù, il babà al mascarpone di Ceraldi a Napoli",
+ "descrizione": "Il Babàmisù di Ceraldi Caffè: babà farcito con crema al mascarpone e bagnato con liquore al caffè. Lo produciamo noi dal 2023, a Napoli in Piazza Carità.",
+ "dek": "Un babà farcito con crema al mascarpone e bagnato con liquore al caffè. Due icone della pasticceria italiana in un solo morso, fatto da noi dal 2023.",
+ "foto": "babamisu",
+ "corpo": """
+<p class="capolettera">Il babà è il dolce lievitato che Napoli ha fatto suo, bagnato e morbido. Il tiramisù è il dolce al cucchiaio con mascarpone e caffè. Il <strong>Babàmisù</strong> li mette insieme: un babà <strong>farcito con crema al mascarpone</strong> e <strong>bagnato con liquore al caffè</strong>.</p>
+
+<h2>Quando nasce</h2>
+<p>Lo produciamo noi, in casa, <strong>dal 2023</strong>: l'anno del cinquantesimo anniversario di Ceraldi, che dal 1973 lavora a Napoli come bar e pasticceria di famiglia. Nello stesso anno è nato anche il <a href="../specialita/">Segreto amalfitano</a>, un babà al limoncello con un cuore di crema chantilly al limone, come quella della delizia al limone amalfitana.</p>
+
+<h2>Che cos'è</h2>
+<ul>
+<li><strong>Il babà</strong>, morbido e imbevuto.</li>
+<li><strong>La farcitura</strong> con crema al mascarpone.</li>
+<li><strong>La bagna</strong> con liquore al caffè: per questo il dolce contiene alcol.</li>
+</ul>
+<p>Allergeni: glutine, latte, uova. Se hai altre esigenze, chiedi al personale al banco.</p>
+
+<h2>Dove e quando</h2>
+<p>Il Babàmisù è sempre disponibile nella nostra vetrina in Piazza Carità 14, lungo via Toledo, dalle 6:30 alle 20:30. Il prezzo aggiornato è nel <a href="../menu/#s-1">menu</a>. Per capire da dove viene il babà, leggi <a href="../storie/baba/">la storia del babà napoletano</a>.</p>
+""",
+ "cta": [("Vedi il menu con i prezzi", "menu_dolci"), ("Come arrivare", "mappa")],
+},
+{
+ "slug": "caffe-sfogliata",
+ "nav": "Caffè Sfogliata",
+ "titolo": "Caffè Sfogliata: il caffè nel riccio al cioccolato",
+ "titolo_seo": "Caffè Sfogliata, il caffè speciale di Ceraldi a Napoli",
+ "descrizione": "Caffè Sfogliata di Ceraldi: caffè caldo e schiuma fredda di latte alla cannella in un riccio edibile al cioccolato fondente. Piazza Carità, Napoli.",
+ "dek": "Caffè caldo, schiuma fredda di latte alla cannella e un riccio che si mangia, rivestito di cioccolato fondente.",
+ "foto": "bar-banco",
+ "corpo": """
+<p class="capolettera">Il <strong>Caffè Sfogliata</strong> è uno dei nostri caffè speciali, e si capisce perché arrivi in un modo diverso dal solito: il caffè è <strong>caldo</strong>, la schiuma di latte alla cannella è <strong>fredda</strong>, e il contenitore è un <strong>riccio edibile rivestito di cioccolato fondente</strong>.</p>
+
+<h2>Com'è fatto</h2>
+<ul>
+<li><strong>Caffè caldo</strong>, servito dentro il riccio.</li>
+<li><strong>Schiuma fredda di latte alla cannella</strong>.</li>
+<li><strong>Un riccio edibile</strong>, rivestito di <strong>cioccolato fondente</strong>: si mangia dopo il caffè.</li>
+</ul>
+<p>Il contrasto tra il caldo del caffè e il freddo della schiuma è il centro della ricetta.</p>
+
+<h2>Dove trovarlo</h2>
+<p>Il Caffè Sfogliata è disponibile al banco e al tavolo da Ceraldi Caffè, in Piazza Carità 14, lungo via Toledo, tutti i giorni dalle 6:30 alle 20:30. Il prezzo è nel <a href="../menu/#s-1">menu</a>. Se ami il caffè fatto con un'idea in più, guarda anche <a href="../specialita/">le specialità della casa</a> e <a href="../storie/caffe-napoletano/">la tradizione del caffè napoletano</a>.</p>
+""",
+ "cta": [("Vedi il menu con i prezzi", "menu_bar"), ("Come arrivare", "mappa")],
 },
 ]
