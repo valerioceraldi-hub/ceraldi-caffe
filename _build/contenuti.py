@@ -107,6 +107,7 @@ FOTO = {
     "babamisu": {"alt": "Babàmisù di Ceraldi Caffè", "w": [800, 480], "r": (1, 1)},
     "pellecchiella": {"alt": "Torta Pellecchiella di Ceraldi Caffè con albicocche del Vesuvio", "w": [800, 480], "r": (1, 1)},
     "squadra": {"alt": "La squadra di Ceraldi Caffè al bancone del bar in Piazza Carità", "w": [1600, 800], "r": (3, 2)},
+    "caffe-sospeso-caffettiera": {"alt": "La caffettiera di rame con le scritte «Ceraldi Caffè» e «Caffè sospeso» sul bancone di Ceraldi Caffè in Piazza Carità, Napoli", "w": [1600, 1024, 640], "r": (3, 4)},
     "sala": {"alt": "La sala di Ceraldi Caffè con le poltroncine in pelle rossa e una colazione servita al tavolo", "w": [1024, 640], "r": (3, 2)},
     "bar-banco": {"alt": "Il banco del bar di Ceraldi Caffè con il barista al lavoro", "w": [1024, 640], "r": (3, 2)},
     "vetrina": {"alt": "La vetrina della pasticceria e della rosticceria di Ceraldi Caffè", "w": [1024, 640], "r": (3, 2)},
@@ -158,26 +159,52 @@ ARTICOLI = [
 },
 {
  "slug": "caffe-sospeso",
- "titolo": "Il caffè sospeso: un gesto napoletano che ha fatto il giro del mondo",
- "titolo_seo": "Caffè sospeso: cos'è, origini e significato",
- "descrizione": "Pagare un caffè in più per chi verrà dopo: cos'è il caffè sospeso, da dove nasce e perché il 10 dicembre gli è dedicata una giornata.",
- "dek": "Si paga un caffè in più, per chi entrerà dopo e non potrà permetterselo. Un'abitudine piccola, nata nei bar di Napoli.",
- "foto": "squadra",
- "lettura": 3,
+ "titolo": "Il caffè sospeso a Napoli: cos'è, come funziona e da dove nasce",
+ "titolo_seo": "Caffè sospeso: cos'è e come funziona a Napoli",
+ "descrizione": "Cos'è il caffè sospeso, come funziona e da dove nasce l'usanza napoletana. Da Ceraldi, in Piazza Carità, si lascia nella caffettiera di rame sul bancone.",
+ "dek": "Si paga un caffè in più, per chi entrerà dopo e non potrà permetterselo. Da Ceraldi, in Piazza Carità, il caffè sospeso ha una casa: una caffettiera di rame sul bancone.",
+ "foto": "caffe-sospeso-caffettiera",
+ "og": "img/caffe-sospeso-og.jpg",
+ "didascalia": "La caffettiera del caffè sospeso sul bancone di Ceraldi Caffè, in Piazza Carità 14.",
+ "aggiornato": "2026-11-10",
+ "lettura": 5,
  "corpo": """
-<p>Il caffè sospeso è semplice: chi entra al bar paga due caffè e ne beve uno. L'altro resta "in sospeso", pagato e in attesa di qualcuno che entrerà più tardi e chiederà se c'è un sospeso. Nessuno sa chi l'ha offerto, nessuno deve ringraziare.</p>
+<p>Il caffè sospeso è semplice: chi entra al bar paga due caffè e ne beve uno. L'altro resta "in sospeso", pagato e in attesa di qualcuno che entrerà più tardi e non potrebbe permetterselo. Nessuno sa chi l'ha offerto, nessuno deve ringraziare.</p>
+
+<h2>Cos'è il caffè sospeso</h2>
+<p>Il caffè sospeso è un caffè pagato in anticipo da un cliente del bar per una persona sconosciuta che verrà dopo. È un'usanza nata nei bar di Napoli e diventata un simbolo della solidarietà napoletana: un gesto anonimo, piccolo e quotidiano. Avvenire lo ha descritto come un gesto di attenzione verso uno sconosciuto, e non come un'elemosina.</p>
+
+<h2>Come funziona da Ceraldi: la caffettiera di rame</h2>
+<p>Al nostro bancone, in Piazza Carità 14, il caffè sospeso ha un posto tutto suo: una grande caffettiera di rame con due scritte, «Ceraldi Caffè» e «Caffè sospeso». Funziona così:</p>
+<ol>
+<li><strong>Per lasciare un caffè sospeso</strong> paghi un caffè in più e metti lo scontrino nella caffettiera.</li>
+<li><strong>Per ricevere un caffè sospeso</strong> chi ne ha bisogno prende uno scontrino dalla caffettiera e al bancone riceve un caffè già pagato, da una persona che non conoscerà.</li>
+</ol>
+<p>Lo scontrino rende il gesto semplice e trasparente: ogni sospeso nella caffettiera è un caffè davvero pagato, e chi lo prende non deve chiedere niente a nessuno. Puoi lasciarne uno anche se sei a Napoli solo per qualche giorno: è uno dei modi più napoletani di passare da un bar.</p>
 
 <h2>Da dove nasce</h2>
-<p>Le origini precise non sono documentate e i racconti sono diversi. Secondo una versione l'usanza si diffuse nel dopoguerra, quando molti non potevano permettersi nemmeno un caffè. Lo scrittore Riccardo Pazzaglia ne dava una lettura più leggera: amici che al bancone litigavano per pagare, e il caffè in più lasciato per il prossimo cliente.</p>
-<p>A renderlo famoso fuori da Napoli è stato Luciano De Crescenzo, che nel libro <em>Il caffè sospeso</em> lo descrive come il gesto di chi è contento e vuole, in qualche modo, offrire un caffè al resto del mondo.</p>
+<p>Le origini precise non sono documentate e i racconti sono diversi. Si dice spesso che l'usanza si sia diffusa negli anni più poveri della città, quando molti non potevano permettersi nemmeno un caffè, ma nessuna fonte la data con certezza. Lo scrittore Riccardo Pazzaglia, nel libro <em>Odore di caffè</em> (2004), ne dava una spiegazione più leggera: al momento di pagare, tra amici al bancone, capitava di saldare un caffè in più, e invece di reclamarlo lo si lasciava a uno sconosciuto.</p>
+<p>A renderlo famoso fuori da Napoli è stato Luciano De Crescenzo, che nel 2008 ha raccolto aneddoti e riflessioni sul tema nel libro <em>Il caffè sospeso</em>: per lui era il gesto di chi è contento e vuole, in qualche modo, offrire un caffè al resto del mondo.</p>
 
-<h2>Il 10 dicembre e il giro del mondo</h2>
-<p>Il 10 dicembre si celebra la giornata del caffè sospeso, promossa da una rete di associazioni per diffondere l'usanza nei bar italiani. Nel frattempo l'idea è arrivata lontano: in altre città italiane e in vari paesi del mondo, dove ha preso nomi diversi, come il <em>café pendiente</em> in Argentina.</p>
+<h2>Il 10 dicembre, giornata del caffè sospeso</h2>
+<p>Nell'autunno del 2010 alcuni festival culturali italiani hanno dato vita alla Rete del caffè sospeso, da un'idea di Maurizio Del Bufalo, ideatore del Festival del cinema dei diritti umani di Napoli. La Rete ha scelto il <strong>10 dicembre</strong>, Giornata internazionale dei diritti umani, come giornata del caffè sospeso, con l'appoggio del sindaco di Napoli, e ha invitato i bar di tutta Italia a riprendere l'usanza.</p>
+<p>Ogni anno, il 10 dicembre, è il giorno ideale per lasciare un sospeso. Ma la caffettiera sul nostro bancone c'è tutto l'anno.</p>
+
+<h2>Dal bar napoletano al resto del mondo</h2>
+<p>Negli anni l'idea ha viaggiato lontano. Il caffè sospeso è stato ripreso in altre città italiane e in diversi paesi, dall'Europa alle Americhe: in inglese si chiama <em>suspended coffee</em>, nei paesi di lingua spagnola <em>café pendiente</em>. In Argentina lo stesso principio è stato applicato anche alle empanadas.</p>
+<p>Proprio mentre il mondo lo scopriva, a Napoli c'era chi lo dava per scomparso. Per questo conta che resti visibile, al bancone, dove tutti possono vederlo e capire come funziona.</p>
 
 <h2>Perché resiste</h2>
-<p>Il caffè sospeso funziona perché è piccolo: costa poco, non chiede organizzazione e non mette in imbarazzo nessuno. È lo stesso spirito del bar napoletano, dove il caffè è prima di tutto un'occasione per stare in mezzo agli altri. Se vuoi capire meglio questo rito, leggi anche <a href="../caffe-napoletano/">come si beve il caffè a Napoli</a>.</p>
+<p>Il caffè sospeso funziona perché è piccolo: costa poco, non chiede organizzazione e non mette in imbarazzo nessuno. È lo stesso spirito del bar napoletano, dove il caffè è prima di tutto un'occasione per stare in mezzo agli altri. Se vuoi capire meglio questo rito, leggi anche <a href="../caffe-napoletano/">come si beve il caffè a Napoli</a>, le altre <a href="../tradizioni-napoletane/">tradizioni napoletane</a> e la storia di <a href="../piazza-carita-via-toledo/">Piazza Carità e via Toledo</a>, dove ci trovi.</p>
 """,
- "provare": [("Espresso al bancone", "il modo più napoletano per cominciare"), ("Caffè Babà", "caffè e babà nella stessa tazza")],
+ "faq": [
+  ("Cos'è il caffè sospeso?", "È un caffè pagato in anticipo da un cliente del bar per una persona che verrà dopo e che non potrebbe permetterselo. È un'usanza nata nei bar di Napoli: chi lo offre resta anonimo e chi lo riceve non deve ringraziare nessuno.", None),
+  ("Come si lascia un caffè sospeso da Ceraldi?", "Si paga un caffè in più e si mette lo scontrino nella grande caffettiera di rame con la scritta «Caffè sospeso», sul bancone di Ceraldi Caffè in Piazza Carità 14, a Napoli.", None),
+  ("Come si riceve un caffè sospeso?", "Chi ne ha bisogno prende uno scontrino dalla caffettiera e al bancone riceve un caffè già pagato da qualcun altro.", None),
+  ("Quando è la giornata del caffè sospeso?", "Il 10 dicembre, insieme alla Giornata internazionale dei diritti umani. L'ha scelta la Rete del caffè sospeso, nata nel 2010 da un'idea di Maurizio Del Bufalo.", None),
+  ("Come si dice caffè sospeso in inglese?", "In inglese si dice «suspended coffee»; nei paesi di lingua spagnola «café pendiente».", None),
+ ],
+ "provare": [("Un caffè sospeso", "lascialo nella caffettiera di rame sul bancone"), ("Espresso al bancone", "il modo più napoletano per cominciare"), ("Caffè Babà", "caffè e babà nella stessa tazza")],
 },
 {
  "slug": "sfogliatella",
@@ -503,6 +530,8 @@ FAQ = [
     ("Avete tavoli all'aperto?", "Sì, abbiamo tavoli all'aperto in Piazza Carità, oltre alla sala interna e al bancone.", None),
     ("Fate anche l'aperitivo?", "Sì, fino alle 20:30, con il nostro Aspritz fatto in casa, spritz, negroni, gin tonic, vini campani al calice e birre.", None),
     ("Si può pranzare?", "Sì, con la rosticceria napoletana (frittatine, crocchè, pizza fritta), saltimbocca e panini, freselle e insalate.", None),
+    ("Si può lasciare un caffè sospeso?", "Sì. Sul bancone c'è una caffettiera di rame con la scritta «Caffè sospeso»: si paga un caffè in più e si mette lo scontrino nella caffettiera. Chi ne ha bisogno prende uno scontrino e riceve un caffè già pagato.",
+     'Sì. Sul bancone c\'è una caffettiera di rame con la scritta «Caffè sospeso»: si paga un caffè in più e si mette lo scontrino nella caffettiera. Chi ne ha bisogno prende uno scontrino e riceve un caffè già pagato. <a href="' + BASE + 'storie/caffe-sospeso/">Leggi la storia del caffè sospeso</a>.'),
     ("Servite la colazione inglese?", "Sì, tutte le mattine serviamo la Full English Breakfast: uova, bacon, salsicce, fagioli, funghi, pomodori, pane tostato e tè.", None),
     ("Come posso contattarvi?", "Al telefono fisso 081 552 3488, al cellulare 328 438 8404 (anche WhatsApp) oppure su Instagram @ceraldicaffe.", None),
     ("Dove posso leggere le recensioni?", "Su Google e su Tripadvisor, dove trovi le recensioni dei nostri clienti.",
@@ -516,6 +545,7 @@ FAQ_EN = [
     ("Do you make your own pastries?", "Yes. Our pastries are made in-house from family recipes handed down through the generations.", None),
     ("What can I have for breakfast?", "A classic Italian breakfast with croissants, brioche, kranz and pain au chocolat, plus Neapolitan pastries such as sfogliatella, graffa and babà.", None),
     ("Do you have outdoor seating?", "Yes, we have outdoor tables on Piazza Carità, as well as the indoor hall and the counter.", None),
+    ("Can I leave a suspended coffee (caffè sospeso)?", "Yes. On our counter there is a copper coffee pot marked «Caffè sospeso»: pay for an extra coffee and drop the receipt into the pot. Someone in need takes a receipt and gets a coffee already paid for.", None),
     ("Do you serve an English breakfast?", "Yes, every morning: eggs, bacon, sausages, beans, mushrooms, tomatoes, toast and tea.", None),
     ("How can I contact you?", "Call +39 081 552 3488, or mobile +39 328 438 8404 (also WhatsApp), or find us on Instagram @ceraldicaffe.", None),
 ]
@@ -526,8 +556,10 @@ _W = "https://it.wikipedia.org/wiki/"
 FONTI = {
  "caffe-napoletano": [("Caffettiera napoletana, Wikipedia", _W + "Caffettiera_napoletana"), ("Questi fantasmi!, Wikipedia", _W + "Questi_fantasmi%21"),
                       ("La cuccumella napoletana è nata a Parigi, Linkiesta", "https://www.linkiesta.it/2020/07/cuccumella-napoletana-caffe-napoli-parigi/")],
- "caffe-sospeso": [("Caffè sospeso, Wikipedia", _W + "Caff%C3%A8_sospeso"),
-                   ("Giornata del caffè sospeso, GreenMe", "https://www.greenme.it/lifestyle/costume-e-societa/giornata-caffe-sospeso-tradiziona-napoletana-solidarieta/")],
+ "caffe-sospeso": [("Lasciamo un «caffè sospeso»: la solidarietà parte dalle piccole cose, Avvenire (9 dicembre 2011)", "https://www.avvenire.it/idee-e-commenti/lasciamo-un-caffe-sospeso-la-solidarieta-parte-dalle-piccole-cose_8571"),
+                   ("Solidarietà in tazzina, L'Espresso (21 novembre 2011)", "https://lespresso.it/c/attualita/2011/11/21/solidarieta-in-tazzina/5118"),
+                   ("Il ritorno della Rete del caffè sospeso, Meer (27 aprile 2021)", "https://www.meer.com/it/65610-il-ritorno-della-rete-del-caffe-sospeso"),
+                   ("Caffè sospeso, Wikipedia", _W + "Caff%C3%A8_sospeso")],
  "sfogliatella": [("Sfogliatella, Wikipedia", _W + "Sfogliatella"), ("Monastero di Santa Rosa, Wikipedia", _W + "Monastero_di_Santa_Rosa")],
  "baba": [("Babà, Wikipedia", _W + "Bab%C3%A0"),
           ("Babà, storia e leggenda del dolce napoletano nato in Francia, Gambero Rosso", "https://www.gamberorosso.it/notizie/storie/baba-storia-e-leggenda-del-dolce-napoletano-nato-in-francia")],

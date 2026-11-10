@@ -55,6 +55,9 @@ PAGINE_EN = [
 </ul>
 <p>If you prefer something else: hot chocolate, Dammann teas and herbal infusions, chai and golden milk, juices and freshly squeezed orange juice.</p>
 
+<h2>Suspended coffee (caffè sospeso)</h2>
+<p>On our counter stands a large copper coffee pot marked «Caffè sospeso». It keeps alive a Neapolitan tradition: you pay for an extra coffee and drop the receipt into the pot, and someone who cannot afford one later takes a receipt and gets a coffee already paid for, by a stranger they will never meet. Anyone can leave one, visitors included. In Italy, Suspended Coffee Day is celebrated on 10 December. <a href="../../storie/caffe-sospeso/" hreflang="it">Read the story of caffè sospeso</a> (in Italian).</p>
+
 <h2>Italian breakfast</h2>
 <p>A warm cornetto with a cappuccino, at the counter or at a table. Our croissants come plain or filled (custard, custard and black cherry, chocolate, apricot, raspberry, apple and cinnamon, lemon), also wholemeal and vegan, plus the croissant ischitano, with a double layer of puff pastry and brioche dough. Then brioche, kranz, pain au chocolat, maritozzo filled with cream and the nuvoletta with milk cream.</p>
 
@@ -73,7 +76,7 @@ PAGINE_EN = [
 <li><strong>What to order</strong>: espresso and house coffees, croissants, sfogliatelle and babà from our own pastry kitchen, full English breakfast. See the <a href="../../menu/en/">menu with prices</a>.</li>
 </ul>
 """,
- "galleria": ["sala", "bar-banco", "vetrina", "cornetti-caffe-bancone", "latte-macchiato-dolci", "caffe-servito-bancone"],
+ "galleria": ["sala", "bar-banco", "caffe-sospeso-caffettiera", "cornetti-caffe-bancone", "latte-macchiato-dolci", "caffe-servito-bancone"],
  "cta": [("Café menu", "menu_bar"), ("Get directions", "mappa")],
 },
 {

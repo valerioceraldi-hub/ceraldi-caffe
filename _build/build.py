@@ -223,7 +223,7 @@ HOME_GIORNATA = [  # foto, momento IT/EN, titolo IT/EN, testo IT/EN, link IT/EN,
 ]
 # Il terzo racconto segue la stagione: per le feste i dolci di Natale. A febbraio rimettere
 # ("piazza-carita-via-toledo", "sala-bianca") e ricostruire il sito.
-HOME_STORIE = [("caffe-sospeso", "squadra"), ("pastiera", "pastiera"), ("dolci-di-natale", "vetrina")]
+HOME_STORIE = [("caffe-sospeso", "caffe-sospeso-caffettiera"), ("pastiera", "pastiera"), ("dolci-di-natale", "vetrina")]
 HOME_TESTI = {
     "it": dict(
         titolo="Ceraldi Caffè | Bar e pasticceria a Napoli, Piazza Carità",
@@ -417,7 +417,7 @@ def articolo(a):
     k = a['foto']
     img = BASE + (f"img/{k}-{FOTO[k]['w'][0]}.webp" if k else "img/og.jpg")
     ld = [{"@context": "https://schema.org", "@type": "Article", "headline": a["titolo"], "description": a["descrizione"],
-           "image": [img], "datePublished": a.get("pubblicato", PUBBLICATO), "dateModified": a.get("aggiornato", a.get("pubblicato", PUBBLICATO)), "inLanguage": "it-IT", "mainEntityOfPage": url,
+           "image": [img] + ([BASE + a["og"]] if a.get("og") else []), "datePublished": a.get("pubblicato", PUBBLICATO), "dateModified": a.get("aggiornato", a.get("pubblicato", PUBBLICATO)), "inLanguage": "it-IT", "mainEntityOfPage": url,
            "isPartOf": {"@id": BASE + "#sito"}, "articleSection": CATEGORIA_DI[a["slug"]]["nome"],
            "citation": [f[1] for f in a["fonti"]],
            "author": {"@type": "Organization", "name": AUTORE, "url": BASE + "storia/"},
@@ -427,9 +427,15 @@ def articolo(a):
               {"@type": "ListItem", "position": 2, "name": "Racconti", "item": BASE + "storie/"},
               {"@type": "ListItem", "position": 3, "name": CATEGORIA_DI[a["slug"]]["nome"], "item": BASE + f"storie/{CATEGORIA_DI[a['slug']]['slug']}/"},
               {"@type": "ListItem", "position": 4, "name": a["titolo"], "item": url}]}]
-    og = f"img/{k}-{FOTO[k]['w'][0]}.webp" if k else "img/og.jpg"
+    # og: immagine orizzontale facoltativa per le anteprime sui social (le foto verticali verrebbero tagliate male)
+    og = a.get("og") or (f"img/{k}-{FOTO[k]['w'][0]}.webp" if k else "img/og.jpg")
+    # faq facoltative: domande e risposte in fondo all'articolo, anche come dati strutturati FAQPage
+    if a.get("faq"):
+        ld.append(ld_faq(a["faq"]))
     h = testa("it", a["titolo_seo"] + " | Ceraldi Caffè", a["descrizione"], url, "../../", og_img=og, ld=ld, tipo="article")
-    fig = f'<figure class="{"verticale" if FOTO[k]["r"][1] > FOTO[k]["r"][0] else ""}">{immagine(k, "../../", "(max-width: 800px) 100vw, 760px", eager=True)}</figure>' if k else ''
+    didascalia = f'<figcaption>{e(a["didascalia"])}</figcaption>' if a.get("didascalia") else ''
+    fig = f'<figure class="{"verticale" if FOTO[k]["r"][1] > FOTO[k]["r"][0] else ""}">{immagine(k, "../../", "(max-width: 800px) 100vw, 760px", eager=True)}{didascalia}</figure>' if k else ''
+    faq = f'<section class="faq-articolo"><h2>Domande frequenti</h2><div class="domande">{faq_html(a["faq"])}</div></section>' if a.get("faq") else ''
     prova = ''.join(f'<li><b>{e(n)}</b><br><span>{e(d)}</span></li>' for n, d in a["provare"])
     fonti = ''.join(f'<li><a href="{e(u)}" rel="noopener">{e(t)}</a></li>' for t, u in a["fonti"])
     altre = ''.join(f'<li><a href="../{b["slug"]}/"><b>{e(b["titolo"])}</b><span>{e(b["dek"])}</span><small>{b["lettura"]} min</small></a></li>' for b in sorted(ARTICOLI, key=lambda b: CATEGORIA_DI[b["slug"]] is not CATEGORIA_DI[a["slug"]]) if b is not a)
@@ -442,6 +448,7 @@ def articolo(a):
 <p class="meta">{meta_articolo(a)}</p>
 {fig}
 <div class="corpo">{a["corpo"]}</div>
+{faq}
 <aside class="cartellino"><h2>Da provare da Ceraldi</h2><p>{e(a.get("cartellino") or "Piazza Carità 14, Napoli. Tutti i giorni dalle 6:30 alle 20:30. Dolci di produzione propria.")}</p><ul>{prova}</ul>
 <div class="azioni sinistra"><a class="btn" href="../../menu/">Guarda il menu</a><a class="btn" href="{BAR["mappa"]}" rel="noopener">Come arrivare</a></div></aside>
 <aside class="fonti"><h2>Fonti</h2><ul>{fonti}</ul></aside>
@@ -1107,6 +1114,7 @@ def llms():
 - Dolci della casa: Cestino, Segreto amalfitano, Babàmisù, Pellecchiella (torta con albicocche Pellecchielle del Vesuvio), torta di mele Annurca IGP
 - Caffè della casa: Caffè Ceraldi, Caffè Babà, Michelino, Nocciolato, Pistacchiotto, Caldo freddo
 - Rosticceria napoletana: frittatina, crocchè, pizza fritta, pizza di scarole, saltimbocca, zingara ischitana; freselle e insalate
+- Caffè sospeso: sul bancone c'è una caffettiera di rame con la scritta «Caffè sospeso»; chi offre paga un caffè in più e mette lo scontrino nella caffettiera, chi ne ha bisogno prende uno scontrino e riceve un caffè già pagato ({BASE}storie/caffe-sospeso/)
 - English breakfast tutte le mattine (uova, bacon, salsicce, fagioli, funghi, pomodori, pane tostato, tè)
 - Aperitivo: Aspritz, aperitivo ideato da Ceraldi e di sua produzione (infusione di agrumi della Costiera Amalfitana, erbe e radici, completata con Asprinio di Aversa DOC spumante e arancia disidratata), spritz, negroni, gin tonic, vini campani, birre
 

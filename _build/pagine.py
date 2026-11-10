@@ -60,6 +60,9 @@ PAGINE = [
 </ul>
 <p>Per chi preferisce altro: cioccolate calde, tè e tisane Dammann, chai e golden milk, succhi e spremute.</p>
 
+<h2>Il caffè sospeso</h2>
+<p>Sul bancone c'è una grande caffettiera di rame con la scritta «Caffè sospeso». Chi vuole offrire un caffè a uno sconosciuto lo paga e mette lo scontrino nella caffettiera; chi ne ha bisogno prende uno scontrino e riceve un caffè già pagato. È la tradizione napoletana del <a href="../storie/caffe-sospeso/">caffè sospeso</a>: qui la trovi tutto l'anno, e il 10 dicembre ne è la giornata.</p>
+
 <h2>La colazione all'italiana</h2>
 <p>Il cornetto caldo con il cappuccino, al bancone o al tavolo. I nostri croissant sono vuoti o farciti (crema, crema e amarena, cioccolato, albicocca, lampone, mela e cannella, limone), anche integrali e vegani, e c'è il croissant ischitano, con doppio strato di sfoglia e pasta brioche. Poi brioche, kranz, pain au chocolat, maritozzo con la panna e la nuvoletta con crema al latte.</p>
 
@@ -79,7 +82,7 @@ PAGINE = [
 <li><strong>Cosa trovi</strong>: espresso e caffè della casa, cornetti, sfogliatelle e babà della nostra pasticceria, English breakfast. Guarda il <a href="../menu/">menu con i prezzi</a>.</li>
 </ul>
 """,
- "galleria": ["sala", "bar-banco", "vetrina", "cornetti-caffe-bancone", "latte-macchiato-dolci", "caffe-servito-bancone"],
+ "galleria": ["sala", "bar-banco", "caffe-sospeso-caffettiera", "cornetti-caffe-bancone", "latte-macchiato-dolci", "caffe-servito-bancone"],
  "cta": [("Menu del bar", "menu_bar"), ("Come arrivare", "mappa")],
 },
 {
