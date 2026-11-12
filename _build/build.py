@@ -177,7 +177,7 @@ def ld_bar(lang='it'):
         "servesCuisine": ["Caffetteria", "Pasticceria napoletana", "Colazione italiana", "Aperitivo"],
         "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Tavoli all'aperto" if lang == 'it' else "Outdoor seating", "value": True}],
         "knowsAbout": ["caffè napoletano", "sfogliatella", "babà", "pastiera napoletana", "zeppole di San Giuseppe", "pasticceria napoletana", "colazione all'italiana"],
-        "sameAs": [BAR["instagram"], BAR["facebook"], BAR["tripadvisor"], BAR["mappa"], BAR["gambero_rosso"]],
+        "sameAs": [BAR["instagram"], BAR["facebook"], BAR["tripadvisor"], BAR["mappa"]],
         "award": "Guida Bar d'Italia del Gambero Rosso" if lang == 'it' else "Gambero Rosso Bar d'Italia guide",
     }
 
@@ -295,7 +295,7 @@ def home(lang='it'):
     tel = BAR["telefono"] if it else "+39 081 552 3488"
     cell = BAR["cellulare"] if it else "+39 328 438 8404"
     info_val = {2: f'<a href="tel:{BAR["tel_link"]}">{tel}</a> · <a href="{BAR["whatsapp"]}" rel="noopener">WhatsApp</a>',
-                3: f'<a href="{BAR["gambero_rosso"]}" rel="noopener">Bar d\'Italia, {"dal" if it else "since"} {BAR["gambero_dal"]}</a>'}
+                3: f'Bar d\'Italia, {"dal" if it else "since"} {BAR["gambero_dal"]}'}
     info = ''.join(f'<div><span>{e(t)}</span><b>{info_val.get(i) or e(v)}</b></div>' for i, (t, v) in enumerate(T["info"]))
     firme = ''.join(
         f'<article class="p-firma"><a href="{rr}{(l_it if it else l_en)}"{"" if it or l_en.startswith("en/") else " hreflang=" + chr(34) + "it" + chr(34)}>'
@@ -358,8 +358,7 @@ def home(lang='it'):
 
 <section class="p-sez p-voci"><div class="p-wrap p-voci-griglia">
 <div class="p-testa"><p class="p-occhiello scuro">{e(T["voci_occ"])}</p><h2>{e(T["voci_h2"])}</h2></div>
-<div class="p-voce"><p class="p-grande">Gambero Rosso</p><p>{T["gambero"].format(dal=BAR["gambero_dal"])}</p>
-<a class="p-link" href="{BAR["gambero_rosso"]}" rel="noopener"{"" if it else ' hreflang="it"'}>{e(T["gambero_link"])}</a></div>
+<div class="p-voce"><p class="p-grande">Gambero Rosso</p><p>{T["gambero"].format(dal=BAR["gambero_dal"])}</p></div>
 <div class="p-voce"><p class="p-grande">{BAR["google_voto"] if it else BAR["google_voto_en"]} <small>{e(T["su5"])}</small></p>
 <p>{e(T["google"].format(n=BAR["google_n"] if it else BAR["google_n_en"], data=BAR["google_data"]))}</p>
 <p class="p-link-riga"><a class="p-link" href="{BAR["google_recensioni"]}" rel="noopener">{e(l_rec[0])}</a><a class="p-link" href="{BAR["tripadvisor"]}" rel="noopener">{e(l_rec[1])}</a><a class="p-link" href="{BAR["google_scrivi"]}" rel="noopener">{e(l_rec[2])}</a></p></div>
@@ -600,7 +599,7 @@ def pagina(p, lang='it'):
 <h1>{e(p["titolo"])}</h1>
 <p class="tag">{e(p["dek"])}</p>
 <div class="azioni sinistra">{cta}</div></div>
-<figure class="specchio">{immagine(k, rr, "(max-width: 900px) 92vw, 480px", eager=True)}</figure>
+<figure class="specchio{" largo" if k == "squadra" else ""}">{immagine(k, rr, "(max-width: 900px) 96vw, 560px" if k == "squadra" else "(max-width: 900px) 92vw, 480px", eager=True)}</figure>
 </div></header>
 <main id="contenuto" class="articolo"><div class="contenitore">
 <div class="corpo">{p["corpo"]}</div>
@@ -982,7 +981,7 @@ def llms():
 - Menu completo con prezzi e foto, in 5 lingue: {BASE}menu/
 - Ragione sociale: {RAGIONE_SOCIALE}, P. IVA {PIVA}
 - Recensioni: Google ({BAR["google_recensioni"]}), Tripadvisor ({BAR["tripadvisor"]}); valutazione {BAR['google_voto']}/5 su Google con {BAR['google_n']} recensioni (dato rilevato il {BAR['google_data']})
-- Riconoscimenti: nella guida Bar d'Italia del Gambero Rosso dal {BAR['gambero_dal']}, presenti nell'edizione 2026 (scheda: {BAR["gambero_rosso"]})
+- Riconoscimenti: nella guida Bar d'Italia del Gambero Rosso dal {BAR['gambero_dal']}, presenti nell'edizione 2026
 - Instagram: {BAR["instagram"]}
 - Mappa: {BAR["mappa"]}
 

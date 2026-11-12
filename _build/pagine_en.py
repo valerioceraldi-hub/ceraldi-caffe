@@ -29,7 +29,7 @@ PAGINE_EN = [
 <h2>Craftspeople by passion</h2>
 <p>Our motto is written in our logo: <em>artigiani per passione</em>, craftspeople by passion. It means doing things the way they were always done, even when there is a quicker way. It means coffee is served in a warm cup, a sfogliatella has to crunch, and whoever walks in should feel at home, even if they come from far away.</p>
 <p>In 2019 we refreshed our logo and our tagline, «Artigiani per passione dal 1973» (craftspeople by passion since 1973): looking back at our past to build the future, without forgetting our roots, and sometimes simplifying and focusing on what matters.</p>
-<p>That commitment has been noticed: since 2014 Ceraldi Caffè has been listed in the <a href="https://www.gamberorosso.it/luoghi/locali/caffe-bar/ceraldi-caffe/" rel="noopener" hreflang="it">Gambero Rosso Bar d'Italia guide</a>.</p>
+<p>That commitment has been noticed: since 2014 Ceraldi Caffè has been listed in the Gambero Rosso Bar d'Italia guide.</p>
 <p>Come and see us in Piazza Carità: we write the rest of the story every day, at the counter.</p>
 """,
  "galleria": ["famiglia", "logo-ceraldi-caffe-carta"],

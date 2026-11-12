@@ -34,7 +34,7 @@ PAGINE = [
 <h2>Artigiani per passione</h2>
 <p>Il nostro motto è scritto nel logo: <em>artigiani per passione</em>. Vuol dire fare le cose come si facevano, anche quando ci sarebbe un modo più veloce. Vuol dire che il caffè si serve nella tazzina calda, che la sfogliatella deve scrocchiare, che chi entra deve sentirsi a casa, anche se viene da lontano.</p>
 <p>Nel 2019 abbiamo rinnovato il logo e il pay-off, «Artigiani per passione dal 1973»: guardare al passato per costruire il futuro, senza dimenticare le nostre radici, e per farlo, a volte, semplificare e guardare all'essenziale.</p>
-<p>Un impegno che negli anni è stato notato: dal 2014 Ceraldi Caffè è nella guida <a href="https://www.gamberorosso.it/luoghi/locali/caffe-bar/ceraldi-caffe/" rel="noopener">Bar d'Italia del Gambero Rosso</a>.</p>
+<p>Un impegno che negli anni è stato notato: dal 2014 Ceraldi Caffè è nella guida Bar d'Italia del Gambero Rosso.</p>
 <p>Vieni a trovarci in Piazza Carità: il resto della storia lo scriviamo ogni giorno, al bancone.</p>
 """,
  "galleria": ["famiglia", "logo-ceraldi-caffe-carta"],

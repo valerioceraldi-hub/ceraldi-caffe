@@ -176,6 +176,9 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .specchio{margin:0;padding:10px;border:1px solid var(--ottone-chiaro);border-radius:999px 999px 4px 4px;max-width:440px;justify-self:end;width:100%}
 .specchio img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 2px 2px}
 .specchio img.fuoco-sx{object-position:30% 50%}
+/* Foto di gruppo: si vede intera (orizzontale 3:2), in un arco più largo */
+.specchio.largo{max-width:560px;border-radius:50% 50% 4px 4px / 30% 30% 4px 4px}
+.specchio.largo img{aspect-ratio:3/2;object-position:50% 50%;border-radius:50% 50% 2px 2px / 30% 30% 2px 2px}
 
 /* ── Pagine di lettura (pagine interne, articoli, menu) ── */
 .articolo{padding-block:clamp(48px,6vw,80px) clamp(64px,8vw,104px)}
@@ -319,6 +322,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
   .p-nav-mobile{display:block}
   .hero-griglia{grid-template-columns:minmax(0,1fr)}
   .specchio{justify-self:start;max-width:360px}
+  .specchio.largo{justify-self:center;max-width:100%}
 }
 /* ── Telefono: titolo nella prima schermata, barra fissa che non copre i contenuti ── */
 @media (max-width:760px){
