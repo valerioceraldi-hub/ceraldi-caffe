@@ -127,7 +127,7 @@ def piede(rr, lang='it'):
     return f'''<footer class="piede"><div class="contenitore">
 <div><img src="{rr}img/logo-ceraldi-chiaro.svg" width="180" height="62" alt="Ceraldi Caffè, artigiani per passione dal 1973" loading="lazy">
 <p style="margin-top:14px">{e(BAR['indirizzo'])}, {e(BAR['cap_citta'])}</p><p>{e(BAR['orari'] if it else BAR['orari_en'])}</p>
-<p><a href="tel:{BAR['tel_link']}">{'Tel.' if it else 'Phone'} {BAR['telefono'] if it else '+39 081 552 3488'}</a></p><p><a href="{BAR['whatsapp']}" rel="noopener">WhatsApp {BAR['cellulare'] if it else '+39 328 438 8404'}</a></p></div>
+<p><a href="tel:{BAR['tel_link']}">{'Tel.' if it else 'Phone'} {BAR['telefono'] if it else '+39 081 552 3488'}</a></p><p><a href="{BAR['whatsapp']}" rel="noopener">WhatsApp {BAR['cellulare'] if it else '+39 328 438 8404'}</a></p><p><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
 <div>{col_pagine}</div>
 <div><p><a href="{rr}{L}storia/">{'La nostra storia' if it else 'Our story'}</a></p><p><a href="{rr}storie/"{'' if it else ' hreflang="it"'}>{'Racconti dal caffè' if it else 'Stories (in Italian)'}</a></p><p><a href="{rr}{L}contatti/">{'Orari e contatti' if it else 'Hours and contact'}</a></p></div>
 <div><p><a href="{BAR['google_recensioni']}" rel="noopener">{'Recensioni Google' if it else 'Google reviews'}</a></p><p><a href="{BAR['tripadvisor']}" rel="noopener">Tripadvisor</a></p><p><a href="{BAR['instagram']}" rel="noopener">Instagram</a></p><p><a href="{BAR['facebook']}" rel="noopener">Facebook</a></p></div>
@@ -166,8 +166,8 @@ def ld_bar(lang='it'):
         "image": [BASE + "img/sfogliatella-riccia-1024.webp", BASE + "img/baba-1024.webp", BASE + "img/squadra-1600.webp", BASE + "img/sala-1024.webp"],
         "description": ("Bar e pasticceria napoletana della famiglia Ceraldi, attiva dal 1973 (prima in Piazza Garibaldi, dal 2002 in Piazza Carità, Napoli). Pasticceria di produzione propria con ricette di famiglia tramandate di generazione in generazione: sfogliatelle, babà, pastiera, zeppole. Colazione all'italiana con croissant e brioche, caffè della casa, aperitivo con l'Aspritz fatto in casa."
                         if lang == 'it' else "Neapolitan café and pastry shop run by the Ceraldi family since 1973 (first in Piazza Garibaldi, in Piazza Carità, Naples, since 2002). In-house pastries from family recipes handed down through the generations: sfogliatella, babà, pastiera, zeppole. Italian breakfast with croissants and brioche, house coffees, aperitivo with our homemade Aspritz."),
-        "foundingDate": "1973", "telephone": "+39 081 552 3488", "priceRange": "€",
-        "contactPoint": [{"@type": "ContactPoint", "telephone": "+39 081 552 3488", "contactType": "customer service", "availableLanguage": ["it", "en"]},
+        "foundingDate": "1973", "telephone": "+39 081 552 3488", "email": EMAIL, "priceRange": "€",
+        "contactPoint": [{"@type": "ContactPoint", "telephone": "+39 081 552 3488", "email": EMAIL, "contactType": "customer service", "availableLanguage": ["it", "en"]},
                          {"@type": "ContactPoint", "telephone": "+39 328 438 8404", "contactType": "customer service", "availableLanguage": ["it"]}],
         "address": {"@type": "PostalAddress", "streetAddress": "Piazza Carità, 14", "postalCode": "80134",
                     "addressLocality": "Napoli", "addressRegion": "NA", "addressCountry": "IT"},
@@ -718,6 +718,7 @@ def pagina_contatti():
 <div><dt>Orari</dt><dd>Tutti i giorni<br>dalle 6:30 alle 20:30</dd></div>
 <div><dt>Telefono</dt><dd><a href="tel:{BAR["tel_link"]}">081 552 3488</a></dd></div>
 <div><dt>Cellulare e WhatsApp</dt><dd><a href="tel:{BAR["cell_link"]}">328 438 8404</a><br>scrivici su <a href="{BAR["whatsapp"]}" rel="noopener">WhatsApp</a></dd></div>
+<div><dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd></div>
 </dl>
 <div class="azioni sinistra"><a class="btn scuro" href="{BAR["mappa"]}" rel="noopener">Apri in Google Maps</a><a class="btn scuro-vuoto" href="tel:{BAR["tel_link"]}">Chiama</a><a class="btn scuro-vuoto" href="{BAR["whatsapp"]}" rel="noopener">Scrivi su WhatsApp</a></div>
 <figure>{immagine("sala-ingresso-piazza-carita", "../", "(max-width: 800px) 100vw, 760px")}</figure>
@@ -789,6 +790,7 @@ def pagina_contatti_en():
 <div><dt>Opening hours</dt><dd>Every day<br>6:30 am – 8:30 pm</dd></div>
 <div><dt>Phone</dt><dd><a href="tel:{BAR["tel_link"]}">+39 081 552 3488</a></dd></div>
 <div><dt>Mobile and WhatsApp</dt><dd><a href="tel:{BAR["cell_link"]}">+39 328 438 8404</a><br>message us on <a href="{BAR["whatsapp"]}" rel="noopener">WhatsApp</a></dd></div>
+<div><dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd></div>
 </dl>
 <div class="azioni sinistra"><a class="btn scuro" href="{BAR["mappa"]}" rel="noopener">Open in Google Maps</a><a class="btn scuro-vuoto" href="tel:{BAR["tel_link"]}">Call</a><a class="btn scuro-vuoto" href="{BAR["whatsapp"]}" rel="noopener">Message us on WhatsApp</a></div>
 <figure>{immagine("sala-ingresso-piazza-carita", "../../", "(max-width: 800px) 100vw, 760px")}</figure>
@@ -977,7 +979,7 @@ def llms():
 ## Informazioni essenziali
 - Indirizzo: Piazza Carità 14, 80134 Napoli, Italia (lungo via Toledo, vicino alle stazioni metro Toledo e Dante, Linea 1)
 - Orari: tutti i giorni, domenica compresa, 6:30 – 20:30
-- Telefono: +39 081 552 3488; cellulare e WhatsApp: +39 328 438 8404
+- Telefono: +39 081 552 3488; cellulare e WhatsApp: +39 328 438 8404; email: {EMAIL}
 - Menu completo con prezzi e foto, in 5 lingue: {BASE}menu/
 - Ragione sociale: {RAGIONE_SOCIALE}, P. IVA {PIVA}
 - Recensioni: Google ({BAR["google_recensioni"]}), Tripadvisor ({BAR["tripadvisor"]}); valutazione {BAR['google_voto']}/5 su Google con {BAR['google_n']} recensioni (dato rilevato il {BAR['google_data']})

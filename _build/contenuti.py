@@ -531,7 +531,7 @@ FAQ = [
     ("Si può lasciare un caffè sospeso?", "Sì. Sul bancone c'è una caffettiera di rame con la scritta «Caffè sospeso»: si paga un caffè in più e si mette lo scontrino nella caffettiera. Chi ne ha bisogno prende uno scontrino e riceve un caffè già pagato.",
      'Sì. Sul bancone c\'è una caffettiera di rame con la scritta «Caffè sospeso»: si paga un caffè in più e si mette lo scontrino nella caffettiera. Chi ne ha bisogno prende uno scontrino e riceve un caffè già pagato. <a href="' + BASE + 'storie/caffe-sospeso/">Leggi la storia del caffè sospeso</a>.'),
     ("Servite la colazione inglese?", "Sì, tutte le mattine serviamo la Full English Breakfast: uova, bacon, salsicce, fagioli, funghi, pomodori, pane tostato e tè.", None),
-    ("Come posso contattarvi?", "Al telefono fisso 081 552 3488, al cellulare 328 438 8404 (anche WhatsApp) oppure su Instagram @ceraldicaffe.", None),
+    ("Come posso contattarvi?", "Al telefono fisso 081 552 3488, al cellulare 328 438 8404 (anche WhatsApp), via email a info@ceraldicaffe.it oppure su Instagram @ceraldicaffe.", None),
     ("Dove posso leggere le recensioni?", "Su Google e su Tripadvisor, dove trovi le recensioni dei nostri clienti.",
      'Su <a href="https://www.google.com/maps/search/?api=1&amp;query=Ceraldi%20Caff%C3%A8&amp;query_place_id=ChIJj5ui8loIOxMRCpGd6YqmVy0" rel="noopener">Google</a> e su <a href="https://www.tripadvisor.it/Restaurant_Review-g187785-d2695184-Reviews-Ceraldi_Caffe-Naples_Province_of_Naples_Campania.html" rel="noopener">Tripadvisor</a>, dove trovi le recensioni dei nostri clienti.'),
 ]
@@ -545,7 +545,7 @@ FAQ_EN = [
     ("Do you have outdoor seating?", "Yes, we have outdoor tables on Piazza Carità, as well as the indoor hall and the counter.", None),
     ("Can I leave a suspended coffee (caffè sospeso)?", "Yes. On our counter there is a copper coffee pot marked «Caffè sospeso»: pay for an extra coffee and drop the receipt into the pot. Someone in need takes a receipt and gets a coffee already paid for.", None),
     ("Do you serve an English breakfast?", "Yes, every morning: eggs, bacon, sausages, beans, mushrooms, tomatoes, toast and tea.", None),
-    ("How can I contact you?", "Call +39 081 552 3488, or mobile +39 328 438 8404 (also WhatsApp), or find us on Instagram @ceraldicaffe.", None),
+    ("How can I contact you?", "Call +39 081 552 3488, or mobile +39 328 438 8404 (also WhatsApp), email info@ceraldicaffe.it, or find us on Instagram @ceraldicaffe.", None),
 ]
 
 
