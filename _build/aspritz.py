@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Contenuti del progetto Aspritz: pagina /aspritz/ (IT ed EN), fascia in home, sei articoli e la loro categoria.
-Fatti sull'Aspritz confermati da Ceraldi (brief del 27/10/2026) e dal menu qromo, voce «Aspritz»:
+Fatti sull'Aspritz confermati da Ceraldi (brief del 27/10/2026) e dal menu digitale, voce «Aspritz»:
   «aperitivo di nostra produzione con infusione di agrumi selezionati della costiera amalfitana, erbe e radici,
    miscelato con Asprinio di Aversa DOC spumante e arance disidratate».
 Profilo sensoriale confermato: profumato, agrumato, dolce ma pulito, fresco al palato.

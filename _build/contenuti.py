@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 # Contenuti del sito di Ceraldi Caffè. Modifica qui i testi, poi esegui build.py.
-# Fatti sul bar: da Ceraldi (logo, menu ceraldicaffe.qromo.it, Instagram, scheda Google).
+# Fatti sul bar: da Ceraldi (logo, menu digitale, Instagram, scheda Google).
 # Foto: tutte di Ceraldi Caffè, prese dal menu online del bar.
 
 BASE = "https://www.ceraldicaffe.it/"
 OGGI = "2026-11-05"
-# Data in cui è stato scaricato l'attuale menu_grezzo.json (i file nuovi la contengono in "_scaricato")
-MENU_SCARICATO = "2026-10-18"
 # Firma e data di prima pubblicazione degli articoli (un articolo può avere "pubblicato" e "aggiornato" propri)
 AUTORE = "Famiglia Ceraldi"
 PUBBLICATO = "2026-10-18"
@@ -609,38 +607,27 @@ CATEGORIE.append(CATEGORIA_ASPRITZ)
 CATEGORIA_DI = {s: c for c in CATEGORIE for s in c["articoli"]}
 assert sorted(CATEGORIA_DI) == sorted(a["slug"] for a in ARTICOLI), "ogni articolo deve avere una categoria"
 
-# ── Collegamenti dal menu agli approfondimenti (per id del prodotto su qromo) ──
-MENU_APPROFONDIMENTI = {
- 152789: "storie/zeppole-di-san-giuseppe/",
- 153840: "storie/sfogliatella/", 153867: "storie/sfogliatella/", 153868: "storie/sfogliatella/",
- 153848: "storie/pastiera/",
- 153854: "storie/baba/", 153855: "storie/baba/", 153860: "storie/baba/", 153861: "storie/baba/",
- 219384: "pasticceria/", 472126: "pasticceria/", 616031: "pasticceria/", 638146: "pasticceria/",
- 153960: "aspritz/",
- 278576: "bar/", 296968: "bar/",
-}
-
 # ── Specialità della casa (pagina /specialita/) ───────────────────────
-# Ogni voce è legata al prodotto su qromo tramite il suo id: ingredienti, allergeni e disponibilità
-# arrivano dal menu; se un prodotto non è più disponibile su qromo, sparisce da solo dalla pagina.
+# Ogni voce è legata al prodotto del nostro menu (database) tramite il suo id: nome e disponibilità
+# arrivano da lì; se un prodotto non è più pubblicato, sparisce dalla pagina alla prossima generazione.
 SPECIALITA = [
  {"id": "caffe", "nome": "I caffè della casa", "nome_en": "House coffees", "menu": "s-1", "voci": [
-   (153768, "caffe-ceraldi", "La nostra firma: cioccolata calda sul fondo, crema di caffè e panna montata fresca, in bicchiere.", "Our signature: hot chocolate at the bottom, coffee cream and fresh whipped cream, served in a glass."),
-   (153770, None, "Il caffè incontra il dolce più napoletano: crema di caffè, crema al babà, un babà mignon e panna.", "Coffee meets the most Neapolitan of pastries: coffee cream, babà cream, a mini babà and cream."),
-   (153769, None, "Espresso con crema di zucchero e panna sciolta a bagnomaria.", "Espresso with whipped sugar cream and cream warmed in a bain-marie."),
-   (153771, None, "Espresso con crema di zucchero, pasta di nocciola Piemonte IGP e cacao.", "Espresso with whipped sugar cream, Piedmont PGI hazelnut paste and cocoa."),
-   (153789, None, "Espresso con crema di pistacchio e granella tostata.", "Espresso with pistachio cream and toasted chopped pistachios."),
-   (153773, None, "Espresso con crema di zucchero e crema di latte montata a freddo.", "Espresso with whipped sugar cream and cold-whipped milk cream."),
+   (83, "caffe-ceraldi", "La nostra firma: cioccolata calda sul fondo, crema di caffè e panna montata fresca, in bicchiere.", "Our signature: hot chocolate at the bottom, coffee cream and fresh whipped cream, served in a glass."),
+   (81, None, "Il caffè incontra il dolce più napoletano: crema di caffè, crema al babà, un babà mignon e panna.", "Coffee meets the most Neapolitan of pastries: coffee cream, babà cream, a mini babà and cream."),
+   (82, None, "Espresso con crema di zucchero e panna sciolta a bagnomaria.", "Espresso with whipped sugar cream and cream warmed in a bain-marie."),
+   (80, None, "Espresso con crema di zucchero, pasta di nocciola Piemonte IGP e cacao.", "Espresso with whipped sugar cream, Piedmont PGI hazelnut paste and cocoa."),
+   (70, None, "Espresso con crema di pistacchio e granella tostata.", "Espresso with pistachio cream and toasted chopped pistachios."),
+   (78, None, "Espresso con crema di zucchero e crema di latte montata a freddo.", "Espresso with whipped sugar cream and cold-whipped milk cream."),
  ]},
  {"id": "dolci", "nome": "I dolci della casa", "nome_en": "House pastries", "menu": "s-1", "voci": [
-   (616031, "cestino", "Il riccio della sfogliatella diventa un cesto croccante, farcito con crema chantilly e frutti di bosco.", "The crisp layers of the sfogliatella shaped into a basket, filled with chantilly cream and berries."),
-   (638146, None, "Monoporzione di babà bagnato al limoncello, con un cuore di chantilly al limone, come quella della delizia al limone amalfitana. Ideato nel 2023.", "A single-serve babà soaked in limoncello, with a heart of lemon chantilly, like that of the Amalfi lemon delizia. Created in 2023."),
-   (219384, "babamisu", "Un babà farcito con crema al mascarpone e bagnato con liquore al caffè: il babà incontra il tiramisù. Lo facciamo noi dal 2023.", "A babà filled with mascarpone cream and soaked in coffee liqueur: babà meets tiramisù. Ours since 2023."),
-   (472126, "pellecchiella", "Torta al forno con albicocche Pellecchielle del Vesuvio.", "A baked cake with Pellecchiella apricots from Vesuvius."),
-   (472130, None, "Torta al forno con mela Annurca IGP, crema pasticcera e cannella.", "A baked cake with Annurca PGI apples, custard and cinnamon."),
-   (153840, None, "La sfogliatella riccia con crema pasticcera e amarene, la più vicina alla ricetta del convento.", "The sfogliatella riccia with custard and black cherries, the closest to the original convent recipe."),
+   (86, "cestino", "Il riccio della sfogliatella diventa un cesto croccante, farcito con crema chantilly e frutti di bosco.", "The crisp layers of the sfogliatella shaped into a basket, filled with chantilly cream and berries."),
+   (85, None, "Monoporzione di babà bagnato al limoncello, con un cuore di chantilly al limone, come quella della delizia al limone amalfitana. Ideato nel 2023.", "A single-serve babà soaked in limoncello, with a heart of lemon chantilly, like that of the Amalfi lemon delizia. Created in 2023."),
+   (102, "babamisu", "Un babà farcito con crema al mascarpone e bagnato con liquore al caffè: il babà incontra il tiramisù. Lo facciamo noi dal 2023.", "A babà filled with mascarpone cream and soaked in coffee liqueur: babà meets tiramisù. Ours since 2023."),
+   (90, "pellecchiella", "Torta al forno con albicocche Pellecchielle del Vesuvio.", "A baked cake with Pellecchiella apricots from Vesuvius."),
+   (89, None, "Torta al forno con mela Annurca IGP, crema pasticcera e cannella.", "A baked cake with Annurca PGI apples, custard and cinnamon."),
+   (134, None, "La sfogliatella riccia con crema pasticcera e amarene, la più vicina alla ricetta del convento.", "The sfogliatella riccia with custard and black cherries, the closest to the original convent recipe."),
  ]},
  {"id": "aperitivo", "nome": "L'aperitivo della casa", "nome_en": "House aperitivo", "menu": "s-3", "voci": [
-   (153960, "aspritz", "Il nostro spritz napoletano: bitter fatto in casa con agrumi della Costiera Amalfitana, erbe e radici, e Asprinio di Aversa spumante.", "Our Neapolitan spritz: a homemade bitter with Amalfi Coast citrus, herbs and roots, topped with sparkling Asprinio di Aversa."),
+   (356, "aspritz", "Il nostro spritz napoletano: bitter fatto in casa con agrumi della Costiera Amalfitana, erbe e radici, e Asprinio di Aversa spumante.", "Our Neapolitan spritz: a homemade bitter with Amalfi Coast citrus, herbs and roots, topped with sparkling Asprinio di Aversa."),
  ]},
 ]

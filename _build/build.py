@@ -521,12 +521,6 @@ def archivio_copertine(c, PER, altre):
 <script src="../../assets/rivela.js" defer></script>
 ''' + piede("../../")
 
-# ── Menu completo (da menu_grezzo.json, scaricato da qromo con aggiorna_menu.py) ──
-ALLERGENI = {1: "sedano", 2: "molluschi", 3: "solfiti", 4: "uova", 5: "pesce", 6: "glutine", 7: "lupini", 8: "latte",
-             9: "senape", 10: "arachidi", 11: "sesamo", 12: "crostacei", 13: "soia", 14: "frutta a guscio", 15: "mandorle",
-             16: "orzo", 17: "noci del Brasile", 18: "anacardi", 19: "nocciole", 20: "macadamia", 21: "avena", 22: "noci pecan",
-             23: "pistacchi", 24: "segale", 25: "farro", 26: "noci", 27: "frumento", 28: "kamut"}
-ETICHETTE = {29: "contiene alcol", 32: "vegano", 33: "vegetariano", 35: "senza glutine", 43: "prodotto surgelato", 44: "prodotto abbattuto"}
 import re as _re
 
 def _slug(t):
@@ -540,122 +534,10 @@ def _pulisci(t):
     t = _re.sub(r'\s*\d+/\d+\s*mi[nm]\b|\s*\d+\s*min\b', '', t)
     return _re.sub(r'\s+', ' ', t).strip()
 
-def _prezzo(c):
-    return ('€ ' + f"{c / 100:.2f}".replace('.', ',')) if c else ''
-
-# Nomi delle sezioni del menu come appaiono sul sito (su qromo restano quelli interni).
-# L'ancora (#bar-dolci, ...) resta ricavata dal nome qromo, così i collegamenti esistenti non cambiano.
-NOMI_MENU = {
-    "Bar & Dolci": ("Bar e dolci", "Coffee bar and pastries"),
-    "Food": ("Rosticceria e pranzo", "Street food and lunch"),
-    "Cocktails, Birre & Alcolici": ("Cocktail, birre e alcolici", "Cocktails, beers and spirits"),
-    "Tè & Tisane Damman": ("Tè e tisane Dammann", "Dammann teas and infusions"),
-    "Oriental latte": ("Matcha, chai e golden milk", "Matcha, chai and golden milk"),
-    "Senza Glutine": ("Senza glutine", "Gluten-free"),
-    "Gelati": ("Gelati", "Ice cream"),
-}
-
-def dati_menu():
-    d = json.load(open(os.path.join(QUI, 'menu_grezzo.json'), encoding='utf-8'))
-    all_by = {}
-    for a in d['menusItemsAllergens']:
-        all_by.setdefault(a['menu_item_id'], []).append(a['allergen_id'])
-    menus = [m for m in sorted(d['menus'], key=lambda m: m['order_number'] or 0)
-             if m['available'] and not m['name'].upper().startswith('BANCO') and m['name'].strip() != 'Comunicazioni']
-    out = []
-    for m in menus:
-        cats = []
-        cc = [c for c in d['menusCategories'] if c['menu_id'] == m['menu_id'] and c['active'] in (1, None)]
-        for c in sorted(cc, key=lambda c: c['order_number'] or 0):
-            ii = [i for i in d['menusItems'] if i['category_id'] == c['menu_category_id'] and i['available']]
-            voci = []
-            for i in sorted(ii, key=lambda i: i['order_number'] or 0):
-                ids = all_by.get(i['menu_item_id'], [])
-                voci.append({"id": i['menu_item_id'], "nome": _pulisci(i['name']), "desc": _re.sub(r'\s+', ' ', (i['ingredients'] or '')).strip(),
-                             "prezzo": i['price'] or 0,
-                             "allergeni": [ALLERGENI[x] for x in ids if x in ALLERGENI],
-                             "etichette": [ETICHETTE[x] for x in ids if x in ETICHETTE]})
-            if voci:
-                cats.append({"nome": _pulisci(c['name']), "voci": voci})
-        if cats:
-            n = _pulisci(m['name'])
-            it_, en_ = NOMI_MENU.get(n, (n, n))
-            out.append({"nome": it_, "nome_en": en_, "id": _slug(n), "categorie": cats})
-    return out
-
 def ld_breadcrumb(voci):
     lst = [{"@type": "ListItem", "position": 1, "name": "Ceraldi Caffè", "item": BASE}]
     lst += [{"@type": "ListItem", "position": i + 2, "name": n, "item": u} for i, (n, u) in enumerate(voci)]
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": lst}
-
-def _voce_ld(v):
-    x = {"@type": "MenuItem", "name": v['nome']}
-    if v['desc']:
-        x["description"] = v['desc']
-    if v['prezzo']:
-        x["offers"] = {"@type": "Offer", "price": f"{v['prezzo'] / 100:.2f}", "priceCurrency": "EUR"}
-    return x
-
-def _voce_html(v, rr="../", it=True):
-    extra = []
-    if v['allergeni']:
-        extra.append(('Allergeni: ' if it else 'Allergens: ') + ', '.join(v['allergeni']))
-    if v['etichette']:
-        extra.append(', '.join(v['etichette']).capitalize())
-    ex = '<small>' + e('. '.join(extra)) + '</small>' if extra else ''
-    de = '<span>' + e(v['desc']) + '</span>' if v['desc'] else ''
-    ap = MENU_APPROFONDIMENTI.get(v.get('id'))
-    if ap and not it:
-        ap = ap if ap.startswith("storie/") else "en/" + ap
-    lk = (f'<a class="approfondisci" href="{rr}{ap}"' + ('' if it or not ap.startswith("storie/") else ' hreflang="it" lang="en"') + '>'
-          + ("La sua storia" if it and ap.startswith("storie/") else "Scopri di più" if it else "Its story (in Italian)" if ap.startswith("storie/") else next(x["nav"] for x in PAGINE_EN if "en/" + x["slug"] + "/" == ap))
-          + '</a>') if ap else ''
-    return '<li><div class="voce-testa"><b>' + e(v['nome']) + '</b><i>' + _prezzo(v['prezzo']) + '</i></div>' + de + ex + lk + '</li>'
-
-def pagina_menu(lang='it'):
-    it = lang == 'it'
-    rr = "../" if it else "../../"
-    url = BASE + ("" if it else "en/") + "menu/"
-    M = dati_menu()
-    n_voci = sum(len(c['voci']) for m in M for c in m['categorie'])
-    ld = {"@context": "https://schema.org", "@type": "Menu", "name": "Menu di Ceraldi Caffè" if it else "Ceraldi Caffè menu", "url": url, "inLanguage": "it-IT",
-          "hasMenuSection": [{"@type": "MenuSection", "name": m['nome'],
-                              "hasMenuSection": [{"@type": "MenuSection", "name": c['nome'], "hasMenuItem": [_voce_ld(v) for v in c['voci']]}
-                                                 for c in m['categorie']]} for m in M]}
-    if it:
-        h = testa("it", "Menu e prezzi | Ceraldi Caffè, Napoli",
-                  f"Il menu completo di Ceraldi Caffè, Napoli: {n_voci} proposte, dal caffè ai dolci, dalla rosticceria ai cocktail, con prezzi e allergeni.",
-                  url, rr, ld=[ld, ld_breadcrumb([("Menu", url)])], alternates=alt_coppia("menu/"))
-    else:
-        h = testa("en", "Menu and prices | Ceraldi Caffè, Naples",
-                  f"The full menu of Ceraldi Caffè, Naples: {n_voci} items, from coffee and pastries to street food and cocktails, with prices and allergens.",
-                  url, rr, ld=[ld, ld_breadcrumb([("Menu", url)])], alternates=alt_coppia("menu/"))
-    chips = ''.join('<a href="#' + m['id'] + '">' + e(m['nome'] if it else m['nome_en']) + '</a>' for m in M)
-    sezioni = ''
-    for m in M:
-        sezioni += '<section class="menu-sezione" id="' + m['id'] + '"><h2>' + e(m['nome'] if it else m['nome_en']) + '</h2>'
-        for c in m['categorie']:
-            sezioni += '<h3>' + e(c['nome']) + '</h3><ul class="menu-voci"' + ('' if it else ' lang="it"') + '>' + ''.join(_voce_html(v, rr, it) for v in c['voci']) + '</ul>'
-        sezioni += '</section>'
-    scaricato = json.load(open(os.path.join(QUI, 'menu_grezzo.json'), encoding='utf-8')).get('_scaricato', MENU_SCARICATO)
-    data = scaricato[8:10] + '/' + scaricato[5:7] + '/' + scaricato[:4]
-    if it:
-        testo = f"""<h1>Il menu</h1>
-<p class="dek">Caffetteria, colazione, pasticceria di produzione propria, rosticceria napoletana, freselle, spritz e cocktail. Prezzi aggiornati al {data}.</p>
-<nav class="chips" aria-label="Sezioni del menu">{chips}</nav>
-<p class="avviso">Le informazioni sugli allergeni vengono dal nostro menu digitale. In caso di allergie o intolleranze chiedi sempre al personale prima di ordinare. Puoi anche consultare il <a href="{BAR['menu']}" rel="noopener">menu interattivo</a>, con filtro allergeni e versione inglese.</p>"""
-    else:
-        testo = f"""<h1>Our menu</h1>
-<p class="dek">Coffee, breakfast, pastries made in-house, Neapolitan street food, freselle, spritz and cocktails. Prices updated on {data}.</p>
-<nav class="chips" aria-label="Menu sections" lang="it">{chips}</nav>
-<p class="avviso">Dish names and descriptions are in Italian, as on our counter: your browser can translate them, and our staff will be happy to help. Allergen information comes from our digital menu; if you have allergies or intolerances, always ask the staff before ordering. You can also use our <a href="{BAR['menu']}" rel="noopener">interactive menu</a>, with an allergen filter and an English version.</p>"""
-    return h + f"""<header class="testata-scura">{barra(rr, lang, "menu/")}</header>
-<main id="contenuto" class="articolo pagina-menu"><div class="contenitore">
-<p class="briciole"><a href="{rr}{'' if it else 'en/'}">Ceraldi Caffè</a></p>
-{testo}
-{sezioni}
-</div></main>
-""" + piede(rr, lang)
 
 CTA_LINK = {"mappa": (BAR["mappa"], True), "menu_interno": ("../menu/", False), "menu_bar": ("../menu/#s-1", False),
             "menu_dolci": ("../menu/#s-1", False), "menu_food": ("../menu/#s-2", False),
@@ -1032,22 +914,18 @@ def pagina_specialita(lang='it'):
     it = lang == 'it'
     rr = "../" if it else "../../"
     url = BASE + ("" if it else "en/") + "specialita/"
-    d = json.load(open(os.path.join(QUI, 'menu_grezzo.json'), encoding='utf-8'))
-    PROD = {i['menu_item_id']: i for i in d['menusItems'] if i['available']}
-    ALL = {}
-    for a in d['menusItemsAllergens']:
-        ALL.setdefault(a['menu_item_id'], []).append(a['allergen_id'])
+    d = json.load(open(os.path.join(QUI, 'menu_db.json'), encoding='utf-8'))  # voci pubblicate nel database (aggiorna_menu.py)
+    PROD = {v['id']: v for v in d['voci']}
     sezioni = ''; voci_ld = []
     for g in SPECIALITA:
         schede = ''
         for pid, foto, d_it, d_en in g["voci"]:
             if pid not in PROD:
                 continue  # non più nel menu: non si mostra
-            nome = _pulisci(PROD[pid]['name']).replace('Babámisú', 'Babàmisù').replace('Sfogliata Santa Rosa', 'Santa Rosa')
+            nome = _pulisci(PROD[pid]['nome']).replace('Sfogliata Santa Rosa', 'Santa Rosa')
             ancora = _slug(nome)
-            al = [ALLERGENI[x] for x in ALL.get(pid, []) if x in ALLERGENI]
             fig = f'<figure>{immagine(foto, rr, "(max-width: 640px) 100vw, 360px")}</figure>' if foto else ''
-            al_txt = (('Allergeni: ' if it else 'Allergens (in Italian): ') + ', '.join(al) + '.') if al else ('Allergeni: chiedi al personale.' if it else 'Allergens: please ask our staff.')
+            al_txt = 'Allergeni: chiedi al personale.' if it else 'Allergens: please ask our staff.'  # gli allergeni si mostrano online solo dopo la verifica prodotto per prodotto
             schede += (f'<article class="spec" id="{ancora}">{fig}<div><h3>{e(nome)}</h3><p>{e(d_it if it else d_en)}</p>'
                        f'<p class="spec-al">{e(al_txt)}</p><a class="approfondisci" href="{rr}{"" if it else "en/"}menu/#{g["menu"]}">{"Nel menu, con il prezzo" if it else "On the menu, with price"}</a></div></article>')
             voci_ld.append({"@type": "MenuItem", "name": nome, "description": d_it if it else d_en, "url": url + "#" + ancora,
