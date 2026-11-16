@@ -7,6 +7,7 @@ from contenuti import *
 from pagine import *
 from pagine_en import *
 from aspritz import PAGINA_ASPRITZ, HOME_ASPRITZ
+from storie_en import ARTICOLI_EN
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 SITO = os.path.dirname(QUI)
@@ -87,6 +88,8 @@ VOCI_NAV = [("bar/", "Il bar"), ("pasticceria/", "Pasticceria"), ("menu/", "Menu
 # Pagine che esistono in entrambe le lingue: percorso italiano -> percorso inglese
 EN_PATH = {"": "en/", "storia/": "en/storia/", "bar/": "en/bar/", "pasticceria/": "en/pasticceria/", "rosticceria/": "en/rosticceria/",
            "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "babamisu/": "en/babamisu/", "caffe-sfogliata/": "en/caffe-sfogliata/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/", "termini/": "en/termini/"}
+# Racconti con versione inglese: percorso italiano -> percorso inglese
+EN_PATH.update({"storie/caffe-sospeso/": "en/stories/caffe-sospeso/", "storie/sfogliatella/": "en/stories/sfogliatella/", "storie/baba/": "en/stories/baba/"})
 VOCI_NAV_EN = [("en/bar/", "Coffee & breakfast"), ("en/pasticceria/", "Pastries"), ("en/menu/", "Menu"), ("en/storia/", "Our story"), ("en/contatti/", "Contact")]
 
 def alt_coppia(it_path):
@@ -197,11 +200,11 @@ HOME_FIRME = [  # foto, nome, descrizione IT, descrizione EN, link IT, link EN, 
     ("sfogliatella-riccia", "Sfogliatella riccia", "Sfogliatella riccia",
      "Ricotta, semola, canditi e cannella dentro mille sfoglie croccanti. Riccia, frolla o Santa Rosa.",
      "Ricotta, semolina, candied peel and cinnamon inside a thousand crisp layers. Riccia, frolla or Santa Rosa.",
-     "storie/sfogliatella/", "storie/sfogliatella/", "La sua storia", "Its story (in Italian)"),
+     "storie/sfogliatella/", "en/stories/sfogliatella/", "La sua storia", "Its story"),
     ("baba-al-rum-classico", "Babà al rum", "Rum babà",
      "Soffice e bagnato al punto giusto: classico, con crema e amarena oppure con panna e fragole.",
      "Soft and soaked just right: classic, with custard and black cherry, or with cream and strawberries.",
-     "storie/baba/", "storie/baba/", "La sua storia", "Its story (in Italian)"),
+     "storie/baba/", "en/stories/baba/", "La sua storia", "Its story"),
     ("caffe-ceraldi", "Caffè Ceraldi", "Caffè Ceraldi",
      "La nostra firma al bancone: cioccolata calda sul fondo, crema di caffè e panna montata fresca.",
      "Our signature at the counter: hot chocolate at the bottom, coffee cream and fresh whipped cream.",
@@ -311,10 +314,10 @@ def home(lang='it'):
     tappe = ''.join(f'<li><span class="p-anno">{a}</span><b>{e(l)}</b><p>{e(t)}</p></li>' for a, l, t in T["tappe"])
     PER = {a["slug"]: a for a in ARTICOLI}
     storie = ''.join(
-        f'<article class="p-storia-card"><a href="{rr}storie/{s}/"{"" if it else " hreflang=" + chr(34) + "it" + chr(34)}>'
+        f'<article class="p-storia-card"><a href="{rr}{"en/stories/" + s + "/" if (not it and s in ARTICOLI_EN) else "storie/" + s + "/"}"{"" if (it or s in ARTICOLI_EN) else " hreflang=" + chr(34) + "it" + chr(34)}>'
         f'<figure>{immagine(f, rr, "(max-width: 760px) 92vw, 360px")}</figure>'
-        f'<p class="p-ora">{e(CATEGORIA_DI[s]["nome"])}</p><h3{"" if it else " lang=" + chr(34) + "it" + chr(34)}>{e(PER[s]["titolo"])}</h3>'
-        f'<p{"" if it else " lang=" + chr(34) + "it" + chr(34)}>{e(PER[s]["dek"])}</p></a></article>' for s, f in HOME_STORIE)
+        f'<p class="p-ora">{e(CATEGORIA_DI[s]["nome"])}</p><h3{"" if (it or s in ARTICOLI_EN) else " lang=" + chr(34) + "it" + chr(34)}>{e(ARTICOLI_EN[s]["titolo"] if (not it and s in ARTICOLI_EN) else PER[s]["titolo"])}</h3>'
+        f'<p{"" if (it or s in ARTICOLI_EN) else " lang=" + chr(34) + "it" + chr(34)}>{e(ARTICOLI_EN[s]["dek"] if (not it and s in ARTICOLI_EN) else PER[s]["dek"])}</p></a></article>' for s, f in HOME_STORIE)
     scheda_val = {1: f'{e(BAR["indirizzo"])}<br>{e(BAR["cap_citta"]) if it else "80134 Naples, Italy"}',
                   2: f'<a href="tel:{BAR["tel_link"]}">{tel}</a>',
                   3: f'<a href="tel:{BAR["cell_link"]}">{cell}</a> · <a href="{BAR["whatsapp"]}" rel="noopener">WhatsApp</a>'}
@@ -431,14 +434,16 @@ def articolo(a):
     # faq facoltative: domande e risposte in fondo all'articolo, anche come dati strutturati FAQPage
     if a.get("faq"):
         ld.append(ld_faq(a["faq"]))
-    h = testa("it", a["titolo_seo"] + " | Ceraldi Caffè", a["descrizione"], url, "../../", og_img=og, ld=ld, tipo="article")
+    it_path = f"storie/{a['slug']}/"
+    h = testa("it", a["titolo_seo"] + " | Ceraldi Caffè", a["descrizione"], url, "../../", og_img=og, ld=ld, tipo="article",
+              alternates=alt_coppia(it_path) if it_path in EN_PATH else None)
     didascalia = f'<figcaption>{e(a["didascalia"])}</figcaption>' if a.get("didascalia") else ''
     fig = f'<figure class="{"verticale" if FOTO[k]["r"][1] > FOTO[k]["r"][0] else ""}">{immagine(k, "../../", "(max-width: 800px) 100vw, 760px", eager=True)}{didascalia}</figure>' if k else ''
     faq = f'<section class="faq-articolo"><h2>Domande frequenti</h2><div class="domande">{faq_html(a["faq"])}</div></section>' if a.get("faq") else ''
     prova = ''.join(f'<li><b>{e(n)}</b><br><span>{e(d)}</span></li>' for n, d in a["provare"])
     fonti = ''.join(f'<li><a href="{e(u)}" rel="noopener">{e(t)}</a></li>' for t, u in a["fonti"])
     altre = ''.join(f'<li><a href="../{b["slug"]}/"><b>{e(b["titolo"])}</b><span>{e(b["dek"])}</span><small>{b["lettura"]} min</small></a></li>' for b in sorted(ARTICOLI, key=lambda b: CATEGORIA_DI[b["slug"]] is not CATEGORIA_DI[a["slug"]]) if b is not a)
-    return h + f'''<header class="testata-scura">{barra("../../", "it", "storie/")}</header>
+    return h + f'''<header class="testata-scura">{barra("../../", "it", it_path if it_path in EN_PATH else "storie/")}</header>
 <main id="contenuto" class="articolo"><div class="contenitore">
 <p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../">Racconti</a> / <a href="../{CATEGORIA_DI[a["slug"]]["slug"]}/">{e(CATEGORIA_DI[a["slug"]]["nome"])}</a></p>
 <article>
@@ -455,6 +460,58 @@ def articolo(a):
 <section class="altre"><h2>Altri racconti</h2><ul class="storie">{altre}</ul></section>
 </div></main>
 ''' + piede("../../")
+
+def articolo_en(slug, t):
+    """Versione inglese di un racconto: stessa struttura dell'italiano, testi da storie_en.py, fonti condivise."""
+    a = next(x for x in ARTICOLI if x["slug"] == slug)
+    url = BASE + f"en/stories/{slug}/"
+    it_path = f"storie/{slug}/"
+    k = a["foto"]
+    img = BASE + f"img/{k}-{FOTO[k]['w'][0]}.webp"
+    madre = t["pagina_madre"]
+    nome_madre = "Coffee & breakfast" if madre == "bar" else "Pastries"
+    og = a.get("og") or f"img/{k}-{FOTO[k]['w'][0]}.webp"
+    ld = [{"@context": "https://schema.org", "@type": "Article", "headline": t["titolo"], "description": t["descrizione"],
+           "image": [img] + ([BASE + a["og"]] if a.get("og") else []), "datePublished": a.get("pubblicato", PUBBLICATO),
+           "dateModified": a.get("aggiornato", a.get("pubblicato", PUBBLICATO)), "inLanguage": "en", "mainEntityOfPage": url,
+           "isPartOf": {"@id": BASE + "#sito"}, "translationOfWork": {"@type": "Article", "url": BASE + it_path},
+           "citation": [f[1] for f in a["fonti"]],
+           "author": {"@type": "Organization", "name": "Ceraldi family", "url": BASE + "en/storia/"},
+           "publisher": {"@type": "Organization", "name": "Ceraldi Caffè", "logo": {"@type": "ImageObject", "url": BASE + "img/apple-touch-icon.png"}}},
+          {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Ceraldi Caffè", "item": BASE + "en/"},
+              {"@type": "ListItem", "position": 2, "name": nome_madre, "item": BASE + f"en/{madre}/"},
+              {"@type": "ListItem", "position": 3, "name": t["titolo"], "item": url}]}]
+    if t.get("faq"):
+        ld.append(ld_faq(t["faq"]))
+    h = testa("en", t["titolo_seo"] + " | Ceraldi Caffè", t["descrizione"], url, "../../../", og_img=og, ld=ld, tipo="article",
+              alternates=alt_coppia(it_path))
+    fig_c = f'<figcaption>{e(t["didascalia"])}</figcaption>' if t.get("didascalia") else ''
+    fig = f'<figure class="{"verticale" if FOTO[k]["r"][1] > FOTO[k]["r"][0] else ""}">{immagine(k, "../../../", "(max-width: 800px) 100vw, 760px", eager=True, alt=t["foto_alt"])}{fig_c}</figure>'
+    faq = f'<section class="faq-articolo"><h2>Frequently asked questions</h2><div class="domande">{faq_html(t["faq"])}</div></section>' if t.get("faq") else ''
+    prova = ''.join(f'<li><b>{e(n)}</b><br><span>{e(d)}</span></li>' for n, d in t["provare"])
+    fonti = ''.join(f'<li><a href="{e(u)}" rel="noopener" hreflang="it">{e(n)}</a></li>' for n, u in a["fonti"])
+    pub = a.get("pubblicato", PUBBLICATO); agg = a.get("aggiornato")
+    meta = f'By the <a href="../../storia/">Ceraldi family</a>. Published <time datetime="{pub}">{pub}</time>'
+    if agg and agg != pub:
+        meta += f', updated <time datetime="{agg}">{agg}</time>'
+    meta += f'. {a["lettura"]} min read. <a href="../../{madre}/">{nome_madre}</a>'
+    return h + f'''<header class="testata-scura">{barra("../../../", "en", it_path)}</header>
+<main id="contenuto" class="articolo"><div class="contenitore">
+<p class="briciole"><a href="../../">Ceraldi Caffè</a> / <a href="../../{madre}/">{nome_madre}</a></p>
+<article>
+<h1>{e(t["titolo"])}</h1>
+<p class="dek">{e(t["dek"])}</p>
+<p class="meta">{meta}</p>
+{fig}
+<div class="corpo">{t["corpo"]}</div>
+{faq}
+<aside class="cartellino"><h2>Try at Ceraldi</h2><p>Piazza Carità 14, Naples. Every day from 6:30 am to 8:30 pm. Pastries made in-house.</p><ul>{prova}</ul>
+<div class="azioni sinistra"><a class="btn" href="../../../menu/en/">See the menu</a><a class="btn" href="{BAR["mappa"]}" rel="noopener">Get directions</a></div></aside>
+<aside class="fonti"><h2>Sources (in Italian)</h2><ul>{fonti}</ul></aside>
+</article>
+</div></main>
+''' + piede("../../../", "en")
 
 def indice_storie():
     url = BASE + "storie/"
@@ -548,8 +605,11 @@ CORRELATI = {
     "bar": [("specialita/", "Specialità della casa", "Caffè Ceraldi, Caffè Babà, Michelino e i dolci nati da noi", "House specialities", "Caffè Ceraldi, Caffè Babà and our own pastries"),
             ("rosticceria/", "Rosticceria e pranzo veloce", "Frittatine, crocchè, pizza fritta, saltimbocca e freselle", "Street food and quick lunch", "Frittatine, croquettes, fried pizza and freselle"),
             ("aspritz/", "Aspritz e aperitivi", "Il nostro spritz fatto in casa", "Aspritz and aperitivo", "Our homemade spritz"),
-            ("caffe-sfogliata/", "Caffè Sfogliata", "Il caffè caldo con schiuma fredda alla cannella", "Caffè Sfogliata", "Hot coffee with cold cinnamon foam")],
+            ("caffe-sfogliata/", "Caffè Sfogliata", "Il caffè caldo con schiuma fredda alla cannella", "Caffè Sfogliata", "Hot coffee with cold cinnamon foam"),
+            ("storie/caffe-sospeso/", "Il caffè sospeso", "Cos'è e come si lascia da noi, nella caffettiera di rame", "The caffè sospeso", "What it is and how to leave one at our counter, in the copper coffee pot")],
     "pasticceria": [("specialita/", "Specialità della casa", "Cestino, Segreto amalfitano, Babàmisù, Pellecchiella", "House specialities", "Cestino, Segreto amalfitano, Babàmisù, Pellecchiella"),
+                    ("storie/sfogliatella/", "La storia della sfogliatella", "Riccia, frolla e Santa Rosa: da dove vengono", "The story of the sfogliatella", "Riccia, frolla and Santa Rosa: where they come from"),
+                    ("storie/baba/", "La storia del babà", "Dal re Stanislao a Napoli", "The story of the babà", "From King Stanislas to Naples"),
                     ("storie/pasticceria-napoletana/", "Storie della pasticceria napoletana", "Sfogliatella, babà, pastiera, zeppole e i dolci dei conventi", "Neapolitan pastry stories", "In Italian: sfogliatella, babà, pastiera, zeppole"),
                     ("bar/", "Il bar e la colazione", "Il caffè al bancone e la colazione napoletana", "Coffee and breakfast", "Espresso at the counter and Neapolitan breakfast"),
                     ("babamisu/", "Babàmisù", "Il babà al mascarpone, nostro dal 2023", "Babàmisù", "The mascarpone babà, ours since 2023")],
@@ -570,8 +630,9 @@ def correlati(slug, rr, it=True):
         return ''
     li = ''
     for path, t_it, d_it, t_en, d_en in voci:
-        solo_it = path.startswith("storie/")
-        href = rr + (path if it or solo_it else "en/" + path)
+        tradotta = (path in EN_PATH) and path.startswith("storie/")
+        solo_it = path.startswith("storie/") and not tradotta
+        href = rr + (path if it or solo_it else EN_PATH.get(path, "en/" + path))
         li += f'<li><a href="{href}"{"" if it or not solo_it else " hreflang=" + chr(34) + "it" + chr(34)}><b>{e(t_it if it else t_en)}</b><span>{e(d_it if it else d_en)}</span></a></li>'
     return f'<nav class="correlati" aria-label="{"Da vedere anche" if it else "See also"}"><h2>{"Da vedere anche" if it else "See also"}</h2><ul>{li}</ul></nav>'
 
@@ -972,6 +1033,7 @@ def sitemap():
 
 def llms():
     righe = '\n'.join(f'- [{a["titolo"]}]({BASE}storie/{a["slug"]}/): {a["descrizione"]}' for a in ARTICOLI)
+    righe_en = '\n'.join(f'- [{t["titolo"]}]({BASE}en/stories/{k}/): {t["descrizione"]}' for k, t in ARTICOLI_EN.items())
     return f'''# Ceraldi Caffè
 
 > Bar e pasticceria napoletana in Piazza Carità 14, Napoli (80134). Attività della famiglia Ceraldi, fondata da Michele Ceraldi nel 1973 in Piazza Garibaldi, in Piazza Carità dal 2002. Motto: "Artigiani per passione dal 1973". Pasticceria di produzione propria con ricette di famiglia tramandate di generazione in generazione.
@@ -1010,6 +1072,9 @@ def llms():
 - [English]({BASE}en/)
 - [Storie dal caffè]({BASE}storie/)
 {righe}
+
+## English versions of selected stories
+{righe_en}
 '''
 
 # ── Pagina non trovata ────────────────────────────────────────────────
@@ -1088,6 +1153,8 @@ if __name__ == "__main__":
         scrivi(f"storie/{a['slug']}/index.html", articolo(a))
     for c in CATEGORIE:
         scrivi(f"storie/{c['slug']}/index.html", pagina_categoria(c))
+    for slug, t in ARTICOLI_EN.items():
+        scrivi(f"en/stories/{slug}/index.html", articolo_en(slug, t))
     for p in PAGINE:
         scrivi(f"{p['slug']}/index.html", pagina_aspritz(p) if p["slug"] == "aspritz" else pagina(p))
     for p in PAGINE_EN:

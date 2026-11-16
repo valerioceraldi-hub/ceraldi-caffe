@@ -172,8 +172,8 @@
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/bar/": [
-  "45e9f3699752ad17187cc2e011e38445fb34440ce49a6a954ccced15ba3de114",
-  "2026-11-12"
+  "b6f0d2c0e42e8b8e26af399523ad9b513c4561c9c140efd446558c610d8b576d",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/caffe-sfogliata/": [
   "f91517f2e6f6010be4fcb28b0895a66ab4e189e507e827b63cce80552dd0ae33",
@@ -184,8 +184,8 @@
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/en/": [
-  "3dc651fa77a2ef8524478f984a76117eb4de7fad5a4690b6670d8acdc4b77ea9",
-  "2026-11-12"
+  "6a2225ba9689d644e600020dfce85135fee65b0b0ab9823acb4c727b69447b74",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/en/aspritz/": [
   "d5f790b945ad65a6276a8c9ed1863089d8a66f39df972d45044b18ab9ec8001b",
@@ -196,8 +196,8 @@
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/en/bar/": [
-  "8360cbc98c24155a1c8c1bb8e0cca9dbcc41e7bdf35367f040f24402827e1c05",
-  "2026-11-12"
+  "51e5295caf0be5be88a8180c51d6435cb08a2c74f6576ec890cbe55e55424278",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/en/caffe-sfogliata/": [
   "0ff653e366823a50024016ae83bc039bae9970bba46d198724696cf1001bf779",
@@ -212,8 +212,8 @@
   "2026-11-05"
  ],
  "https://www.ceraldicaffe.it/en/pasticceria/": [
-  "c94738327a66363d89d2475ed720567d35a0d015b0d4b148a523e7019786ba77",
-  "2026-11-12"
+  "01c930cbd4eb927f994e6048bb815600dabf506e958baee6e96b49ec42bd2532",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/en/privacy/": [
   "bc4f350fc174f6df065d5ce50d058586a9eae25248bc2ad94752cd54978181e0",
@@ -231,33 +231,45 @@
   "eb5e4bc8cc694d608a7b02ee2061cb362e09b607ac32528f39fc7417aff0d63b",
   "2026-11-12"
  ],
+ "https://www.ceraldicaffe.it/en/stories/baba/": [
+  "bdd0dc8831f28f4286f39cd30e816cc8428985f3d6ece495cd772c1d4484f1f5",
+  "2026-11-16"
+ ],
+ "https://www.ceraldicaffe.it/en/stories/caffe-sospeso/": [
+  "62ac55172dc2d5d531fd8ca00b30267394037e02134e8614d53540ba9f15263d",
+  "2026-11-16"
+ ],
+ "https://www.ceraldicaffe.it/en/stories/sfogliatella/": [
+  "243ef9096f0b06ffdeddabc568d03c1a6d01f4b3a7abe5ba0e3cc30569b892c0",
+  "2026-11-16"
+ ],
  "https://www.ceraldicaffe.it/en/termini/": [
   "336b869238ede6b80b32c718349881a05e3026ce5b6c7b95fc727090c88d45ac",
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/menu/": [
-  "ccc3cc13c17322b71d537d0f1e025abd6c44f97bca16a725f25266c13a77e1f2",
-  "2026-11-12"
+  "5daff8f3af694a4310ff72ca942847ba66258c82b37324660cff5cf4f6f78702",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/menu/de/": [
-  "4b57e53846977f7d239d06f76980cf7bb9aebed37fb87e30c2591b79e94d9c8e",
-  "2026-11-12"
+  "9b4665941601c36fa410a9cc3b669be43e210fb52be404cca96153eb8e280995",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/menu/en/": [
-  "ffc7db1bab9721a54d98bf4fc4752bf57f4444d725a0dba77ab5122dd81d43fb",
-  "2026-11-12"
+  "ffad574d4ec83d98be6385bc0c361ca847dd37e2357320c67f3b4e083283b55f",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/menu/es/": [
-  "1271dc5085b81d011d892b7056e0bc22cbd8070b21d1f85fd8be8ad09d4c394b",
-  "2026-11-12"
+  "7c02f2098babd7337d3b6466ee382c1e1369c239e8a3b8f6057c7a1e28265d35",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/menu/fr/": [
-  "f9fb004150f314cafdb0e2c0b6cfbc1996ca4ec4ddf3aab5329b33e22ecfcbf2",
-  "2026-11-12"
+  "4d0fa66d1327a5747ffa6edb77c3561cd6ab6dceee16632840c7defc8029d982",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/pasticceria/": [
-  "075cf8d8293ec343d592c7e74a71b74912db79321fae54202e3637dd1d9b2056",
-  "2026-11-12"
+  "77e6b1ea983fa2d2a39c2913ce4b1c3bade1032d2b568ea5cfc23cf43cce35c3",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/privacy/": [
   "71b6bb29ec11ce4cb3d1b4c879db2b559f8f59600143be98a40b1636c4bf2b64",
@@ -308,8 +320,8 @@
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/storie/baba/": [
-  "148b67bb6303e9869cab44d5ebbbfd3c35b6a5c01859a74df2ef4fda8d74798a",
-  "2026-11-12"
+  "c4fc439c2bbfae74b9553a207663e2299c6eb3bf39679dbcf9aaff71d0b62b3c",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/storie/caffe-e-colazione/": [
   "08908635f194f04106bd3d51abcd3e972c0d0bb66ca437520123080c160e3366",
@@ -320,8 +332,8 @@
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/storie/caffe-sospeso/": [
-  "d85d3baf32f37bbbabf30f79bd6d929ccc9c6d50953b09e6caeb8b2b1e3ef276",
-  "2026-11-12"
+  "bdfbadac25486b64304ce73df4adfbdab1afc94a77bbd4e0befd955b962042ef",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/storie/colazione-napoletana/": [
   "faddd2768918a4bcb6775f41465ac023f78bdfa1aafb43e09e8834e00183a497",
@@ -360,8 +372,8 @@
   "2026-11-12"
  ],
  "https://www.ceraldicaffe.it/storie/sfogliatella/": [
-  "d0a28722249afd152bd98e978a0320748060ea05d4c0ceefbd764848ee580e86",
-  "2026-11-12"
+  "2a34a892c1757e2ba92fc41f937c0f47b271675df0760b7f6701c69a7f8cfebc",
+  "2026-11-16"
  ],
  "https://www.ceraldicaffe.it/storie/tradizioni-napoletane/": [
   "e288bbabb91f493f9834159ef8299946b95b55ffd65d0ccaf5aa4e0cc50934bd",
