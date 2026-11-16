@@ -67,8 +67,8 @@ ARTICOLI_EN = {
 <h2>The Santa Rosa convent</h2>
 <p>The most often told story leads to Conca dei Marini, on the Amalfi Coast, in the monastery of Santa Rosa. There, in the seventeenth century, a nun is said to have used leftovers from the kitchen (semolina cooked in milk, ricotta and dried fruit) to create a new pastry, enclosed in a hood-shaped layer of dough. The <strong>Santa Rosa</strong>, the sfogliatella with custard and sour cherries, takes its name from that convent.</p>
 
-<h2>Pintauro and Via Toledo</h2>
-<p>It was around 1818 that Pasquale Pintauro, who had a shop on Via Toledo, a few steps from Piazza Carità, brought the sfogliatella into the city. Pintauro simplified it: he left out the custard and the sour cherries and kept the ricotta filling we know today. From there the sfogliatella became one of the symbols of the Neapolitan breakfast.</p>
+<h2>From Conca dei Marini to Via Toledo</h2>
+<p>Around 1818 the sfogliatella left the convent and arrived in Naples, along Via Toledo, a few steps from Piazza Carità. In the city the recipe was simplified: the custard and the sour cherries were left out, and the ricotta filling we know today remained. From there the sfogliatella became one of the symbols of the Neapolitan breakfast.</p>
 
 <h2>Riccia, frolla and Santa Rosa</h2>
 <ul>

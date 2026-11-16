@@ -218,8 +218,8 @@ ARTICOLI = [
 <h2>Il convento di Santa Rosa</h2>
 <p>La storia più raccontata porta a Conca dei Marini, sulla Costiera Amalfitana, nel monastero di Santa Rosa. Qui, nel Seicento, una suora avrebbe usato gli avanzi della cucina, semola cotta nel latte, ricotta e frutta secca, per creare un dolce nuovo, chiuso in una sfoglia a forma di cappuccio. Da quel convento prende il nome la <strong>Santa Rosa</strong>, la sfogliatella con crema pasticcera e amarene.</p>
 
-<h2>Pintauro e via Toledo</h2>
-<p>A portare la sfogliatella in città fu, intorno al 1818, Pasquale Pintauro, che aveva una bottega su via Toledo, a pochi passi da Piazza Carità. Pintauro la semplificò: tolse crema e amarene e lasciò il ripieno di ricotta che conosciamo oggi. Da lì la sfogliatella è diventata uno dei simboli della colazione napoletana.</p>
+<h2>Da Conca dei Marini a via Toledo</h2>
+<p>Intorno al 1818 la sfogliatella lasciò il convento e arrivò a Napoli, lungo via Toledo, a pochi passi da Piazza Carità. In città la ricetta fu semplificata: via la crema e le amarene, restò il ripieno di ricotta che conosciamo oggi. Da lì la sfogliatella è diventata uno dei simboli della colazione napoletana.</p>
 
 <h2>Riccia, frolla e Santa Rosa</h2>
 <ul>
@@ -298,7 +298,7 @@ ARTICOLI = [
 
 <h2>Una ricetta del 1837</h2>
 <p>La prima ricetta scritta della zeppola napoletana si trova nella <em>Cucina teorico-pratica</em> di Ippolito Cavalcanti, duca di Buonvicino, pubblicata nel 1837. All'epoca era un dolce fritto e semplice: farina, acqua, un liquore all'anice, vino e zucchero.</p>
-<p>La tradizione attribuisce al pasticcere Pasquale Pintauro, lo stesso della <a href="../sfogliatella/">sfogliatella</a>, l'idea di arricchirla e di friggerla due volte. È un racconto più che un fatto documentato, ma dice molto di come i dolci napoletani siano cresciuti nelle botteghe del centro.</p>
+<p>Nel tempo la zeppola è stata arricchita e fritta due volte: un'evoluzione nata, come quella della <a href="../sfogliatella/">sfogliatella</a>, nelle botteghe e nei laboratori del centro di Napoli. Le origini precise di queste varianti non sono documentate.</p>
 
 <h2>San Giuseppe frittellaro</h2>
 <p>Una leggenda popolare racconta che, durante la fuga in Egitto, San Giuseppe abbia venduto frittelle per mantenere la famiglia. Per questo a Napoli è anche il protettore di chi frigge, e il suo giorno si festeggia con un dolce fritto.</p>
