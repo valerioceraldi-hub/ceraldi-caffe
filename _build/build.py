@@ -89,7 +89,7 @@ VOCI_NAV = [("bar/", "Il bar"), ("pasticceria/", "Pasticceria"), ("menu/", "Menu
 EN_PATH = {"": "en/", "storia/": "en/storia/", "bar/": "en/bar/", "pasticceria/": "en/pasticceria/", "rosticceria/": "en/rosticceria/",
            "aspritz/": "en/aspritz/", "specialita/": "en/specialita/", "babamisu/": "en/babamisu/", "caffe-sfogliata/": "en/caffe-sfogliata/", "menu/": "en/menu/", "contatti/": "en/contatti/", "privacy/": "en/privacy/", "termini/": "en/termini/"}
 # Racconti con versione inglese: percorso italiano -> percorso inglese
-EN_PATH.update({"storie/caffe-sospeso/": "en/stories/caffe-sospeso/", "storie/sfogliatella/": "en/stories/sfogliatella/", "storie/baba/": "en/stories/baba/"})
+EN_PATH.update({"storie/caffe-sospeso/": "en/stories/caffe-sospeso/", "storie/sfogliatella/": "en/stories/sfogliatella/", "storie/baba/": "en/stories/baba/", "storie/dolci-di-natale/": "en/stories/dolci-di-natale/"})
 VOCI_NAV_EN = [("en/bar/", "Coffee & breakfast"), ("en/pasticceria/", "Pastries"), ("en/menu/", "Menu"), ("en/storia/", "Our story"), ("en/contatti/", "Contact")]
 
 def alt_coppia(it_path):
@@ -467,10 +467,10 @@ def articolo_en(slug, t):
     url = BASE + f"en/stories/{slug}/"
     it_path = f"storie/{slug}/"
     k = a["foto"]
-    img = BASE + f"img/{k}-{FOTO[k]['w'][0]}.webp"
+    img = BASE + (f"img/{k}-{FOTO[k]['w'][0]}.webp" if k else "img/og.jpg")
     madre = t["pagina_madre"]
     nome_madre = "Coffee & breakfast" if madre == "bar" else "Pastries"
-    og = a.get("og") or f"img/{k}-{FOTO[k]['w'][0]}.webp"
+    og = a.get("og") or (f"img/{k}-{FOTO[k]['w'][0]}.webp" if k else "img/og.jpg")
     ld = [{"@context": "https://schema.org", "@type": "Article", "headline": t["titolo"], "description": t["descrizione"],
            "image": [img] + ([BASE + a["og"]] if a.get("og") else []), "datePublished": a.get("pubblicato", PUBBLICATO),
            "dateModified": a.get("aggiornato", a.get("pubblicato", PUBBLICATO)), "inLanguage": "en", "mainEntityOfPage": url,
@@ -487,7 +487,7 @@ def articolo_en(slug, t):
     h = testa("en", t["titolo_seo"] + " | Ceraldi Caffè", t["descrizione"], url, "../../../", og_img=og, ld=ld, tipo="article",
               alternates=alt_coppia(it_path))
     fig_c = f'<figcaption>{e(t["didascalia"])}</figcaption>' if t.get("didascalia") else ''
-    fig = f'<figure class="{"verticale" if FOTO[k]["r"][1] > FOTO[k]["r"][0] else ""}">{immagine(k, "../../../", "(max-width: 800px) 100vw, 760px", eager=True, alt=t["foto_alt"])}{fig_c}</figure>'
+    fig = f'<figure class="{"verticale" if FOTO[k]["r"][1] > FOTO[k]["r"][0] else ""}">{immagine(k, "../../../", "(max-width: 800px) 100vw, 760px", eager=True, alt=t["foto_alt"])}{fig_c}</figure>' if k else ''
     faq = f'<section class="faq-articolo"><h2>Frequently asked questions</h2><div class="domande">{faq_html(t["faq"])}</div></section>' if t.get("faq") else ''
     prova = ''.join(f'<li><b>{e(n)}</b><br><span>{e(d)}</span></li>' for n, d in t["provare"])
     fonti = ''.join(f'<li><a href="{e(u)}" rel="noopener" hreflang="it">{e(n)}</a></li>' for n, u in a["fonti"])

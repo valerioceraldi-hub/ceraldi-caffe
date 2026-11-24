@@ -101,12 +101,50 @@ ARTICOLI_EN = {
 <h2>Arriving in Naples</h2>
 <p>The babà reached Naples between the late eighteenth and the nineteenth century, with the French cooks of the great families and of the Bourbon court. Neapolitan pastry chefs gave it the mushroom shape we know, a softer dough and a generous soak. From a court dessert it became a street sweet, to be eaten standing at the bar.</p>
 
+<h2>A story with several versions</h2>
+<p>The origins of the babà are told in different ways, and the sources do not always agree. Wikipedia derives it from a yeast cake of Polish and Slavic tradition, the <em>babka</em>, perfected in France; the modern mushroom shape is traced back to 1835. Gambero Rosso says that in Paris the cake lost its saffron and candied fruit and took today's dome shape. The Neapolitan dates differ too: Wikipedia cites Neapolitan sources from 1836, while Gambero Rosso gives the first written record as Vincenzo Agnoletti's manual of 1863, with the cake becoming common among Naples' middle class in the late nineteenth century. A popular etymology links the name to the <em>baba</em>, Turkish dignitaries who accompanied Ottoman ambassadors to Naples: it is a handed-down explanation, not a certainty.</p>
+
+<h2>How it is made</h2>
+<p>The dough is yeasted and bakes for a long time in a truncated-cone mould, until it turns amber. After baking, the babà is left to dry for at least a day, then dipped in a sugar syrup with rum or limoncello and left to drain. Some pastry shops cover it with an apricot glaze. There is also the <em>savarin</em> babà, with a little milk in the dough, lighter and spongier, used for cakes to be filled with cream and fruit.</p>
+
 <h2>“Sì nu babà”</h2>
 <p>In Naples, telling someone “sì nu babà” (“you are a babà”) is an affectionate compliment: it means they are sweet, good, irresistible. It shows how deeply this cake has entered the way the city speaks.</p>
 
 <h2>How to enjoy it</h2>
-<p>The classic babà is simple, just dough and soak. But it lends itself to a thousand variations: with custard and sour cherries, with cream and strawberries, with chocolate, or with limoncello, as a tribute to the Amalfi Coast.</p>
+<p>The classic babà is simple, just dough and soak. But it lends itself to a thousand variations: with custard and sour cherries, with cream and strawberries, with chocolate, or with limoncello, as a tribute to the Amalfi Coast. According to Gambero Rosso, from the start it was eaten on the move in Naples, like true street food.</p>
 """,
  "provare": [("Rum babà", "classic, or with custard and sour cherries, cream and strawberries or chocolate"), ("Segreto amalfitano", "limoncello babà with a heart of lemon chantilly"), ("Babàmisù", "mascarpone babà soaked in coffee liqueur"), ("Caffè Babà", "the babà in the cup too")],
+},
+
+"dolci-di-natale": {
+ "pagina_madre": "pasticceria",
+ "titolo": "Christmas sweets in Naples: struffoli, roccocò and mostaccioli",
+ "titolo_seo": "Neapolitan Christmas sweets: struffoli and roccocò",
+ "descrizione": "Struffoli, roccocò, mostaccioli, susamielli, raffioli and divino amore: the sweets of a Neapolitan Christmas, their ingredients and their history.",
+ "dek": "Honey, almonds, pisto and colourful diavulilli. In Naples, Christmas is recognised first of all by its sweets.",
+ "lettura": 4,
+ "corpo": """
+<p>Christmas in Naples has a precise scent: warm honey, toasted almonds, orange zest and <strong>pisto</strong>, the spice blend (cinnamon, cloves, nutmeg and others) that goes into almost every festive sweet.</p>
+
+<h2>Struffoli</h2>
+<p>Small balls of fried dough, bound with honey and decorated with candied fruit and coloured sprinkles, the <em>diavulilli</em>. Struffoli are made in large quantities, given as gifts and stay on the table for days. They resemble sweets from other Mediterranean traditions, such as Greek <em>loukoumades</em>.</p>
+
+<h2>Roccocò</h2>
+<p>Hard, crunchy rings with almonds, orange zest and pisto. Tradition traces them back to the fourteenth century and to the nuns of the Real Convento della Maddalena. They are hard by nature: many people soften them in wine, such as marsala.</p>
+
+<h2>Mostaccioli</h2>
+<p>Soft honey and spice biscuits covered in chocolate. Originally the dough contained grape must, which gave them their name.</p>
+
+<h2>Susamielli, raffioli and divino amore</h2>
+<ul>
+<li><strong>Susamielli</strong>: S-shaped biscuits with honey, almonds and pisto, covered in sesame seeds.</li>
+<li><strong>Raffioli</strong>: discs of sponge cake with apricot jam and white icing.</li>
+<li><strong>Divino amore</strong>: almond paste with candied fruit and jam, under a pink icing.</li>
+</ul>
+
+<h2>Christmas in the bars</h2>
+<p>During the holidays Christmas sweets also arrive in the bars, next to the coffee. And the pastiera, the Easter sweet par excellence, is increasingly found in Naples at Christmas too.</p>
+""",
+ "provare": [("Roccocò, mostaccioli, struffoli", "the festive classics"), ("Susamielli and divino amore", "biscuits and sweets of the Christmas tradition"), ("Raffioli, raffiolo a cassata, cassatine", "plain raffioli, white or chocolate")],
 },
 }
