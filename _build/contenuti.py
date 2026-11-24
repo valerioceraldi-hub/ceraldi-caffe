@@ -396,7 +396,7 @@ ARTICOLI += [
 <h2>Il Natale nei bar</h2>
 <p>Durante le feste i dolci natalizi entrano anche nei bar, accanto al caffè. E la <a href="../pastiera/">pastiera</a>, dolce di Pasqua per eccellenza, a Napoli si trova sempre più spesso anche a Natale.</p>
 """,
- "provare": [("Pastiera napoletana", "a Napoli ormai si mangia anche a Natale"), ("Biscotto all'amarena", "dolce tradizionale napoletano di pasta frolla")],
+ "provare": [("Roccocò, mostaccioli, struffoli", "i classici delle feste"), ("Susamielli e divino amore", "biscotti e dolci della tradizione natalizia"), ("Raffioli, raffiolo a cassata, cassatine", "raffioli semplici bianchi e al cioccolato")],
 },
 {
  "slug": "piazza-carita-via-toledo",
